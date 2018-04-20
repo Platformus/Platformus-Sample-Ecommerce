@@ -1,0 +1,12 @@
+﻿@* Copyright © 2017 Dmitry Sikorsky. All rights reserved. *@
+@* Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information. *@
+@model dynamic
+<h1>
+  @Model.Catalog.Name
+</h1>
+<div class="products">
+  @foreach (var product in this.Model.Catalog.Products)
+  {
+    @Html.Partial("_Product", product as object)
+  }
+</div>
