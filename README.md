@@ -22,7 +22,7 @@ Join our team!
 
 ## Links
 
-Live demo: http://demo.platformus.net/
+Live demo: http://ecommerce-demo.platformus.net/
 
 Sources on GitHub: https://github.com/Platformus/Platformus
 
