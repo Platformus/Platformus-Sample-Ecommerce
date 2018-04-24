@@ -38,8 +38,4 @@
     <PackageReference Include="Platformus.WebApplication" Version="1.0.0-beta4" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\css\" />
-  </ItemGroup>
-
 </Project>
