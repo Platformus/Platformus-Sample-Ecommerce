@@ -14,7 +14,7 @@
     <PackageReference Include="Platformus.ECommerce.Backend" Version="1.0.0-beta4" />
     <PackageReference Include="Platformus.ECommerce.Data.EntityFramework.Sqlite" Version="1.0.0-beta4" />
     <PackageReference Include="Platformus.ECommerce.Frontend" Version="1.0.0-beta4" />
-	<PackageReference Include="Platformus.Domain.Api" Version="1.0.0-beta4" />
+	  <PackageReference Include="Platformus.Domain.Api" Version="1.0.0-beta4" />
     <PackageReference Include="Platformus.Domain.Backend" Version="1.0.0-beta4" />
     <PackageReference Include="Platformus.Domain.Data.EntityFramework.Sqlite" Version="1.0.0-beta4" />
     <PackageReference Include="Platformus.Domain.Frontend" Version="1.0.0-beta4" />

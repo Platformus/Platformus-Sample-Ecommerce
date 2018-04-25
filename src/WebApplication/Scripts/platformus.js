@@ -13,17 +13,14 @@ function getCulture() {
   return "en";
 }
 
-function toggleMaster() {
-  var master = $(".master-detail__master");
-  var detail = $(".master-detail__detail");
+function toggleHeader() {
+  var header = $(".header");
 
-  if (master.is(":visible")) {
-    master.slideUp("fast");
-    detail.show();
+  if (header.is(":visible")) {
+    header.slideUp("fast");
   }
 
   else {
-    master.slideDown("fast");
-    detail.hide()
+    header.slideDown("fast");
   }
 }

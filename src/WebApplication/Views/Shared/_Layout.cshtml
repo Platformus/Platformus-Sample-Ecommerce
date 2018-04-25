@@ -18,6 +18,9 @@
     @await Component.InvokeAsync("Catalogs", new { additionalCssClass = "header__catalogs" })
     @await Component.InvokeAsync("Cultures", new { additionalCssClass = "header__cultures" })
   </div>
+  <div class="mobile-header">
+    <div class="mobile-header__menu-toggle" onclick="toggleHeader();"></div>
+  </div>
   <div class="content">
     @RenderBody()
   </div>
