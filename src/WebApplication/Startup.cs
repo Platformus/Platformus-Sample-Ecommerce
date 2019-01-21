@@ -26,9 +26,9 @@ namespace WebApplication
     public void ConfigureServices(IServiceCollection services)
     {
       services.Configure<StorageContextOptions>(options =>
-      {
-        options.ConnectionString = this.configuration.GetConnectionString("Default");
-      }
+        {
+          options.ConnectionString = this.configuration.GetConnectionString("Default");
+        }
       );
 
       services.AddPlatformus(this.extensionsPath);
@@ -40,7 +40,6 @@ namespace WebApplication
       {
         applicationBuilder.UseDeveloperExceptionPage();
         applicationBuilder.UseDatabaseErrorPage();
-        applicationBuilder.UseBrowserLink();
       }
 
       applicationBuilder.UsePlatformus();
