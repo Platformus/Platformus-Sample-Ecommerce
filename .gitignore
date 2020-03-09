@@ -4,3 +4,4 @@ obj/
 src/WebApplication/wwwroot/css
 src/WebApplication/wwwroot/js
 *.user
+/src/WebApplication/Properties/PublishProfiles
