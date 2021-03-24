@@ -1,23 +1,22 @@
-# Platformus 1.0.0-beta5 Sample Ecommerce
+# Platformus 2.0.0 Sample Ecommerce
 
 [![Join the chat at https://gitter.im/Platformus/Platformus](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Platformus/Platformus?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Introduction
 
-[Platformus](https://github.com/Platformus/Platformus) is free, open source and cross-platform CMS
-based on ASP.NET Core and [ExtCore framework](https://github.com/ExtCore/ExtCore). It is built using
-the best and the most modern tools and languages (Visual Studio 2017, C#, TypeScript, SCSS etc).
-Join our team!
+[Platformus](https://github.com/Platformus/Platformus) is free, open source, and cross-platform developer-friendly CMS
+based on ASP.NET Core, [ExtCore framework](https://github.com/ExtCore/ExtCore),
+and [Magicalizer](https://github.com/Magicalizer/Magicalizer).
 
-### Some Screenshots
+### Sample Screenshots
 
-![Home page](http://platformus.net/samples/ecommerce/1.png)
+![Home page](home_page.png)
 *Home page*
 
-![Category page](http://platformus.net/samples/ecommerce/2.png)
+![Category page](category_page.png)
 *Category page*
 
-![Product page](http://platformus.net/samples/ecommerce/3.png)
+![Product page](product_page.png)
 *Product page*
 
 ## Links

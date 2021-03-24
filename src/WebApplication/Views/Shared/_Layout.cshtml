@@ -15,7 +15,7 @@
   <div class="header">
     <a class="header__logo logo" href="/@System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName/">Your brand</a>
     @await Component.InvokeAsync("Menu", new { code = "Main", additionalCssClass = "header__menu" })
-    @await Component.InvokeAsync("Catalogs", new { additionalCssClass = "header__catalogs" })
+    @await Component.InvokeAsync("Catalog", new { additionalCssClass = "header__catalog" })
     @await Component.InvokeAsync("Cultures", new { additionalCssClass = "header__cultures" })
   </div>
   <div class="mobile-header">

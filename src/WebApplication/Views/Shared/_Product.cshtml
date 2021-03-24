@@ -1,15 +1,16 @@
 ﻿@* Copyright © 2018 Dmitry Sikorsky. All rights reserved. *@
 @* Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information. *@
-@model dynamic
+@model Platformus.ECommerce.Frontend.ViewModels.Shared.ProductViewModel
 <div class="products__product product">
-  <div class="product__cover">
-    <a href="/@System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName@Model.Url">
-      <img class="product__cover-image" src="/img?url=/images/temp/@Model.CoverPhoto.Filename&w=640&h=640" />
-    </a>
-  </div>
+  <a href="/@System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName@Model.Url">
+    <img class="product__cover" src="/img?url=/images/products/@Model.Cover.Filename&w=640&h=640" />
+  </a>
   <a class="product__name" href="/@System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName@Model.Url">@Model.Name</a>
   <div class="product__price">
     $@Model.Price
   </div>
-  <a class="product__add-to-cart button button--positive" href="/@System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName/ecommerce/cart/add?productid=@Model.Id">Add to cart</a>
+  <div class="product__units">
+    @Model.Units
+  </div>
+  <a class="product__add-to-cart button button--positive" onclick="return addToCart(@Model.Id);">Add to cart</a>
 </div>

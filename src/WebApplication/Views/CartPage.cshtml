@@ -1,0 +1,28 @@
+﻿@* Copyright © 2017 Dmitry Sikorsky. All rights reserved. *@
+@* Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information. *@
+@inject Platformus.ECommerce.Services.Abstractions.ICartManager CartManager
+@model dynamic
+@{
+  this.ViewBag.Title = this.Model.Page.Title;
+  this.ViewBag.MetaKeywords = this.Model.Page.MetaKeywords;
+  this.ViewBag.MetaDescription = this.Model.Page.MetaDescription;
+}
+@Html.Raw(this.Model.Page.Content)
+@if (await this.CartManager.GetQuantityAsync() != 0m)
+{
+  <div class="cart">
+    @await Component.InvokeAsync("Positions", new { additionalCssClass = "cart__positions" })
+    <div class="cart__total">
+      ₴@((await this.CartManager.GetTotalAsync()).ToString("0.00"))
+    </div>
+    <div class="cart__buttons">
+      <a class="button button--positive" href="/@System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName/ecommerce/checkout">Checkout</a>
+    </div>
+  </div>
+}
+else
+{
+  <p>
+    Cart is empty.
+  </p>
+}

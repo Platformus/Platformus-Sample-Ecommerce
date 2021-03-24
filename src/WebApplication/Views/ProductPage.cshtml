@@ -1,0 +1,20 @@
+﻿@* Copyright © 2017 Dmitry Sikorsky. All rights reserved. *@
+@* Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information. *@
+@model Platformus.ECommerce.Frontend.ViewModels.ECommerce.ProductPageViewModel
+@{
+  this.ViewBag.Title = this.Model.Title;
+  this.ViewBag.MetaKeywords = this.Model.MetaKeywords;
+  this.ViewBag.MetaDescription = this.Model.MetaDescription;
+}
+<div class="product-page">
+  <img class="product-page__cover" src="/img?url=/images/products/@Model.Photos.FirstOrDefault().Filename&w=960&h=960" />
+  <h1>@Model.Name</h1>
+  @Html.Raw(this.Model.Description)
+  <div class="product-page__price">
+    $@Model.Price
+  </div>
+  <div class="product__units">
+    @Model.Units
+  </div>
+  <a class="product-page__add-to-cart button button--positive" onclick="return addToCart(@Model.Id);">Add to cart</a>
+</div>

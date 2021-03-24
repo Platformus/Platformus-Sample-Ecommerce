@@ -170,36 +170,36 @@ a:hover {
 .menu__item-name--active:hover {
 }
 
-/* Catalogs */
-.catalogs {
+/* Catalog */
+.catalog {
   background: #f0f0f0;
 }
 
-.catalogs__catalog {
+.catalog__category {
   display: inline-block;
   padding: 0.5rem;
 }
 
-.catalogs__catalog:hover {
+.catalog__category:hover {
 }
 
-.catalogs__catalog--active {
+.catalog__category--active {
 }
 
-.catalogs__catalog--active:hover {
+.catalog__category--active:hover {
 }
 
-.catalogs__catalog-name {
+.catalog__category-name {
 }
 
-.catalogs__catalog-name:hover {
+.catalog__category-name:hover {
 }
 
-.catalogs__catalog-name--active {
+.catalog__category-name--active {
   text-decoration: none;
 }
 
-.catalogs__catalog-name--active:hover {
+.catalog__category-name--active:hover {
 }
 
 /* Cultures */
@@ -244,14 +244,19 @@ a:hover {
 }
 
 .product__cover {
-}
-
-.product__cover-image {
-  width: 80%;
+  display: block;
+  width: 100%;
 }
 
 .product__price {
   font-size: 2rem;
+}
+
+.product__units {
+}
+
+.product__add-to-cart {
+  margin-top: 1rem;
 }
 
 /* Products */
@@ -283,9 +288,9 @@ a:hover {
   top: 0;
 }
 
-.product-page__cover-image {
+.product-page__cover {
+  display: block;
   width: 30rem;
-  height: 30rem;
 }
 
 .product-page__price {
@@ -304,15 +309,21 @@ a:hover {
 }
 
 .position__product-cover {
+  display: block;
   position: absolute;
   left: 0;
   top: 0;
-}
-
-.position__product-cover-image {
-  display: block;
   width: 4rem;
   height: 4rem;
+}
+
+.position__remove {
+  color: red;
+  cursor: pointer;
+  font-size: 2rem;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 /* Cart */
@@ -321,6 +332,14 @@ a:hover {
 
 .cart__position {
   margin-top: 1rem;
+}
+
+.cart__total {
+  margin-top: 1rem;
+}
+
+.cart__buttons {
+  margin-top: 2rem;
 }
 
 /* Header */
@@ -338,7 +357,7 @@ a:hover {
   margin-left: 0.5rem;
 }
 
-.header__catalogs {
+.header__catalog {
   float: left;
 }
 
@@ -441,7 +460,7 @@ a:hover {
     width: 100%;
   }
 
-  .product__cover-image {
+  .product__cover {
     width: 100%;
   }
 
@@ -451,20 +470,11 @@ a:hover {
   }
 
   .product-page__cover {
-    position: static;
-  }
-
-  .product-page__cover-image {
     width: 100%;
-    height: 100%;
   }
 
   .product-page__price {
     font-size: 2rem;
-    margin-top: 1rem;
-  }
-
-  .product-page__add-to-cart {
     margin-top: 1rem;
   }
 
@@ -489,7 +499,7 @@ a:hover {
     padding: 2rem;
   }
 
-  .header__catalogs {
+  .header__catalog {
     font-size: 2rem;
     float: none;
     margin: 0;

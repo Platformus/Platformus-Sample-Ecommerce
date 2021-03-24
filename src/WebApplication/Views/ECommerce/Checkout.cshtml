@@ -1,0 +1,52 @@
+﻿@* Copyright © 2021 Dmitry Sikorsky. All rights reserved. *@
+@* Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information. *@
+@model Platformus.ECommerce.Frontend.ViewModels.ECommerce.CheckoutPageViewModel
+@{
+  this.ViewBag.Title = "Checkout";
+}
+<h1>Checkout</h1>
+<form class="form" method="post">
+  <div class="form__field field">
+    <label class="field__label" asp-for="PaymentMethodId"></label>
+    @foreach (var paymentMethod in this.Model.PaymentMethods)
+    {
+      <input id="paymentMethod@(paymentMethod.Id)" name="paymentMethodId" type="radio" value="@paymentMethod.Id" checked="@(paymentMethod.Id == this.Model.PaymentMethodId ? "checked" : null)" />
+      <label for="paymentMethod@(paymentMethod.Id)">@paymentMethod.Name</label>
+    }
+  </div>
+  <div class="form__field field">
+    <label class="field__label" asp-for="DeliveryMethodId"></label>
+    @foreach (var deliveryMethod in this.Model.DeliveryMethods)
+    {
+      <input id="deliveryMethod@(deliveryMethod.Id)" name="deliveryMethodId" type="radio" value="@deliveryMethod.Id" checked="@(deliveryMethod.Id == this.Model.DeliveryMethodId ? "checked" : null)" />
+      <label for="deliveryMethod@(deliveryMethod.Id)">@deliveryMethod.Name</label>
+    }
+  </div>
+  <div class="form__field field">
+    <label class="field__label" asp-for="FirstName"></label>
+    <input class="field__text-box text-box" type="text" asp-for="FirstName" />
+  </div>
+  <div class="form__field field">
+    <label class="field__label" asp-for="LastName"></label>
+    <input class="field__text-box text-box" type="text" asp-for="LastName" />
+  </div>
+  <div class="form__field field">
+    <label class="field__label" asp-for="Phone"></label>
+    <input class="field__text-box text-box" type="text" asp-for="Phone" />
+  </div>
+  <div class="form__field field">
+    <label class="field__label" asp-for="Email"></label>
+    <input class="field__text-box text-box" type="text" asp-for="Email" />
+  </div>
+  <div class="form__field field">
+    <label class="field__label" asp-for="Address"></label>
+    <input class="field__text-box text-box" type="text" asp-for="Address" />
+  </div>
+  <div class="form__field field">
+    <label class="field__label" asp-for="Note"></label>
+    <textarea class="field__text-area text-area" asp-for="Note"></textarea>
+  </div>
+  <div class="form__buttons buttons">
+    <button class="buttons__button button" type="submit">Checkout</button>
+  </div>
+</form>
