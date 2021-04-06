@@ -7,15 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Platformus.Core.Data.EntityFramework.Sqlite" Version="2.0.0" />
-    <PackageReference Include="Platformus.ECommerce.Backend" Version="2.0.0" />
-    <PackageReference Include="Platformus.ECommerce.Data.EntityFramework.SqlServer" Version="2.0.0" />
-    <PackageReference Include="Platformus.ECommerce.Frontend" Version="2.0.0" />
-    <PackageReference Include="Platformus.Images" Version="2.0.0" />
-    <PackageReference Include="Platformus.WebApplication" Version="2.0.0" />
-    <PackageReference Include="Platformus.Website.Backend" Version="2.0.0" />
-    <PackageReference Include="Platformus.Website.Data.EntityFramework.SqlServer" Version="2.0.0" />
-    <PackageReference Include="Platformus.Website.Frontend" Version="2.0.0" />
+    <PackageReference Include="Platformus.Core.Data.EntityFramework.Sqlite" Version="2.1.0" />
+    <PackageReference Include="Platformus.ECommerce.Backend" Version="2.1.0" />
+    <PackageReference Include="Platformus.ECommerce.Data.EntityFramework.SqlServer" Version="2.1.0" />
+    <PackageReference Include="Platformus.ECommerce.Frontend" Version="2.1.0" />
+    <PackageReference Include="Platformus.Images" Version="2.1.0" />
+    <PackageReference Include="Platformus.WebApplication" Version="2.1.0" />
+    <PackageReference Include="Platformus.Website.Backend" Version="2.1.0" />
+    <PackageReference Include="Platformus.Website.Data.EntityFramework.SqlServer" Version="2.1.0" />
+    <PackageReference Include="Platformus.Website.Frontend" Version="2.1.0" />
   </ItemGroup>
 
   <Target Name="PrecompileScript" BeforeTargets="BeforeBuild">
