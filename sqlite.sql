@@ -1,4 +1,10 @@
 BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "ModelStates" (
+	"Id"	TEXT NOT NULL,
+	"Value"	TEXT NOT NULL,
+	"Created"	TEXT NOT NULL,
+	CONSTRAINT "PK_ModelState" PRIMARY KEY("Id")
+);
 CREATE TABLE IF NOT EXISTS "Users" (
 	"Id"	INTEGER NOT NULL,
 	"Name"	TEXT NOT NULL,
@@ -85,8 +91,8 @@ CREATE TABLE IF NOT EXISTS "Localizations" (
 	"CultureId"	TEXT NOT NULL,
 	"Value"	TEXT,
 	CONSTRAINT "PK_Localization" PRIMARY KEY("Id" AUTOINCREMENT),
-	CONSTRAINT "FK_Localization_Culture_CultureId" FOREIGN KEY("CultureId") REFERENCES "Cultures"("Id") ON DELETE CASCADE,
-	CONSTRAINT "FK_Localization_Dictionary_DictionaryId" FOREIGN KEY("DictionaryId") REFERENCES "Dictionaries"("Id") ON DELETE CASCADE
+	CONSTRAINT "FK_Localization_Dictionary_DictionaryId" FOREIGN KEY("DictionaryId") REFERENCES "Dictionaries"("Id") ON DELETE CASCADE,
+	CONSTRAINT "FK_Localization_Culture_CultureId" FOREIGN KEY("CultureId") REFERENCES "Cultures"("Id") ON DELETE CASCADE
 );
 CREATE TABLE IF NOT EXISTS "Endpoints" (
 	"Id"	INTEGER NOT NULL,
@@ -95,24 +101,25 @@ CREATE TABLE IF NOT EXISTS "Endpoints" (
 	"Position"	INTEGER,
 	"DisallowAnonymous"	INTEGER NOT NULL,
 	"SignInUrl"	TEXT,
+	"RequestProcessorCSharpClassName"	TEXT NOT NULL,
+	"RequestProcessorParameters"	TEXT,
 	"ResponseCacheCSharpClassName"	TEXT,
-	"CSharpClassName"	TEXT NOT NULL,
-	"Parameters"	TEXT,
+	"ResponseCacheParameters"	TEXT,
 	CONSTRAINT "PK_Endpoint" PRIMARY KEY("Id" AUTOINCREMENT)
 );
 CREATE TABLE IF NOT EXISTS "EndpointPermissions" (
 	"EndpointId"	INTEGER NOT NULL,
 	"PermissionId"	INTEGER NOT NULL,
 	CONSTRAINT "PK_EndpointPermission" PRIMARY KEY("EndpointId","PermissionId"),
-	CONSTRAINT "FK_EndpointPermission_Permission_PermissionId" FOREIGN KEY("PermissionId") REFERENCES "Permissions"("Id") ON DELETE CASCADE,
-	CONSTRAINT "FK_EndpointPermission_Endpoint_EndpointId" FOREIGN KEY("EndpointId") REFERENCES "Endpoints"("Id") ON DELETE CASCADE
+	CONSTRAINT "FK_EndpointPermission_Endpoint_EndpointId" FOREIGN KEY("EndpointId") REFERENCES "Endpoints"("Id") ON DELETE CASCADE,
+	CONSTRAINT "FK_EndpointPermission_Permission_PermissionId" FOREIGN KEY("PermissionId") REFERENCES "Permissions"("Id") ON DELETE CASCADE
 );
 CREATE TABLE IF NOT EXISTS "DataSources" (
 	"Id"	INTEGER NOT NULL,
 	"EndpointId"	INTEGER NOT NULL,
 	"Code"	TEXT NOT NULL,
-	"CSharpClassName"	TEXT NOT NULL,
-	"Parameters"	TEXT,
+	"DataProviderCSharpClassName"	TEXT NOT NULL,
+	"DataProviderParameters"	TEXT,
 	CONSTRAINT "PK_DataSource" PRIMARY KEY("Id" AUTOINCREMENT),
 	CONSTRAINT "FK_DataSource_Endpoint_EndpointId" FOREIGN KEY("EndpointId") REFERENCES "Endpoints"("Id") ON DELETE CASCADE
 );
@@ -166,10 +173,10 @@ CREATE TABLE IF NOT EXISTS "Members" (
 	"MinRelatedObjectsNumber"	INTEGER,
 	"MaxRelatedObjectsNumber"	INTEGER,
 	CONSTRAINT "PK_Member" PRIMARY KEY("Id" AUTOINCREMENT),
-	CONSTRAINT "FK_Member_Class_RelationClassId" FOREIGN KEY("RelationClassId") REFERENCES "Classes"("Id") ON DELETE SET NULL,
 	CONSTRAINT "FK_Member_Class_ClassId" FOREIGN KEY("ClassId") REFERENCES "Classes"("Id") ON DELETE CASCADE,
+	CONSTRAINT "FK_Member_DataType_PropertyDataTypeId" FOREIGN KEY("PropertyDataTypeId") REFERENCES "DataTypes"("Id") ON DELETE SET NULL,
 	CONSTRAINT "FK_Member_Tab_TabId" FOREIGN KEY("TabId") REFERENCES "Tabs"("Id") ON DELETE SET NULL,
-	CONSTRAINT "FK_Member_DataType_PropertyDataTypeId" FOREIGN KEY("PropertyDataTypeId") REFERENCES "DataTypes"("Id") ON DELETE SET NULL
+	CONSTRAINT "FK_Member_Class_RelationClassId" FOREIGN KEY("RelationClassId") REFERENCES "Classes"("Id") ON DELETE SET NULL
 );
 CREATE TABLE IF NOT EXISTS "DataTypeParameterValues" (
 	"Id"	INTEGER NOT NULL,
@@ -177,8 +184,8 @@ CREATE TABLE IF NOT EXISTS "DataTypeParameterValues" (
 	"MemberId"	INT NOT NULL,
 	"Value"	TEXT NOT NULL,
 	CONSTRAINT "PK_DataTypeParameterValue" PRIMARY KEY("Id" AUTOINCREMENT),
-	CONSTRAINT "FK_DataTypeParameterValue_DataTypeParameter_DataTypeParameterId" FOREIGN KEY("DataTypeParameterId") REFERENCES "DataTypeParameters"("Id") ON DELETE CASCADE,
-	CONSTRAINT "FK_DataTypeParameterValue_Member_MemberId" FOREIGN KEY("MemberId") REFERENCES "Members"("Id") ON DELETE CASCADE
+	CONSTRAINT "FK_DataTypeParameterValue_Member_MemberId" FOREIGN KEY("MemberId") REFERENCES "Members"("Id") ON DELETE CASCADE,
+	CONSTRAINT "FK_DataTypeParameterValue_DataTypeParameter_DataTypeParameterId" FOREIGN KEY("DataTypeParameterId") REFERENCES "DataTypeParameters"("Id") ON DELETE CASCADE
 );
 CREATE TABLE IF NOT EXISTS "Objects" (
 	"Id"	INTEGER NOT NULL,
@@ -205,8 +212,8 @@ CREATE TABLE IF NOT EXISTS "Relations" (
 	"PrimaryId"	INTEGER NOT NULL,
 	"ForeignId"	INTEGER NOT NULL,
 	CONSTRAINT "PK_Relation" PRIMARY KEY("Id" AUTOINCREMENT),
-	CONSTRAINT "FK_Relation_Object_PrimaryId" FOREIGN KEY("PrimaryId") REFERENCES "Objects"("Id") ON DELETE CASCADE,
 	CONSTRAINT "FK_Relation_Member_MemberId" FOREIGN KEY("MemberId") REFERENCES "Members"("Id") ON DELETE CASCADE,
+	CONSTRAINT "FK_Relation_Object_PrimaryId" FOREIGN KEY("PrimaryId") REFERENCES "Objects"("Id") ON DELETE CASCADE,
 	CONSTRAINT "FK_Relation_Object_ForeignId" FOREIGN KEY("ForeignId") REFERENCES "Objects"("Id") ON DELETE CASCADE
 );
 CREATE TABLE IF NOT EXISTS "Menus" (
@@ -225,8 +232,8 @@ CREATE TABLE IF NOT EXISTS "MenuItems" (
 	"Position"	INTEGER,
 	CONSTRAINT "PK_MenuItem" PRIMARY KEY("Id" AUTOINCREMENT),
 	CONSTRAINT "FK_MenuItem_Menu_MenuId" FOREIGN KEY("MenuId") REFERENCES "Menus"("Id") ON DELETE CASCADE,
-	CONSTRAINT "FK_MenuItem_Dictionary_NameId" FOREIGN KEY("NameId") REFERENCES "Dictionaries"("Id"),
-	CONSTRAINT "FK_MenuItem_MenuItem_MenuItemId" FOREIGN KEY("MenuItemId") REFERENCES "MenuItems"("Id") ON DELETE CASCADE
+	CONSTRAINT "FK_MenuItem_MenuItem_MenuItemId" FOREIGN KEY("MenuItemId") REFERENCES "MenuItems"("Id") ON DELETE CASCADE,
+	CONSTRAINT "FK_MenuItem_Dictionary_NameId" FOREIGN KEY("NameId") REFERENCES "Dictionaries"("Id")
 );
 CREATE TABLE IF NOT EXISTS "Forms" (
 	"Id"	INTEGER NOT NULL,
@@ -234,8 +241,8 @@ CREATE TABLE IF NOT EXISTS "Forms" (
 	"NameId"	INTEGER NOT NULL,
 	"SubmitButtonTitleId"	INTEGER NOT NULL,
 	"ProduceCompletedForms"	INTEGER NOT NULL,
-	"CSharpClassName"	TEXT NOT NULL,
-	"Parameters"	TEXT,
+	"FormHandlerCSharpClassName"	TEXT NOT NULL,
+	"FormHandlerParameters"	TEXT,
 	CONSTRAINT "PK_Form" PRIMARY KEY("Id" AUTOINCREMENT),
 	CONSTRAINT "FK_Form_Dictionary_NameId" FOREIGN KEY("NameId") REFERENCES "Dictionaries"("Id"),
 	CONSTRAINT "FK_Form_Dictionary_SubmitButtonTitleId" FOREIGN KEY("SubmitButtonTitleId") REFERENCES "Dictionaries"("Id")
@@ -268,8 +275,8 @@ CREATE TABLE IF NOT EXISTS "FieldOptions" (
 	"ValueId"	INTEGER NOT NULL,
 	"Position"	INTEGER,
 	CONSTRAINT "PK_FieldOption" PRIMARY KEY("Id" AUTOINCREMENT),
-	CONSTRAINT "FK_FieldOption_Field_FieldId" FOREIGN KEY("FieldId") REFERENCES "Fields"("Id") ON DELETE CASCADE,
-	CONSTRAINT "FK_FieldOption_Dictionary_ValueId" FOREIGN KEY("ValueId") REFERENCES "Dictionaries"("Id")
+	CONSTRAINT "FK_FieldOption_Dictionary_ValueId" FOREIGN KEY("ValueId") REFERENCES "Dictionaries"("Id"),
+	CONSTRAINT "FK_FieldOption_Field_FieldId" FOREIGN KEY("FieldId") REFERENCES "Fields"("Id") ON DELETE CASCADE
 );
 CREATE TABLE IF NOT EXISTS "CompletedForms" (
 	"Id"	INTEGER NOT NULL,
@@ -284,8 +291,8 @@ CREATE TABLE IF NOT EXISTS "CompletedFields" (
 	"FieldId"	INTEGER NOT NULL,
 	"Value"	TEXT,
 	CONSTRAINT "PK_CompletedField" PRIMARY KEY("Id" AUTOINCREMENT),
-	CONSTRAINT "FK_CompletedField_CompletedForm_CompletedFormId" FOREIGN KEY("CompletedFormId") REFERENCES "CompletedForms"("Id") ON DELETE CASCADE,
-	CONSTRAINT "FK_CompletedField_Field_FieldId" FOREIGN KEY("FieldId") REFERENCES "Fields"("Id") ON DELETE CASCADE
+	CONSTRAINT "FK_CompletedField_Field_FieldId" FOREIGN KEY("FieldId") REFERENCES "Fields"("Id") ON DELETE CASCADE,
+	CONSTRAINT "FK_CompletedField_CompletedForm_CompletedFormId" FOREIGN KEY("CompletedFormId") REFERENCES "CompletedForms"("Id") ON DELETE CASCADE
 );
 CREATE TABLE IF NOT EXISTS "Files" (
 	"Id"	INTEGER NOT NULL,
@@ -298,12 +305,20 @@ CREATE TABLE IF NOT EXISTS "Categories" (
 	"CategoryId"	INTEGER,
 	"Url"	TEXT,
 	"NameId"	INTEGER NOT NULL,
-	"CSharpClassName"	TEXT NOT NULL,
-	"Parameters"	TEXT,
+	"DescriptionId"	INTEGER NOT NULL,
 	"Position"	INTEGER,
+	"TitleId"	INTEGER NOT NULL,
+	"MetaDescriptionId"	INTEGER NOT NULL,
+	"MetaKeywordsId"	INTEGER NOT NULL,
+	"ProductProviderCSharpClassName"	TEXT NOT NULL,
+	"ProductProviderParameters"	TEXT,
 	CONSTRAINT "PK_Category" PRIMARY KEY("Id" AUTOINCREMENT),
+	CONSTRAINT "FK_Category_Dictionary_MetaKeywordsId" FOREIGN KEY("MetaKeywordsId") REFERENCES "Dictionaries"("Id"),
+	CONSTRAINT "FK_Category_Dictionary_TitleId" FOREIGN KEY("TitleId") REFERENCES "Dictionaries"("Id"),
 	CONSTRAINT "FK_Category_Category_CategoryId" FOREIGN KEY("CategoryId") REFERENCES "Categories"("Id") ON DELETE CASCADE,
-	CONSTRAINT "FK_Category_Dictionary_NameId" FOREIGN KEY("NameId") REFERENCES "Dictionaries"("Id")
+	CONSTRAINT "FK_Category_Dictionary_DescriptionId" FOREIGN KEY("DescriptionId") REFERENCES "Dictionaries"("Id"),
+	CONSTRAINT "FK_Category_Dictionary_NameId" FOREIGN KEY("NameId") REFERENCES "Dictionaries"("Id"),
+	CONSTRAINT "FK_Category_Dictionary_MetaDescriptionId" FOREIGN KEY("MetaDescriptionId") REFERENCES "Dictionaries"("Id")
 );
 CREATE TABLE IF NOT EXISTS "Products" (
 	"Id"	INTEGER NOT NULL,
@@ -318,13 +333,13 @@ CREATE TABLE IF NOT EXISTS "Products" (
 	"MetaDescriptionId"	INTEGER NOT NULL,
 	"MetaKeywordsId"	INTEGER NOT NULL,
 	CONSTRAINT "PK_Product" PRIMARY KEY("Id" AUTOINCREMENT),
-	CONSTRAINT "FK_Product_Dictionary_MetaKeywordsId" FOREIGN KEY("MetaKeywordsId") REFERENCES "Dictionaries"("Id"),
 	CONSTRAINT "FK_Product_Category_CategoryId" FOREIGN KEY("CategoryId") REFERENCES "Categories"("Id") ON DELETE CASCADE,
 	CONSTRAINT "FK_Product_Dictionary_NameId" FOREIGN KEY("NameId") REFERENCES "Dictionaries"("Id"),
-	CONSTRAINT "FK_Product_Dictionary_TitleId" FOREIGN KEY("TitleId") REFERENCES "Dictionaries"("Id"),
+	CONSTRAINT "FK_Product_Dictionary_DescriptionId" FOREIGN KEY("DescriptionId") REFERENCES "Dictionaries"("Id"),
 	CONSTRAINT "FK_Product_Dictionary_UnitsId" FOREIGN KEY("UnitsId") REFERENCES "Dictionaries"("Id"),
+	CONSTRAINT "FK_Product_Dictionary_TitleId" FOREIGN KEY("TitleId") REFERENCES "Dictionaries"("Id"),
 	CONSTRAINT "FK_Product_Dictionary_MetaDescriptionId" FOREIGN KEY("MetaDescriptionId") REFERENCES "Dictionaries"("Id"),
-	CONSTRAINT "FK_Product_Dictionary_DescriptionId" FOREIGN KEY("DescriptionId") REFERENCES "Dictionaries"("Id")
+	CONSTRAINT "FK_Product_Dictionary_MetaKeywordsId" FOREIGN KEY("MetaKeywordsId") REFERENCES "Dictionaries"("Id")
 );
 CREATE TABLE IF NOT EXISTS "Photos" (
 	"Id"	INTEGER NOT NULL,
@@ -378,9 +393,9 @@ CREATE TABLE IF NOT EXISTS "Orders" (
 	"Note"	TEXT,
 	"Created"	TEXT NOT NULL,
 	CONSTRAINT "PK_Order" PRIMARY KEY("Id" AUTOINCREMENT),
-	CONSTRAINT "FK_Order_DeliveryMethod_DeliveryMethodId" FOREIGN KEY("DeliveryMethodId") REFERENCES "DeliveryMethods"("Id") ON DELETE CASCADE,
+	CONSTRAINT "FK_Order_OrderState_OrderStateId" FOREIGN KEY("OrderStateId") REFERENCES "OrderStates"("Id") ON DELETE CASCADE,
 	CONSTRAINT "FK_Order_PaymentMethod_PaymentMethodId" FOREIGN KEY("PaymentMethodId") REFERENCES "PaymentMethods"("Id") ON DELETE CASCADE,
-	CONSTRAINT "FK_Order_OrderState_OrderStateId" FOREIGN KEY("OrderStateId") REFERENCES "OrderStates"("Id") ON DELETE CASCADE
+	CONSTRAINT "FK_Order_DeliveryMethod_DeliveryMethodId" FOREIGN KEY("DeliveryMethodId") REFERENCES "DeliveryMethods"("Id") ON DELETE CASCADE
 );
 CREATE TABLE IF NOT EXISTS "Positions" (
 	"Id"	INTEGER NOT NULL,
@@ -578,6 +593,18 @@ INSERT INTO "Dictionaries" VALUES (132);
 INSERT INTO "Dictionaries" VALUES (133);
 INSERT INTO "Dictionaries" VALUES (134);
 INSERT INTO "Dictionaries" VALUES (135);
+INSERT INTO "Dictionaries" VALUES (136);
+INSERT INTO "Dictionaries" VALUES (137);
+INSERT INTO "Dictionaries" VALUES (138);
+INSERT INTO "Dictionaries" VALUES (139);
+INSERT INTO "Dictionaries" VALUES (140);
+INSERT INTO "Dictionaries" VALUES (141);
+INSERT INTO "Dictionaries" VALUES (142);
+INSERT INTO "Dictionaries" VALUES (143);
+INSERT INTO "Dictionaries" VALUES (144);
+INSERT INTO "Dictionaries" VALUES (145);
+INSERT INTO "Dictionaries" VALUES (146);
+INSERT INTO "Dictionaries" VALUES (147);
 INSERT INTO "Localizations" VALUES (1,1,'en','Main');
 INSERT INTO "Localizations" VALUES (2,1,'ru','Главное');
 INSERT INTO "Localizations" VALUES (3,1,'uk','Головне');
@@ -608,70 +635,70 @@ INSERT INTO "Localizations" VALUES (27,9,'en','Your email');
 INSERT INTO "Localizations" VALUES (28,10,'uk','Ваше повідомлення');
 INSERT INTO "Localizations" VALUES (29,10,'ru','Ваше сообщение');
 INSERT INTO "Localizations" VALUES (30,10,'en','Your message');
-INSERT INTO "Localizations" VALUES (31,11,'uk','Піца');
-INSERT INTO "Localizations" VALUES (32,11,'ru','Пицца');
-INSERT INTO "Localizations" VALUES (33,11,'en','Pizza');
-INSERT INTO "Localizations" VALUES (34,12,'uk','Паніні');
-INSERT INTO "Localizations" VALUES (35,12,'ru','Панини');
-INSERT INTO "Localizations" VALUES (36,12,'en','Panini');
-INSERT INTO "Localizations" VALUES (37,13,'uk','Напої');
-INSERT INTO "Localizations" VALUES (38,13,'ru','Напитки');
-INSERT INTO "Localizations" VALUES (39,13,'en','Drinks');
-INSERT INTO "Localizations" VALUES (40,14,'uk','');
-INSERT INTO "Localizations" VALUES (41,19,'en','420 g');
-INSERT INTO "Localizations" VALUES (42,18,'uk','Піца 1');
-INSERT INTO "Localizations" VALUES (43,18,'ru','Пицца 1');
-INSERT INTO "Localizations" VALUES (44,18,'en','Pizza 1');
-INSERT INTO "Localizations" VALUES (45,17,'uk','Піца 1');
-INSERT INTO "Localizations" VALUES (46,17,'ru','Пицца 1');
-INSERT INTO "Localizations" VALUES (47,19,'ru','420 г');
-INSERT INTO "Localizations" VALUES (48,17,'en','Pizza 1');
-INSERT INTO "Localizations" VALUES (49,16,'ru','');
-INSERT INTO "Localizations" VALUES (50,16,'en','');
-INSERT INTO "Localizations" VALUES (51,15,'en','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
-INSERT INTO "Localizations" VALUES (52,15,'ru','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
-INSERT INTO "Localizations" VALUES (53,15,'uk','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
-INSERT INTO "Localizations" VALUES (54,14,'en','');
-INSERT INTO "Localizations" VALUES (55,14,'ru','');
-INSERT INTO "Localizations" VALUES (56,16,'uk','');
-INSERT INTO "Localizations" VALUES (57,19,'uk','420 г');
-INSERT INTO "Localizations" VALUES (58,20,'uk','480 г');
-INSERT INTO "Localizations" VALUES (59,25,'ru','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
-INSERT INTO "Localizations" VALUES (60,25,'uk','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
-INSERT INTO "Localizations" VALUES (61,24,'en','');
-INSERT INTO "Localizations" VALUES (62,24,'ru','');
-INSERT INTO "Localizations" VALUES (63,24,'uk','');
-INSERT INTO "Localizations" VALUES (64,23,'en','');
-INSERT INTO "Localizations" VALUES (65,23,'ru','');
-INSERT INTO "Localizations" VALUES (66,25,'en','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO "Localizations" VALUES (31,11,'uk','');
+INSERT INTO "Localizations" VALUES (32,11,'ru','');
+INSERT INTO "Localizations" VALUES (33,11,'en','');
+INSERT INTO "Localizations" VALUES (34,12,'uk','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO "Localizations" VALUES (35,12,'ru','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO "Localizations" VALUES (36,12,'en','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO "Localizations" VALUES (37,13,'en','');
+INSERT INTO "Localizations" VALUES (38,13,'ru','');
+INSERT INTO "Localizations" VALUES (39,13,'uk','');
+INSERT INTO "Localizations" VALUES (40,14,'en','Pizza');
+INSERT INTO "Localizations" VALUES (41,14,'ru','Пицца');
+INSERT INTO "Localizations" VALUES (42,14,'uk','Піца');
+INSERT INTO "Localizations" VALUES (43,15,'en','Pizza');
+INSERT INTO "Localizations" VALUES (44,15,'ru','Пицца');
+INSERT INTO "Localizations" VALUES (45,15,'uk','Піца');
+INSERT INTO "Localizations" VALUES (46,16,'uk','Паніні');
+INSERT INTO "Localizations" VALUES (47,16,'ru','Панини');
+INSERT INTO "Localizations" VALUES (48,16,'en','Panini');
+INSERT INTO "Localizations" VALUES (49,17,'uk','Паніні');
+INSERT INTO "Localizations" VALUES (50,17,'ru','Панини');
+INSERT INTO "Localizations" VALUES (51,17,'en','Panini');
+INSERT INTO "Localizations" VALUES (52,18,'uk','');
+INSERT INTO "Localizations" VALUES (53,18,'ru','');
+INSERT INTO "Localizations" VALUES (54,18,'en','');
+INSERT INTO "Localizations" VALUES (55,19,'uk','');
+INSERT INTO "Localizations" VALUES (56,19,'ru','');
+INSERT INTO "Localizations" VALUES (57,19,'en','');
+INSERT INTO "Localizations" VALUES (58,20,'uk','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO "Localizations" VALUES (59,20,'ru','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO "Localizations" VALUES (60,20,'en','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO "Localizations" VALUES (61,21,'uk','Напої');
+INSERT INTO "Localizations" VALUES (62,21,'ru','Напитки');
+INSERT INTO "Localizations" VALUES (63,21,'en','Drinks');
+INSERT INTO "Localizations" VALUES (64,22,'uk','Напої');
+INSERT INTO "Localizations" VALUES (65,22,'ru','Напитки');
+INSERT INTO "Localizations" VALUES (66,22,'en','Drinks');
 INSERT INTO "Localizations" VALUES (67,23,'uk','');
-INSERT INTO "Localizations" VALUES (68,22,'ru','Пицца 2');
-INSERT INTO "Localizations" VALUES (69,22,'uk','Піца 2');
-INSERT INTO "Localizations" VALUES (70,21,'en','Pizza 2');
-INSERT INTO "Localizations" VALUES (71,21,'ru','Пицца 2');
-INSERT INTO "Localizations" VALUES (72,21,'uk','Піца 2');
-INSERT INTO "Localizations" VALUES (73,20,'en','480 g');
-INSERT INTO "Localizations" VALUES (74,20,'ru','480 г');
-INSERT INTO "Localizations" VALUES (75,22,'en','Pizza 2');
-INSERT INTO "Localizations" VALUES (76,26,'uk','440 г');
-INSERT INTO "Localizations" VALUES (77,31,'ru','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
-INSERT INTO "Localizations" VALUES (78,31,'uk','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
-INSERT INTO "Localizations" VALUES (79,30,'en','');
-INSERT INTO "Localizations" VALUES (80,30,'ru','');
-INSERT INTO "Localizations" VALUES (81,30,'uk','');
-INSERT INTO "Localizations" VALUES (82,29,'en','');
-INSERT INTO "Localizations" VALUES (83,29,'ru','');
-INSERT INTO "Localizations" VALUES (84,31,'en','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
-INSERT INTO "Localizations" VALUES (85,29,'uk','');
-INSERT INTO "Localizations" VALUES (86,28,'ru','Пицца 3');
-INSERT INTO "Localizations" VALUES (87,28,'uk','Піца 3');
-INSERT INTO "Localizations" VALUES (88,27,'en','Pizza 3');
-INSERT INTO "Localizations" VALUES (89,27,'ru','Пицца 3');
-INSERT INTO "Localizations" VALUES (90,27,'uk','Піца 3');
-INSERT INTO "Localizations" VALUES (91,26,'en','440 g');
-INSERT INTO "Localizations" VALUES (92,26,'ru','440 г');
-INSERT INTO "Localizations" VALUES (93,28,'en','Pizza 3');
-INSERT INTO "Localizations" VALUES (94,32,'uk','420 г');
+INSERT INTO "Localizations" VALUES (68,23,'ru','');
+INSERT INTO "Localizations" VALUES (69,23,'en','');
+INSERT INTO "Localizations" VALUES (70,24,'uk','');
+INSERT INTO "Localizations" VALUES (71,24,'ru','');
+INSERT INTO "Localizations" VALUES (72,24,'en','');
+INSERT INTO "Localizations" VALUES (73,25,'uk','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO "Localizations" VALUES (74,25,'ru','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO "Localizations" VALUES (75,25,'en','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO "Localizations" VALUES (76,26,'uk','Піца 1');
+INSERT INTO "Localizations" VALUES (77,31,'en','480 g');
+INSERT INTO "Localizations" VALUES (78,30,'en','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO "Localizations" VALUES (79,30,'ru','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO "Localizations" VALUES (80,30,'uk','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO "Localizations" VALUES (81,29,'en','');
+INSERT INTO "Localizations" VALUES (82,29,'ru','');
+INSERT INTO "Localizations" VALUES (83,31,'ru','480 г');
+INSERT INTO "Localizations" VALUES (84,29,'uk','');
+INSERT INTO "Localizations" VALUES (85,28,'ru','');
+INSERT INTO "Localizations" VALUES (86,28,'uk','');
+INSERT INTO "Localizations" VALUES (87,27,'en','Pizza 1');
+INSERT INTO "Localizations" VALUES (88,27,'ru','Пицца 1');
+INSERT INTO "Localizations" VALUES (89,27,'uk','Піца 1');
+INSERT INTO "Localizations" VALUES (90,26,'en','Pizza 1');
+INSERT INTO "Localizations" VALUES (91,26,'ru','Пицца 1');
+INSERT INTO "Localizations" VALUES (92,28,'en','');
+INSERT INTO "Localizations" VALUES (93,31,'uk','480 г');
+INSERT INTO "Localizations" VALUES (94,32,'uk','470 г');
 INSERT INTO "Localizations" VALUES (95,37,'ru','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (96,37,'uk','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (97,36,'en','');
@@ -681,15 +708,15 @@ INSERT INTO "Localizations" VALUES (100,35,'en','');
 INSERT INTO "Localizations" VALUES (101,35,'ru','');
 INSERT INTO "Localizations" VALUES (102,37,'en','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (103,35,'uk','');
-INSERT INTO "Localizations" VALUES (104,34,'ru','Пицца 4');
-INSERT INTO "Localizations" VALUES (105,34,'uk','Піца 4');
-INSERT INTO "Localizations" VALUES (106,33,'en','Pizza 4');
-INSERT INTO "Localizations" VALUES (107,33,'ru','Пицца 4');
-INSERT INTO "Localizations" VALUES (108,33,'uk','Піца 4');
-INSERT INTO "Localizations" VALUES (109,32,'en','420 g');
-INSERT INTO "Localizations" VALUES (110,32,'ru','420 г');
-INSERT INTO "Localizations" VALUES (111,34,'en','Pizza 4');
-INSERT INTO "Localizations" VALUES (112,38,'uk','470 г');
+INSERT INTO "Localizations" VALUES (104,34,'ru','Пицца 2');
+INSERT INTO "Localizations" VALUES (105,34,'uk','Піца 2');
+INSERT INTO "Localizations" VALUES (106,33,'en','Pizza 2');
+INSERT INTO "Localizations" VALUES (107,33,'ru','Пицца 2');
+INSERT INTO "Localizations" VALUES (108,33,'uk','Піца 2');
+INSERT INTO "Localizations" VALUES (109,32,'en','470 g');
+INSERT INTO "Localizations" VALUES (110,32,'ru','470 г');
+INSERT INTO "Localizations" VALUES (111,34,'en','Pizza 2');
+INSERT INTO "Localizations" VALUES (112,38,'uk','420 г');
 INSERT INTO "Localizations" VALUES (113,43,'ru','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (114,43,'uk','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (115,42,'en','');
@@ -699,15 +726,15 @@ INSERT INTO "Localizations" VALUES (118,41,'en','');
 INSERT INTO "Localizations" VALUES (119,41,'ru','');
 INSERT INTO "Localizations" VALUES (120,43,'en','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (121,41,'uk','');
-INSERT INTO "Localizations" VALUES (122,40,'ru','Пицца 5');
-INSERT INTO "Localizations" VALUES (123,40,'uk','Піца 5');
-INSERT INTO "Localizations" VALUES (124,39,'en','Pizza 5');
-INSERT INTO "Localizations" VALUES (125,39,'ru','Пицца 5');
-INSERT INTO "Localizations" VALUES (126,39,'uk','Піца 5');
-INSERT INTO "Localizations" VALUES (127,38,'en','470 g');
-INSERT INTO "Localizations" VALUES (128,38,'ru','470 г');
-INSERT INTO "Localizations" VALUES (129,40,'en','Pizza 5');
-INSERT INTO "Localizations" VALUES (130,44,'uk','420 г');
+INSERT INTO "Localizations" VALUES (122,40,'ru','Пицца 3');
+INSERT INTO "Localizations" VALUES (123,40,'uk','Піца 3');
+INSERT INTO "Localizations" VALUES (124,39,'en','Pizza 3');
+INSERT INTO "Localizations" VALUES (125,39,'ru','Пицца 3');
+INSERT INTO "Localizations" VALUES (126,39,'uk','Піца 3');
+INSERT INTO "Localizations" VALUES (127,38,'en','420 g');
+INSERT INTO "Localizations" VALUES (128,38,'ru','420 г');
+INSERT INTO "Localizations" VALUES (129,40,'en','Pizza 3');
+INSERT INTO "Localizations" VALUES (130,44,'uk','450 г');
 INSERT INTO "Localizations" VALUES (131,49,'ru','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (132,49,'uk','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (133,48,'en','');
@@ -717,15 +744,15 @@ INSERT INTO "Localizations" VALUES (136,47,'en','');
 INSERT INTO "Localizations" VALUES (137,47,'ru','');
 INSERT INTO "Localizations" VALUES (138,49,'en','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (139,47,'uk','');
-INSERT INTO "Localizations" VALUES (140,46,'ru','Пицца 6');
-INSERT INTO "Localizations" VALUES (141,46,'uk','Піца 6');
-INSERT INTO "Localizations" VALUES (142,45,'en','Pizza 6');
-INSERT INTO "Localizations" VALUES (143,45,'ru','Пицца 6');
-INSERT INTO "Localizations" VALUES (144,45,'uk','Піца 6');
-INSERT INTO "Localizations" VALUES (145,44,'en','420 g');
-INSERT INTO "Localizations" VALUES (146,44,'ru','420 г');
-INSERT INTO "Localizations" VALUES (147,46,'en','Pizza 6');
-INSERT INTO "Localizations" VALUES (148,50,'uk','410 г');
+INSERT INTO "Localizations" VALUES (140,46,'ru','Пицца 4');
+INSERT INTO "Localizations" VALUES (141,46,'uk','Піца 4');
+INSERT INTO "Localizations" VALUES (142,45,'en','Pizza 4');
+INSERT INTO "Localizations" VALUES (143,45,'ru','Пицца 4');
+INSERT INTO "Localizations" VALUES (144,45,'uk','Піца 4');
+INSERT INTO "Localizations" VALUES (145,44,'en','450 g');
+INSERT INTO "Localizations" VALUES (146,44,'ru','450 г');
+INSERT INTO "Localizations" VALUES (147,46,'en','Pizza 4');
+INSERT INTO "Localizations" VALUES (148,50,'uk','480 г');
 INSERT INTO "Localizations" VALUES (149,55,'ru','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (150,55,'uk','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (151,54,'en','');
@@ -735,15 +762,15 @@ INSERT INTO "Localizations" VALUES (154,53,'en','');
 INSERT INTO "Localizations" VALUES (155,53,'ru','');
 INSERT INTO "Localizations" VALUES (156,55,'en','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (157,53,'uk','');
-INSERT INTO "Localizations" VALUES (158,52,'ru','Пицца 7');
-INSERT INTO "Localizations" VALUES (159,52,'uk','Піца 7');
-INSERT INTO "Localizations" VALUES (160,51,'en','Pizza 7');
-INSERT INTO "Localizations" VALUES (161,51,'ru','Пицца 7');
-INSERT INTO "Localizations" VALUES (162,51,'uk','Піца 7');
-INSERT INTO "Localizations" VALUES (163,50,'en','410 g');
-INSERT INTO "Localizations" VALUES (164,50,'ru','410 г');
-INSERT INTO "Localizations" VALUES (165,52,'en','Pizza 7');
-INSERT INTO "Localizations" VALUES (166,56,'uk','470 г');
+INSERT INTO "Localizations" VALUES (158,52,'ru','Пицца 5');
+INSERT INTO "Localizations" VALUES (159,52,'uk','Піца 5');
+INSERT INTO "Localizations" VALUES (160,51,'en','Pizza 5');
+INSERT INTO "Localizations" VALUES (161,51,'ru','Пицца 5');
+INSERT INTO "Localizations" VALUES (162,51,'uk','Піца 5');
+INSERT INTO "Localizations" VALUES (163,50,'en','480 g');
+INSERT INTO "Localizations" VALUES (164,50,'ru','480 г');
+INSERT INTO "Localizations" VALUES (165,52,'en','Pizza 5');
+INSERT INTO "Localizations" VALUES (166,56,'uk','460 г');
 INSERT INTO "Localizations" VALUES (167,61,'ru','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (168,61,'uk','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (169,60,'en','');
@@ -753,15 +780,15 @@ INSERT INTO "Localizations" VALUES (172,59,'en','');
 INSERT INTO "Localizations" VALUES (173,59,'ru','');
 INSERT INTO "Localizations" VALUES (174,61,'en','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (175,59,'uk','');
-INSERT INTO "Localizations" VALUES (176,58,'ru','Пицца 8');
-INSERT INTO "Localizations" VALUES (177,58,'uk','Піца 8');
-INSERT INTO "Localizations" VALUES (178,57,'en','Pizza 8');
-INSERT INTO "Localizations" VALUES (179,57,'ru','Пицца 8');
-INSERT INTO "Localizations" VALUES (180,57,'uk','Піца 8');
-INSERT INTO "Localizations" VALUES (181,56,'en','470 g');
-INSERT INTO "Localizations" VALUES (182,56,'ru','470 г');
-INSERT INTO "Localizations" VALUES (183,58,'en','Pizza 8');
-INSERT INTO "Localizations" VALUES (184,62,'uk','430 г');
+INSERT INTO "Localizations" VALUES (176,58,'ru','Пицца 6');
+INSERT INTO "Localizations" VALUES (177,58,'uk','Піца 6');
+INSERT INTO "Localizations" VALUES (178,57,'en','Pizza 6');
+INSERT INTO "Localizations" VALUES (179,57,'ru','Пицца 6');
+INSERT INTO "Localizations" VALUES (180,57,'uk','Піца 6');
+INSERT INTO "Localizations" VALUES (181,56,'en','460 g');
+INSERT INTO "Localizations" VALUES (182,56,'ru','460 г');
+INSERT INTO "Localizations" VALUES (183,58,'en','Pizza 6');
+INSERT INTO "Localizations" VALUES (184,62,'uk','470 г');
 INSERT INTO "Localizations" VALUES (185,67,'ru','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (186,67,'uk','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (187,66,'en','');
@@ -771,15 +798,15 @@ INSERT INTO "Localizations" VALUES (190,65,'en','');
 INSERT INTO "Localizations" VALUES (191,65,'ru','');
 INSERT INTO "Localizations" VALUES (192,67,'en','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (193,65,'uk','');
-INSERT INTO "Localizations" VALUES (194,64,'ru','Пицца 9');
-INSERT INTO "Localizations" VALUES (195,64,'uk','Піца 9');
-INSERT INTO "Localizations" VALUES (196,63,'en','Pizza 9');
-INSERT INTO "Localizations" VALUES (197,63,'ru','Пицца 9');
-INSERT INTO "Localizations" VALUES (198,63,'uk','Піца 9');
-INSERT INTO "Localizations" VALUES (199,62,'en','430 g');
-INSERT INTO "Localizations" VALUES (200,62,'ru','430 г');
-INSERT INTO "Localizations" VALUES (201,64,'en','Pizza 9');
-INSERT INTO "Localizations" VALUES (202,68,'uk','140 г');
+INSERT INTO "Localizations" VALUES (194,64,'ru','Пицца 7');
+INSERT INTO "Localizations" VALUES (195,64,'uk','Піца 7');
+INSERT INTO "Localizations" VALUES (196,63,'en','Pizza 7');
+INSERT INTO "Localizations" VALUES (197,63,'ru','Пицца 7');
+INSERT INTO "Localizations" VALUES (198,63,'uk','Піца 7');
+INSERT INTO "Localizations" VALUES (199,62,'en','470 g');
+INSERT INTO "Localizations" VALUES (200,62,'ru','470 г');
+INSERT INTO "Localizations" VALUES (201,64,'en','Pizza 7');
+INSERT INTO "Localizations" VALUES (202,68,'uk','430 г');
 INSERT INTO "Localizations" VALUES (203,73,'ru','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (204,73,'uk','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (205,72,'en','');
@@ -789,15 +816,15 @@ INSERT INTO "Localizations" VALUES (208,71,'en','');
 INSERT INTO "Localizations" VALUES (209,71,'ru','');
 INSERT INTO "Localizations" VALUES (210,73,'en','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (211,71,'uk','');
-INSERT INTO "Localizations" VALUES (212,70,'ru','Панини 1');
-INSERT INTO "Localizations" VALUES (213,70,'uk','Паніні 1');
-INSERT INTO "Localizations" VALUES (214,69,'en','Panini 1');
-INSERT INTO "Localizations" VALUES (215,69,'ru','Панини 1');
-INSERT INTO "Localizations" VALUES (216,69,'uk','Паніні 1');
-INSERT INTO "Localizations" VALUES (217,68,'en','140 g');
-INSERT INTO "Localizations" VALUES (218,68,'ru','140 г');
-INSERT INTO "Localizations" VALUES (219,70,'en','Panini 1');
-INSERT INTO "Localizations" VALUES (220,74,'uk','150 г');
+INSERT INTO "Localizations" VALUES (212,70,'ru','Пицца 8');
+INSERT INTO "Localizations" VALUES (213,70,'uk','Піца 8');
+INSERT INTO "Localizations" VALUES (214,69,'en','Pizza 8');
+INSERT INTO "Localizations" VALUES (215,69,'ru','Пицца 8');
+INSERT INTO "Localizations" VALUES (216,69,'uk','Піца 8');
+INSERT INTO "Localizations" VALUES (217,68,'en','430 g');
+INSERT INTO "Localizations" VALUES (218,68,'ru','430 г');
+INSERT INTO "Localizations" VALUES (219,70,'en','Pizza 8');
+INSERT INTO "Localizations" VALUES (220,74,'uk','420 г');
 INSERT INTO "Localizations" VALUES (221,79,'ru','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (222,79,'uk','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (223,78,'en','');
@@ -807,15 +834,15 @@ INSERT INTO "Localizations" VALUES (226,77,'en','');
 INSERT INTO "Localizations" VALUES (227,77,'ru','');
 INSERT INTO "Localizations" VALUES (228,79,'en','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (229,77,'uk','');
-INSERT INTO "Localizations" VALUES (230,76,'ru','Панини 2');
-INSERT INTO "Localizations" VALUES (231,76,'uk','Паніні 2');
-INSERT INTO "Localizations" VALUES (232,75,'en','Panini 2');
-INSERT INTO "Localizations" VALUES (233,75,'ru','Панини 2');
-INSERT INTO "Localizations" VALUES (234,75,'uk','Паніні 2');
-INSERT INTO "Localizations" VALUES (235,74,'en','150 g');
-INSERT INTO "Localizations" VALUES (236,74,'ru','150 г');
-INSERT INTO "Localizations" VALUES (237,76,'en','Panini 2');
-INSERT INTO "Localizations" VALUES (238,80,'uk','130 г');
+INSERT INTO "Localizations" VALUES (230,76,'ru','Пицца 9');
+INSERT INTO "Localizations" VALUES (231,76,'uk','Піца 9');
+INSERT INTO "Localizations" VALUES (232,75,'en','Pizza 9');
+INSERT INTO "Localizations" VALUES (233,75,'ru','Пицца 9');
+INSERT INTO "Localizations" VALUES (234,75,'uk','Піца 9');
+INSERT INTO "Localizations" VALUES (235,74,'en','420 g');
+INSERT INTO "Localizations" VALUES (236,74,'ru','420 г');
+INSERT INTO "Localizations" VALUES (237,76,'en','Pizza 9');
+INSERT INTO "Localizations" VALUES (238,80,'uk','140 г');
 INSERT INTO "Localizations" VALUES (239,85,'ru','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (240,85,'uk','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (241,84,'en','');
@@ -825,15 +852,15 @@ INSERT INTO "Localizations" VALUES (244,83,'en','');
 INSERT INTO "Localizations" VALUES (245,83,'ru','');
 INSERT INTO "Localizations" VALUES (246,85,'en','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (247,83,'uk','');
-INSERT INTO "Localizations" VALUES (248,82,'ru','Панини 3');
-INSERT INTO "Localizations" VALUES (249,82,'uk','Паніні 3');
-INSERT INTO "Localizations" VALUES (250,81,'en','Panini 3');
-INSERT INTO "Localizations" VALUES (251,81,'ru','Панини 3');
-INSERT INTO "Localizations" VALUES (252,81,'uk','Паніні 3');
-INSERT INTO "Localizations" VALUES (253,80,'en','130 g');
-INSERT INTO "Localizations" VALUES (254,80,'ru','130 г');
-INSERT INTO "Localizations" VALUES (255,82,'en','Panini 3');
-INSERT INTO "Localizations" VALUES (256,86,'uk','1 л');
+INSERT INTO "Localizations" VALUES (248,82,'ru','Панини 1');
+INSERT INTO "Localizations" VALUES (249,82,'uk','Паніні 1');
+INSERT INTO "Localizations" VALUES (250,81,'en','Panini 1');
+INSERT INTO "Localizations" VALUES (251,81,'ru','Панини 1');
+INSERT INTO "Localizations" VALUES (252,81,'uk','Паніні 1');
+INSERT INTO "Localizations" VALUES (253,80,'en','140 g');
+INSERT INTO "Localizations" VALUES (254,80,'ru','140 г');
+INSERT INTO "Localizations" VALUES (255,82,'en','Panini 1');
+INSERT INTO "Localizations" VALUES (256,86,'uk','110 г');
 INSERT INTO "Localizations" VALUES (257,91,'ru','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (258,91,'uk','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (259,90,'en','');
@@ -843,15 +870,15 @@ INSERT INTO "Localizations" VALUES (262,89,'en','');
 INSERT INTO "Localizations" VALUES (263,89,'ru','');
 INSERT INTO "Localizations" VALUES (264,91,'en','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (265,89,'uk','');
-INSERT INTO "Localizations" VALUES (266,88,'ru','Напитки 1');
-INSERT INTO "Localizations" VALUES (267,88,'uk','Напої 1');
-INSERT INTO "Localizations" VALUES (268,87,'en','Drinks 1');
-INSERT INTO "Localizations" VALUES (269,87,'ru','Напитки 1');
-INSERT INTO "Localizations" VALUES (270,87,'uk','Напої 1');
-INSERT INTO "Localizations" VALUES (271,86,'en','1 l');
-INSERT INTO "Localizations" VALUES (272,86,'ru','1 л');
-INSERT INTO "Localizations" VALUES (273,88,'en','Drinks 1');
-INSERT INTO "Localizations" VALUES (274,92,'uk','1 л');
+INSERT INTO "Localizations" VALUES (266,88,'ru','Панини 2');
+INSERT INTO "Localizations" VALUES (267,88,'uk','Паніні 2');
+INSERT INTO "Localizations" VALUES (268,87,'en','Panini 2');
+INSERT INTO "Localizations" VALUES (269,87,'ru','Панини 2');
+INSERT INTO "Localizations" VALUES (270,87,'uk','Паніні 2');
+INSERT INTO "Localizations" VALUES (271,86,'en','110 g');
+INSERT INTO "Localizations" VALUES (272,86,'ru','110 г');
+INSERT INTO "Localizations" VALUES (273,88,'en','Panini 2');
+INSERT INTO "Localizations" VALUES (274,92,'uk','170 г');
 INSERT INTO "Localizations" VALUES (275,97,'ru','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (276,97,'uk','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (277,96,'en','');
@@ -861,14 +888,14 @@ INSERT INTO "Localizations" VALUES (280,95,'en','');
 INSERT INTO "Localizations" VALUES (281,95,'ru','');
 INSERT INTO "Localizations" VALUES (282,97,'en','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (283,95,'uk','');
-INSERT INTO "Localizations" VALUES (284,94,'ru','Напитки 2');
-INSERT INTO "Localizations" VALUES (285,94,'uk','Напої 2');
-INSERT INTO "Localizations" VALUES (286,93,'en','Drinks 2');
-INSERT INTO "Localizations" VALUES (287,93,'ru','Напитки 2');
-INSERT INTO "Localizations" VALUES (288,93,'uk','Напої 2');
-INSERT INTO "Localizations" VALUES (289,92,'en','1 l');
-INSERT INTO "Localizations" VALUES (290,92,'ru','1 л');
-INSERT INTO "Localizations" VALUES (291,94,'en','Drinks 2');
+INSERT INTO "Localizations" VALUES (284,94,'ru','Панини 3');
+INSERT INTO "Localizations" VALUES (285,94,'uk','Паніні 3');
+INSERT INTO "Localizations" VALUES (286,93,'en','Panini 3');
+INSERT INTO "Localizations" VALUES (287,93,'ru','Панини 3');
+INSERT INTO "Localizations" VALUES (288,93,'uk','Паніні 3');
+INSERT INTO "Localizations" VALUES (289,92,'en','170 g');
+INSERT INTO "Localizations" VALUES (290,92,'ru','170 г');
+INSERT INTO "Localizations" VALUES (291,94,'en','Panini 3');
 INSERT INTO "Localizations" VALUES (292,98,'uk','1 л');
 INSERT INTO "Localizations" VALUES (293,103,'ru','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (294,103,'uk','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
@@ -879,110 +906,144 @@ INSERT INTO "Localizations" VALUES (298,101,'en','');
 INSERT INTO "Localizations" VALUES (299,101,'ru','');
 INSERT INTO "Localizations" VALUES (300,103,'en','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO "Localizations" VALUES (301,101,'uk','');
-INSERT INTO "Localizations" VALUES (302,100,'ru','Напитки 3');
-INSERT INTO "Localizations" VALUES (303,100,'uk','Напої 3');
-INSERT INTO "Localizations" VALUES (304,99,'en','Drinks 3');
-INSERT INTO "Localizations" VALUES (305,99,'ru','Напитки 3');
-INSERT INTO "Localizations" VALUES (306,99,'uk','Напої 3');
+INSERT INTO "Localizations" VALUES (302,100,'ru','Напитки 1');
+INSERT INTO "Localizations" VALUES (303,100,'uk','Напої 1');
+INSERT INTO "Localizations" VALUES (304,99,'en','Drinks 1');
+INSERT INTO "Localizations" VALUES (305,99,'ru','Напитки 1');
+INSERT INTO "Localizations" VALUES (306,99,'uk','Напої 1');
 INSERT INTO "Localizations" VALUES (307,98,'en','1 l');
 INSERT INTO "Localizations" VALUES (308,98,'ru','1 л');
-INSERT INTO "Localizations" VALUES (309,100,'en','Drinks 3');
-INSERT INTO "Localizations" VALUES (310,104,'uk','Новий');
-INSERT INTO "Localizations" VALUES (311,104,'ru','Новый');
-INSERT INTO "Localizations" VALUES (312,104,'en','New');
-INSERT INTO "Localizations" VALUES (313,105,'uk','Підтверджений');
-INSERT INTO "Localizations" VALUES (314,105,'ru','Подтвержден');
-INSERT INTO "Localizations" VALUES (315,105,'en','Confirmed');
-INSERT INTO "Localizations" VALUES (316,106,'uk','Запланований');
-INSERT INTO "Localizations" VALUES (317,106,'ru','Запланирован');
-INSERT INTO "Localizations" VALUES (318,106,'en','Scheduled');
-INSERT INTO "Localizations" VALUES (319,107,'uk','Доставляється');
-INSERT INTO "Localizations" VALUES (320,107,'ru','Доставляется');
-INSERT INTO "Localizations" VALUES (321,107,'en','Being delivered');
-INSERT INTO "Localizations" VALUES (322,108,'uk','Доставлений');
-INSERT INTO "Localizations" VALUES (323,108,'ru','Доставлен');
-INSERT INTO "Localizations" VALUES (324,108,'en','Delivered');
-INSERT INTO "Localizations" VALUES (325,109,'uk','Закритий');
-INSERT INTO "Localizations" VALUES (326,109,'ru','Закрыт');
-INSERT INTO "Localizations" VALUES (327,109,'en','Closed');
-INSERT INTO "Localizations" VALUES (328,110,'uk','Скасований');
-INSERT INTO "Localizations" VALUES (329,110,'ru','Отменен');
-INSERT INTO "Localizations" VALUES (330,110,'en','Canceled');
-INSERT INTO "Localizations" VALUES (331,111,'uk','Не вказано');
-INSERT INTO "Localizations" VALUES (332,111,'ru','Не указан');
-INSERT INTO "Localizations" VALUES (333,111,'en','Not set');
-INSERT INTO "Localizations" VALUES (334,112,'uk','Готівка');
-INSERT INTO "Localizations" VALUES (335,112,'ru','Наличные');
-INSERT INTO "Localizations" VALUES (336,112,'en','Cash');
-INSERT INTO "Localizations" VALUES (337,113,'uk','Не вказано');
-INSERT INTO "Localizations" VALUES (338,113,'ru','Не указан');
-INSERT INTO "Localizations" VALUES (339,113,'en','Not set');
-INSERT INTO "Localizations" VALUES (340,114,'uk','Самовивіз');
-INSERT INTO "Localizations" VALUES (341,114,'ru','Самовывоз');
-INSERT INTO "Localizations" VALUES (342,114,'en','Pickup');
-INSERT INTO "Localizations" VALUES (343,115,'uk','Кур’єр');
-INSERT INTO "Localizations" VALUES (344,115,'ru','Курьер');
-INSERT INTO "Localizations" VALUES (345,115,'en','Courier');
-INSERT INTO "Localizations" VALUES (346,116,'__','/');
-INSERT INTO "Localizations" VALUES (347,117,'uk','<h1>Ваш веб-сайт електронної комерції</h1><p>Вітаємо! Це ваш веб-сайт електронної комерції, він працює на базі системи керування вмістом &laquo;<a href="http://platformus.net/" target="_blank" rel="noopener">Платформус</a>&raquo;. Ви можете керувати ним (створювати сторінки, елементи меню, форми і так далі) за допомогою <a href="/backend">бекенду</a>. Для входу використовуйте, будь ласка, ім&rsquo;я користувача і пароль, вказані під час установки (за замовчуванням це &laquo;admin@platformus.net&raquo; і &laquo;admin&raquo; відповідно).</p><p>Щоб дізнатися більше про Платформус і про те, як ним користуватися, будь ласка, скористайтеся <a href="http://docs.platformus.net/" target="_blank" rel="noopener">документацією</a>, там є декілька прикладів, що стануть у нагоді початківцям. При виникненні труднощів або питань ви можете звернутися в наш <a href="https://gitter.im/Platformus/Platformus" target="_blank" rel="noopener">чат</a>, де вам обов&rsquo;язково допоможуть.</p><p>Приємної роботи!</p>');
-INSERT INTO "Localizations" VALUES (348,117,'ru','<h1>Ваш веб-сайт электронной коммерции</h1><p>Здравствуйте! Это ваш веб-сайт электронной коммерции, он работает на базе системы управления содержимым &laquo;<a href="http://platformus.net/" target="_blank" rel="noopener">Платформус</a>&raquo;. Вы можете управлять им (создавать страницы, элементы меню, формы и так далее) с помощью <a href="/backend">бекенда</a>. Для входа используйте, пожалуйста, имя пользователя и пароль, указанные при установке (по умолчанию это &laquo;admin@platformus.net&raquo; и &laquo;admin&raquo; соответственно).</p><p>Чтобы узнать больше о Платформусе и о том, как им пользоваться, пожалуйста, воспользуйтесь <a href="http://docs.platformus.net/" target="_blank" rel="noopener">документацией</a>, там есть несколько примеров, которые пригодятся начинающим. При возникновении сложностей или вопросов вы можете обратиться в наш <a href="https://gitter.im/Platformus/Platformus" target="_blank" rel="noopener">чат</a>, где вам обязательно помогут.</p><p>Приятной работы!</p>');
-INSERT INTO "Localizations" VALUES (349,117,'en','<h1>Your Ecommerce Website</h1><p>Hello! This is your ecommerce website, it is based on the <a href="http://platformus.net/" target="_blank" rel="noopener">Platformus</a> content management system. You can manage it (create pages, menu items, forms and so on) using the <a href="/backend">backend</a>. Please use the username and password specified during the installation to sign in (it is &ldquo;admin@platformus.net&rdquo; and &ldquo;admin&rdquo; by default).</p><p>Please use the <a href="http://docs.platformus.net/" target="_blank" rel="noopener">documentation</a> to learn more about Platformus and how to use it. There are several examples that could be useful for the beginners. Also, you can get help in our <a href="https://gitter.im/Platformus/Platformus" target="_blank" rel="noopener">chat</a>.</p><p>Have a nice work!</p>');
-INSERT INTO "Localizations" VALUES (350,118,'uk','Ваш веб-сайт електронної комерції');
-INSERT INTO "Localizations" VALUES (351,118,'ru','Ваш веб-сайт электронной коммерции');
-INSERT INTO "Localizations" VALUES (352,118,'en','Your Ecommerce Website');
-INSERT INTO "Localizations" VALUES (353,119,'uk','');
-INSERT INTO "Localizations" VALUES (354,119,'ru','');
-INSERT INTO "Localizations" VALUES (355,119,'en','');
-INSERT INTO "Localizations" VALUES (356,120,'uk','');
-INSERT INTO "Localizations" VALUES (357,120,'ru','');
-INSERT INTO "Localizations" VALUES (358,120,'en','');
-INSERT INTO "Localizations" VALUES (359,121,'__','/about-us');
-INSERT INTO "Localizations" VALUES (360,122,'uk','<h1>Про нас</h1><p>Розкажіть про ваш веб-сайт електронної комерції. Ви можете додати сюди фотографії або відео.</p>');
-INSERT INTO "Localizations" VALUES (361,122,'ru','<h1>О нас</h1><p>Расскажите о вашем веб-сайте электронной коммерции. Вы можете добавить сюда фотографии или видео.</p>');
-INSERT INTO "Localizations" VALUES (362,122,'en','<h1>About Us</h1><p>Tell us about your ecommerce website. You can add photos or videos here.</p>');
-INSERT INTO "Localizations" VALUES (363,123,'uk','Про нас');
-INSERT INTO "Localizations" VALUES (364,123,'ru','О нас');
-INSERT INTO "Localizations" VALUES (365,123,'en','About Us');
-INSERT INTO "Localizations" VALUES (366,124,'uk','');
-INSERT INTO "Localizations" VALUES (367,124,'ru','');
-INSERT INTO "Localizations" VALUES (368,124,'en','');
-INSERT INTO "Localizations" VALUES (369,125,'uk','');
-INSERT INTO "Localizations" VALUES (370,125,'ru','');
-INSERT INTO "Localizations" VALUES (371,125,'en','');
-INSERT INTO "Localizations" VALUES (372,126,'__','/contacts');
-INSERT INTO "Localizations" VALUES (373,127,'uk','<h1>Контакти</h1><p>Додайте свої контакти на цій сторінці. Номер телефону, месенджери, посилання на соціальні мережі. Форма зворотного зв&rsquo;язку, розташована нижче (до речі, ви можете її змінити або перенести в інше місце), допоможе відвідувачам написати вам повідомлення прямо з сайту, лише вкажіть для цього адресу, на яку потрібно надсилати повідомлення.</p><h2>Форма зворотного зв&rsquo;язку</h2>');
-INSERT INTO "Localizations" VALUES (374,127,'ru','<h1>Контакты</h1><p>Добавьте свои контакты на этой странице. Телефонный номер, мессенджеры, ссылки на социальные сети. Форма обратной связи, расположенная ниже (кстати, вы можете ее изменить или перенести в другое место), поможет посетителям написать вам сообщение прямо с сайта, лишь укажите для этого адрес, на который нужно присылать сообщения.</p><h2>Форма обратной связи</h2>');
-INSERT INTO "Localizations" VALUES (375,127,'en','<h1>Contacts</h1><p>Add your contacts on this page. Phone number, messengers, social links. The feedback form below (by the way, you can edit or move it to a different place) allows your visitors to write you directly from the website, just don&rsquo;t forget to specify the email address for the messages.</p><h2>Feedback from</h2>');
-INSERT INTO "Localizations" VALUES (376,128,'uk','Контакти');
-INSERT INTO "Localizations" VALUES (377,128,'ru','Контакты');
-INSERT INTO "Localizations" VALUES (378,128,'en','Contacts');
-INSERT INTO "Localizations" VALUES (379,129,'uk','');
-INSERT INTO "Localizations" VALUES (380,129,'ru','');
-INSERT INTO "Localizations" VALUES (381,129,'en','');
-INSERT INTO "Localizations" VALUES (382,130,'uk','');
-INSERT INTO "Localizations" VALUES (383,130,'ru','');
-INSERT INTO "Localizations" VALUES (384,130,'en','');
-INSERT INTO "Localizations" VALUES (385,131,'__','/cart');
-INSERT INTO "Localizations" VALUES (386,132,'uk','<h1>Кошик</h1>');
-INSERT INTO "Localizations" VALUES (387,132,'ru','<h1>Корзина</h1>');
-INSERT INTO "Localizations" VALUES (388,132,'en','<h1>Cart</h1>');
-INSERT INTO "Localizations" VALUES (389,133,'uk','Кошик');
-INSERT INTO "Localizations" VALUES (390,133,'ru','Корзина');
-INSERT INTO "Localizations" VALUES (391,133,'en','Cart');
-INSERT INTO "Localizations" VALUES (392,134,'uk','');
-INSERT INTO "Localizations" VALUES (393,134,'ru','');
-INSERT INTO "Localizations" VALUES (394,134,'en','');
-INSERT INTO "Localizations" VALUES (395,135,'uk','');
-INSERT INTO "Localizations" VALUES (396,135,'ru','');
-INSERT INTO "Localizations" VALUES (397,135,'en','');
-INSERT INTO "Endpoints" VALUES (1,'Default','{*url}',1000,0,NULL,NULL,'Platformus.Website.Frontend.DefaultEndpoint','ViewName=RegularPage');
-INSERT INTO "Endpoints" VALUES (2,'Contacts','about-us',10,0,NULL,NULL,'Platformus.Website.Frontend.DefaultEndpoint','ViewName=RegularPage');
-INSERT INTO "Endpoints" VALUES (3,'Contacts','contacts',20,0,NULL,NULL,'Platformus.Website.Frontend.DefaultEndpoint','ViewName=ContactsPage');
-INSERT INTO "Endpoints" VALUES (4,'Cart','cart',20,0,NULL,NULL,'Platformus.Website.Frontend.DefaultEndpoint','ViewName=CartPage');
-INSERT INTO "DataSources" VALUES (1,1,'Page','Platformus.Website.Frontend.DataSources.PageObjectDataSource',NULL);
-INSERT INTO "DataSources" VALUES (2,2,'Page','Platformus.Website.Frontend.DataSources.PageObjectDataSource',NULL);
-INSERT INTO "DataSources" VALUES (3,3,'Page','Platformus.Website.Frontend.DataSources.PageObjectDataSource',NULL);
-INSERT INTO "DataSources" VALUES (4,4,'Page','Platformus.Website.Frontend.DataSources.PageObjectDataSource',NULL);
+INSERT INTO "Localizations" VALUES (309,100,'en','Drinks 1');
+INSERT INTO "Localizations" VALUES (310,104,'uk','1 л');
+INSERT INTO "Localizations" VALUES (311,109,'ru','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO "Localizations" VALUES (312,109,'uk','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO "Localizations" VALUES (313,108,'en','');
+INSERT INTO "Localizations" VALUES (314,108,'ru','');
+INSERT INTO "Localizations" VALUES (315,108,'uk','');
+INSERT INTO "Localizations" VALUES (316,107,'en','');
+INSERT INTO "Localizations" VALUES (317,107,'ru','');
+INSERT INTO "Localizations" VALUES (318,109,'en','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO "Localizations" VALUES (319,107,'uk','');
+INSERT INTO "Localizations" VALUES (320,106,'ru','Напитки 2');
+INSERT INTO "Localizations" VALUES (321,106,'uk','Напої 2');
+INSERT INTO "Localizations" VALUES (322,105,'en','Drinks 2');
+INSERT INTO "Localizations" VALUES (323,105,'ru','Напитки 2');
+INSERT INTO "Localizations" VALUES (324,105,'uk','Напої 2');
+INSERT INTO "Localizations" VALUES (325,104,'en','1 l');
+INSERT INTO "Localizations" VALUES (326,104,'ru','1 л');
+INSERT INTO "Localizations" VALUES (327,106,'en','Drinks 2');
+INSERT INTO "Localizations" VALUES (328,110,'uk','1 л');
+INSERT INTO "Localizations" VALUES (329,115,'ru','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO "Localizations" VALUES (330,115,'uk','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO "Localizations" VALUES (331,114,'en','');
+INSERT INTO "Localizations" VALUES (332,114,'ru','');
+INSERT INTO "Localizations" VALUES (333,114,'uk','');
+INSERT INTO "Localizations" VALUES (334,113,'en','');
+INSERT INTO "Localizations" VALUES (335,113,'ru','');
+INSERT INTO "Localizations" VALUES (336,115,'en','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO "Localizations" VALUES (337,113,'uk','');
+INSERT INTO "Localizations" VALUES (338,112,'ru','Напитки 3');
+INSERT INTO "Localizations" VALUES (339,112,'uk','Напої 3');
+INSERT INTO "Localizations" VALUES (340,111,'en','Drinks 3');
+INSERT INTO "Localizations" VALUES (341,111,'ru','Напитки 3');
+INSERT INTO "Localizations" VALUES (342,111,'uk','Напої 3');
+INSERT INTO "Localizations" VALUES (343,110,'en','1 l');
+INSERT INTO "Localizations" VALUES (344,110,'ru','1 л');
+INSERT INTO "Localizations" VALUES (345,112,'en','Drinks 3');
+INSERT INTO "Localizations" VALUES (346,116,'uk','Новий');
+INSERT INTO "Localizations" VALUES (347,116,'ru','Новый');
+INSERT INTO "Localizations" VALUES (348,116,'en','New');
+INSERT INTO "Localizations" VALUES (349,117,'uk','Підтверджений');
+INSERT INTO "Localizations" VALUES (350,117,'ru','Подтвержден');
+INSERT INTO "Localizations" VALUES (351,117,'en','Confirmed');
+INSERT INTO "Localizations" VALUES (352,118,'uk','Запланований');
+INSERT INTO "Localizations" VALUES (353,118,'ru','Запланирован');
+INSERT INTO "Localizations" VALUES (354,118,'en','Scheduled');
+INSERT INTO "Localizations" VALUES (355,119,'uk','Доставляється');
+INSERT INTO "Localizations" VALUES (356,119,'ru','Доставляется');
+INSERT INTO "Localizations" VALUES (357,119,'en','Being delivered');
+INSERT INTO "Localizations" VALUES (358,120,'uk','Доставлений');
+INSERT INTO "Localizations" VALUES (359,120,'ru','Доставлен');
+INSERT INTO "Localizations" VALUES (360,120,'en','Delivered');
+INSERT INTO "Localizations" VALUES (361,121,'uk','Закритий');
+INSERT INTO "Localizations" VALUES (362,121,'ru','Закрыт');
+INSERT INTO "Localizations" VALUES (363,121,'en','Closed');
+INSERT INTO "Localizations" VALUES (364,122,'uk','Скасований');
+INSERT INTO "Localizations" VALUES (365,122,'ru','Отменен');
+INSERT INTO "Localizations" VALUES (366,122,'en','Canceled');
+INSERT INTO "Localizations" VALUES (367,123,'uk','Не вказано');
+INSERT INTO "Localizations" VALUES (368,123,'ru','Не указан');
+INSERT INTO "Localizations" VALUES (369,123,'en','Not set');
+INSERT INTO "Localizations" VALUES (370,124,'uk','Готівка');
+INSERT INTO "Localizations" VALUES (371,124,'ru','Наличные');
+INSERT INTO "Localizations" VALUES (372,124,'en','Cash');
+INSERT INTO "Localizations" VALUES (373,125,'uk','Не вказано');
+INSERT INTO "Localizations" VALUES (374,125,'ru','Не указан');
+INSERT INTO "Localizations" VALUES (375,125,'en','Not set');
+INSERT INTO "Localizations" VALUES (376,126,'uk','Самовивіз');
+INSERT INTO "Localizations" VALUES (377,126,'ru','Самовывоз');
+INSERT INTO "Localizations" VALUES (378,126,'en','Pickup');
+INSERT INTO "Localizations" VALUES (379,127,'uk','Кур’єр');
+INSERT INTO "Localizations" VALUES (380,127,'ru','Курьер');
+INSERT INTO "Localizations" VALUES (381,127,'en','Courier');
+INSERT INTO "Localizations" VALUES (382,128,'__','/');
+INSERT INTO "Localizations" VALUES (383,129,'uk','<h1>Ваш веб-сайт електронної комерції</h1><p>Вітаємо! Це ваш веб-сайт електронної комерції, він працює на базі системи керування вмістом &laquo;<a href="http://platformus.net/" target="_blank" rel="noopener">Платформус</a>&raquo;. Ви можете керувати ним (створювати сторінки, елементи меню, форми і так далі) за допомогою <a href="/backend">бекенду</a>. Для входу використовуйте, будь ласка, ім&rsquo;я користувача і пароль, вказані під час установки (за замовчуванням це &laquo;admin@platformus.net&raquo; і &laquo;admin&raquo; відповідно).</p><p>Щоб дізнатися більше про Платформус і про те, як ним користуватися, будь ласка, скористайтеся <a href="http://docs.platformus.net/" target="_blank" rel="noopener">документацією</a>, там є декілька прикладів, що стануть у нагоді початківцям. При виникненні труднощів або питань ви можете звернутися в наш <a href="https://gitter.im/Platformus/Platformus" target="_blank" rel="noopener">чат</a>, де вам обов&rsquo;язково допоможуть.</p><p>Приємної роботи!</p>');
+INSERT INTO "Localizations" VALUES (384,129,'ru','<h1>Ваш веб-сайт электронной коммерции</h1><p>Здравствуйте! Это ваш веб-сайт электронной коммерции, он работает на базе системы управления содержимым &laquo;<a href="http://platformus.net/" target="_blank" rel="noopener">Платформус</a>&raquo;. Вы можете управлять им (создавать страницы, элементы меню, формы и так далее) с помощью <a href="/backend">бекенда</a>. Для входа используйте, пожалуйста, имя пользователя и пароль, указанные при установке (по умолчанию это &laquo;admin@platformus.net&raquo; и &laquo;admin&raquo; соответственно).</p><p>Чтобы узнать больше о Платформусе и о том, как им пользоваться, пожалуйста, воспользуйтесь <a href="http://docs.platformus.net/" target="_blank" rel="noopener">документацией</a>, там есть несколько примеров, которые пригодятся начинающим. При возникновении сложностей или вопросов вы можете обратиться в наш <a href="https://gitter.im/Platformus/Platformus" target="_blank" rel="noopener">чат</a>, где вам обязательно помогут.</p><p>Приятной работы!</p>');
+INSERT INTO "Localizations" VALUES (385,129,'en','<h1>Your Ecommerce Website</h1><p>Hello! This is your ecommerce website, it is based on the <a href="http://platformus.net/" target="_blank" rel="noopener">Platformus</a> content management system. You can manage it (create pages, menu items, forms and so on) using the <a href="/backend">backend</a>. Please use the username and password specified during the installation to sign in (it is &ldquo;admin@platformus.net&rdquo; and &ldquo;admin&rdquo; by default).</p><p>Please use the <a href="http://docs.platformus.net/" target="_blank" rel="noopener">documentation</a> to learn more about Platformus and how to use it. There are several examples that could be useful for the beginners. Also, you can get help in our <a href="https://gitter.im/Platformus/Platformus" target="_blank" rel="noopener">chat</a>.</p><p>Have a nice work!</p>');
+INSERT INTO "Localizations" VALUES (386,130,'uk','Ваш веб-сайт електронної комерції');
+INSERT INTO "Localizations" VALUES (387,130,'ru','Ваш веб-сайт электронной коммерции');
+INSERT INTO "Localizations" VALUES (388,130,'en','Your Ecommerce Website');
+INSERT INTO "Localizations" VALUES (389,131,'uk','');
+INSERT INTO "Localizations" VALUES (390,131,'ru','');
+INSERT INTO "Localizations" VALUES (391,131,'en','');
+INSERT INTO "Localizations" VALUES (392,132,'uk','');
+INSERT INTO "Localizations" VALUES (393,132,'ru','');
+INSERT INTO "Localizations" VALUES (394,132,'en','');
+INSERT INTO "Localizations" VALUES (395,133,'__','/about-us');
+INSERT INTO "Localizations" VALUES (396,134,'uk','<h1>Про нас</h1><p>Розкажіть про ваш веб-сайт електронної комерції. Ви можете додати сюди фотографії або відео.</p>');
+INSERT INTO "Localizations" VALUES (397,134,'ru','<h1>О нас</h1><p>Расскажите о вашем веб-сайте электронной коммерции. Вы можете добавить сюда фотографии или видео.</p>');
+INSERT INTO "Localizations" VALUES (398,134,'en','<h1>About Us</h1><p>Tell us about your ecommerce website. You can add photos or videos here.</p>');
+INSERT INTO "Localizations" VALUES (399,135,'uk','Про нас');
+INSERT INTO "Localizations" VALUES (400,135,'ru','О нас');
+INSERT INTO "Localizations" VALUES (401,135,'en','About Us');
+INSERT INTO "Localizations" VALUES (402,136,'uk','');
+INSERT INTO "Localizations" VALUES (403,136,'ru','');
+INSERT INTO "Localizations" VALUES (404,136,'en','');
+INSERT INTO "Localizations" VALUES (405,137,'uk','');
+INSERT INTO "Localizations" VALUES (406,137,'ru','');
+INSERT INTO "Localizations" VALUES (407,137,'en','');
+INSERT INTO "Localizations" VALUES (408,138,'__','/contacts');
+INSERT INTO "Localizations" VALUES (409,139,'uk','<h1>Контакти</h1><p>Додайте свої контакти на цій сторінці. Номер телефону, месенджери, посилання на соціальні мережі. Форма зворотного зв&rsquo;язку, розташована нижче (до речі, ви можете її змінити або перенести в інше місце), допоможе відвідувачам написати вам повідомлення прямо з сайту, лише вкажіть для цього адресу, на яку потрібно надсилати повідомлення.</p><h2>Форма зворотного зв&rsquo;язку</h2>');
+INSERT INTO "Localizations" VALUES (410,139,'ru','<h1>Контакты</h1><p>Добавьте свои контакты на этой странице. Телефонный номер, мессенджеры, ссылки на социальные сети. Форма обратной связи, расположенная ниже (кстати, вы можете ее изменить или перенести в другое место), поможет посетителям написать вам сообщение прямо с сайта, лишь укажите для этого адрес, на который нужно присылать сообщения.</p><h2>Форма обратной связи</h2>');
+INSERT INTO "Localizations" VALUES (411,139,'en','<h1>Contacts</h1><p>Add your contacts on this page. Phone number, messengers, social links. The feedback form below (by the way, you can edit or move it to a different place) allows your visitors to write you directly from the website, just don&rsquo;t forget to specify the email address for the messages.</p><h2>Feedback from</h2>');
+INSERT INTO "Localizations" VALUES (412,140,'uk','Контакти');
+INSERT INTO "Localizations" VALUES (413,140,'ru','Контакты');
+INSERT INTO "Localizations" VALUES (414,140,'en','Contacts');
+INSERT INTO "Localizations" VALUES (415,141,'uk','');
+INSERT INTO "Localizations" VALUES (416,141,'ru','');
+INSERT INTO "Localizations" VALUES (417,141,'en','');
+INSERT INTO "Localizations" VALUES (418,142,'uk','');
+INSERT INTO "Localizations" VALUES (419,142,'ru','');
+INSERT INTO "Localizations" VALUES (420,142,'en','');
+INSERT INTO "Localizations" VALUES (421,143,'__','/cart');
+INSERT INTO "Localizations" VALUES (422,144,'uk','<h1>Кошик</h1>');
+INSERT INTO "Localizations" VALUES (423,144,'ru','<h1>Корзина</h1>');
+INSERT INTO "Localizations" VALUES (424,144,'en','<h1>Cart</h1>');
+INSERT INTO "Localizations" VALUES (425,145,'uk','Кошик');
+INSERT INTO "Localizations" VALUES (426,145,'ru','Корзина');
+INSERT INTO "Localizations" VALUES (427,145,'en','Cart');
+INSERT INTO "Localizations" VALUES (428,146,'uk','');
+INSERT INTO "Localizations" VALUES (429,146,'ru','');
+INSERT INTO "Localizations" VALUES (430,146,'en','');
+INSERT INTO "Localizations" VALUES (431,147,'uk','');
+INSERT INTO "Localizations" VALUES (432,147,'ru','');
+INSERT INTO "Localizations" VALUES (433,147,'en','');
+INSERT INTO "Endpoints" VALUES (1,'Default','{*url}',1000,0,NULL,'Platformus.Website.Frontend.RequestProcessors.DefaultRequestProcessor','ViewName=RegularPage',NULL,NULL);
+INSERT INTO "Endpoints" VALUES (2,'Contacts','contacts',10,0,NULL,'Platformus.Website.Frontend.RequestProcessors.DefaultRequestProcessor','ViewName=ContactsPage',NULL,NULL);
+INSERT INTO "Endpoints" VALUES (3,'Cart','cart',20,0,NULL,'Platformus.Website.Frontend.RequestProcessors.DefaultRequestProcessor','ViewName=CartPage',NULL,NULL);
+INSERT INTO "DataSources" VALUES (1,1,'Page','Platformus.Website.Frontend.DataProviders.PageObjectDataProvider',NULL);
+INSERT INTO "DataSources" VALUES (2,2,'Page','Platformus.Website.Frontend.DataProviders.PageObjectDataProvider',NULL);
+INSERT INTO "DataSources" VALUES (3,3,'Page','Platformus.Website.Frontend.DataProviders.PageObjectDataProvider',NULL);
 INSERT INTO "Classes" VALUES (1,NULL,'Page','Page','Pages',1);
 INSERT INTO "Classes" VALUES (2,1,'RegularPage','Regular Page','Regular Pages',0);
 INSERT INTO "Tabs" VALUES (1,1,'SEO',100);
@@ -993,16 +1054,23 @@ INSERT INTO "DataTypes" VALUES (4,'integer','integerNumber','Integer number',4);
 INSERT INTO "DataTypes" VALUES (5,'decimal','decimalNumber','Decimal number',5);
 INSERT INTO "DataTypes" VALUES (6,'integer','booleanFlag','Boolean flag',6);
 INSERT INTO "DataTypes" VALUES (7,'datetime','date','Date',7);
-INSERT INTO "DataTypes" VALUES (8,'string','image','Image',8);
-INSERT INTO "DataTypes" VALUES (9,'string','sourceCode','Source code',9);
+INSERT INTO "DataTypes" VALUES (8,'datetime','dateTime','DateTime',8);
+INSERT INTO "DataTypes" VALUES (9,'string','image','Image',9);
+INSERT INTO "DataTypes" VALUES (10,'string','sourceCode','Source code',10);
 INSERT INTO "DataTypeParameters" VALUES (1,1,'checkbox','IsRequired','Is required');
 INSERT INTO "DataTypeParameters" VALUES (2,1,'numericTextBox','MaxLength','Max length');
 INSERT INTO "DataTypeParameters" VALUES (3,2,'checkbox','IsRequired','Is required');
 INSERT INTO "DataTypeParameters" VALUES (4,2,'numericTextBox','MaxLength','Max length');
-INSERT INTO "DataTypeParameters" VALUES (5,7,'checkbox','IsRequired','Is required');
-INSERT INTO "DataTypeParameters" VALUES (6,8,'numericTextBox','Width','Width');
-INSERT INTO "DataTypeParameters" VALUES (7,8,'numericTextBox','Height','Height');
-INSERT INTO "DataTypeParameters" VALUES (8,9,'textBox','Mode','Mode');
+INSERT INTO "DataTypeParameters" VALUES (5,4,'checkbox','IsRequired','Is required');
+INSERT INTO "DataTypeParameters" VALUES (6,4,'numericTextBox','MinValue','Min value');
+INSERT INTO "DataTypeParameters" VALUES (7,4,'numericTextBox','MaxValue','Max value');
+INSERT INTO "DataTypeParameters" VALUES (8,5,'checkbox','IsRequired','Is required');
+INSERT INTO "DataTypeParameters" VALUES (9,5,'numericTextBox','MinValue','Min value');
+INSERT INTO "DataTypeParameters" VALUES (10,5,'numericTextBox','MaxValue','Max value');
+INSERT INTO "DataTypeParameters" VALUES (11,7,'checkbox','IsRequired','Is required');
+INSERT INTO "DataTypeParameters" VALUES (12,8,'numericTextBox','Width','Width');
+INSERT INTO "DataTypeParameters" VALUES (13,8,'numericTextBox','Height','Height');
+INSERT INTO "DataTypeParameters" VALUES (14,9,'textBox','Mode','Mode');
 INSERT INTO "Members" VALUES (1,1,NULL,'Url','URL',1,1,0,1,NULL,NULL,NULL,NULL);
 INSERT INTO "Members" VALUES (2,1,NULL,'Content','Content',10,3,1,0,NULL,NULL,NULL,NULL);
 INSERT INTO "Members" VALUES (3,1,1,'Title','Title',1000,1,1,0,NULL,NULL,NULL,NULL);
@@ -1020,26 +1088,26 @@ INSERT INTO "Objects" VALUES (1,2);
 INSERT INTO "Objects" VALUES (2,2);
 INSERT INTO "Objects" VALUES (3,2);
 INSERT INTO "Objects" VALUES (4,2);
-INSERT INTO "Properties" VALUES (1,1,1,NULL,NULL,116,NULL);
-INSERT INTO "Properties" VALUES (2,1,2,NULL,NULL,117,NULL);
-INSERT INTO "Properties" VALUES (3,1,3,NULL,NULL,118,NULL);
-INSERT INTO "Properties" VALUES (4,1,4,NULL,NULL,119,NULL);
-INSERT INTO "Properties" VALUES (5,1,5,NULL,NULL,120,NULL);
-INSERT INTO "Properties" VALUES (6,2,1,NULL,NULL,121,NULL);
-INSERT INTO "Properties" VALUES (7,2,2,NULL,NULL,122,NULL);
-INSERT INTO "Properties" VALUES (8,2,3,NULL,NULL,123,NULL);
-INSERT INTO "Properties" VALUES (9,2,4,NULL,NULL,124,NULL);
-INSERT INTO "Properties" VALUES (10,2,5,NULL,NULL,125,NULL);
-INSERT INTO "Properties" VALUES (11,3,1,NULL,NULL,126,NULL);
-INSERT INTO "Properties" VALUES (12,3,2,NULL,NULL,127,NULL);
-INSERT INTO "Properties" VALUES (13,3,3,NULL,NULL,128,NULL);
-INSERT INTO "Properties" VALUES (14,3,4,NULL,NULL,129,NULL);
-INSERT INTO "Properties" VALUES (15,3,5,NULL,NULL,130,NULL);
-INSERT INTO "Properties" VALUES (16,4,1,NULL,NULL,131,NULL);
-INSERT INTO "Properties" VALUES (17,4,2,NULL,NULL,132,NULL);
-INSERT INTO "Properties" VALUES (18,4,3,NULL,NULL,133,NULL);
-INSERT INTO "Properties" VALUES (19,4,4,NULL,NULL,134,NULL);
-INSERT INTO "Properties" VALUES (20,4,5,NULL,NULL,135,NULL);
+INSERT INTO "Properties" VALUES (1,1,1,NULL,NULL,128,NULL);
+INSERT INTO "Properties" VALUES (2,1,2,NULL,NULL,129,NULL);
+INSERT INTO "Properties" VALUES (3,1,3,NULL,NULL,130,NULL);
+INSERT INTO "Properties" VALUES (4,1,4,NULL,NULL,131,NULL);
+INSERT INTO "Properties" VALUES (5,1,5,NULL,NULL,132,NULL);
+INSERT INTO "Properties" VALUES (6,2,1,NULL,NULL,133,NULL);
+INSERT INTO "Properties" VALUES (7,2,2,NULL,NULL,134,NULL);
+INSERT INTO "Properties" VALUES (8,2,3,NULL,NULL,135,NULL);
+INSERT INTO "Properties" VALUES (9,2,4,NULL,NULL,136,NULL);
+INSERT INTO "Properties" VALUES (10,2,5,NULL,NULL,137,NULL);
+INSERT INTO "Properties" VALUES (11,3,1,NULL,NULL,138,NULL);
+INSERT INTO "Properties" VALUES (12,3,2,NULL,NULL,139,NULL);
+INSERT INTO "Properties" VALUES (13,3,3,NULL,NULL,140,NULL);
+INSERT INTO "Properties" VALUES (14,3,4,NULL,NULL,141,NULL);
+INSERT INTO "Properties" VALUES (15,3,5,NULL,NULL,142,NULL);
+INSERT INTO "Properties" VALUES (16,4,1,NULL,NULL,143,NULL);
+INSERT INTO "Properties" VALUES (17,4,2,NULL,NULL,144,NULL);
+INSERT INTO "Properties" VALUES (18,4,3,NULL,NULL,145,NULL);
+INSERT INTO "Properties" VALUES (19,4,4,NULL,NULL,146,NULL);
+INSERT INTO "Properties" VALUES (20,4,5,NULL,NULL,147,NULL);
 INSERT INTO "Menus" VALUES (1,'Main',1);
 INSERT INTO "MenuItems" VALUES (1,1,NULL,2,'/',10);
 INSERT INTO "MenuItems" VALUES (2,1,NULL,3,'/about-us',20);
@@ -1052,28 +1120,28 @@ INSERT INTO "FieldTypes" VALUES (3,'Checkbox','Checkbox',3,NULL);
 INSERT INTO "FieldTypes" VALUES (4,'RadioButtonList','Radio button list',4,NULL);
 INSERT INTO "FieldTypes" VALUES (5,'DropDownList','Drop down list',5,NULL);
 INSERT INTO "FieldTypes" VALUES (6,'FileUpload','File upload',6,NULL);
-INSERT INTO "FieldTypes" VALUES (7,'ReCAPTCHA','ReCAPTCHA',7,'Platformus.Website.Frontend.FormHandlers.ReCaptchaFieldValidator');
+INSERT INTO "FieldTypes" VALUES (7,'ReCAPTCHA','ReCAPTCHA',7,'Platformus.Website.Frontend.FieldValidators.ReCaptchaFieldValidator');
 INSERT INTO "Fields" VALUES (1,1,1,'Name',8,1,NULL,10);
 INSERT INTO "Fields" VALUES (2,1,1,'Email',9,1,NULL,20);
 INSERT INTO "Fields" VALUES (3,1,2,'Message',10,1,NULL,30);
-INSERT INTO "Categories" VALUES (1,NULL,'/pizza',11,'Platformus.ECommerce.ProductProviders.DefaultProductProvider',NULL,10);
-INSERT INTO "Categories" VALUES (2,NULL,'/panini',12,'Platformus.ECommerce.ProductProviders.DefaultProductProvider',NULL,20);
-INSERT INTO "Categories" VALUES (3,NULL,'/drinks',13,'Platformus.ECommerce.ProductProviders.DefaultProductProvider',NULL,30);
-INSERT INTO "Products" VALUES (1,1,'/pizza/pizza-1','pizza-1',17,15,19,110.0,18,14,16);
-INSERT INTO "Products" VALUES (2,1,'/pizza/pizza-2','pizza-2',22,25,20,180.0,21,24,23);
-INSERT INTO "Products" VALUES (3,1,'/pizza/pizza-3','pizza-3',28,31,26,140.0,27,30,29);
-INSERT INTO "Products" VALUES (4,1,'/pizza/pizza-4','pizza-4',34,37,32,150.0,33,36,35);
-INSERT INTO "Products" VALUES (5,1,'/pizza/pizza-5','pizza-5',40,43,38,170.0,39,42,41);
-INSERT INTO "Products" VALUES (6,1,'/pizza/pizza-6','pizza-6',46,49,44,170.0,45,48,47);
-INSERT INTO "Products" VALUES (7,1,'/pizza/pizza-7','pizza-7',52,55,50,150.0,51,54,53);
-INSERT INTO "Products" VALUES (8,1,'/pizza/pizza-8','pizza-8',58,61,56,140.0,57,60,59);
-INSERT INTO "Products" VALUES (9,1,'/pizza/pizza-9','pizza-9',64,67,62,160.0,63,66,65);
-INSERT INTO "Products" VALUES (10,2,'/panini/panini-1','panini-1',70,73,68,40.0,69,72,71);
-INSERT INTO "Products" VALUES (11,2,'/panini/panini-2','panini-2',76,79,74,80.0,75,78,77);
-INSERT INTO "Products" VALUES (12,2,'/panini/panini-3','panini-3',82,85,80,40.0,81,84,83);
-INSERT INTO "Products" VALUES (13,3,'/pizza/drinks-1','drinks-1',88,91,86,10.0,87,90,89);
-INSERT INTO "Products" VALUES (14,3,'/pizza/drinks-2','drinks-2',94,97,92,30.0,93,96,95);
-INSERT INTO "Products" VALUES (15,3,'/pizza/drinks-3','drinks-3',100,103,98,10.0,99,102,101);
+INSERT INTO "Categories" VALUES (1,NULL,'/pizza',14,12,10,15,11,13,'Platformus.ECommerce.ProductProviders.DefaultProductProvider',NULL);
+INSERT INTO "Categories" VALUES (2,NULL,'/panini',17,20,20,16,19,18,'Platformus.ECommerce.ProductProviders.DefaultProductProvider',NULL);
+INSERT INTO "Categories" VALUES (3,NULL,'/drinks',22,25,30,21,24,23,'Platformus.ECommerce.ProductProviders.DefaultProductProvider',NULL);
+INSERT INTO "Products" VALUES (1,1,'/pizza/pizza-1','pizza-1',27,30,31,170.0,26,29,28);
+INSERT INTO "Products" VALUES (2,1,'/pizza/pizza-2','pizza-2',34,37,32,160.0,33,36,35);
+INSERT INTO "Products" VALUES (3,1,'/pizza/pizza-3','pizza-3',40,43,38,110.0,39,42,41);
+INSERT INTO "Products" VALUES (4,1,'/pizza/pizza-4','pizza-4',46,49,44,110.0,45,48,47);
+INSERT INTO "Products" VALUES (5,1,'/pizza/pizza-5','pizza-5',52,55,50,180.0,51,54,53);
+INSERT INTO "Products" VALUES (6,1,'/pizza/pizza-6','pizza-6',58,61,56,120.0,57,60,59);
+INSERT INTO "Products" VALUES (7,1,'/pizza/pizza-7','pizza-7',64,67,62,140.0,63,66,65);
+INSERT INTO "Products" VALUES (8,1,'/pizza/pizza-8','pizza-8',70,73,68,160.0,69,72,71);
+INSERT INTO "Products" VALUES (9,1,'/pizza/pizza-9','pizza-9',76,79,74,180.0,75,78,77);
+INSERT INTO "Products" VALUES (10,2,'/panini/panini-1','panini-1',82,85,80,60.0,81,84,83);
+INSERT INTO "Products" VALUES (11,2,'/panini/panini-2','panini-2',88,91,86,60.0,87,90,89);
+INSERT INTO "Products" VALUES (12,2,'/panini/panini-3','panini-3',94,97,92,30.0,93,96,95);
+INSERT INTO "Products" VALUES (13,3,'/pizza/drinks-1','drinks-1',100,103,98,50.0,99,102,101);
+INSERT INTO "Products" VALUES (14,3,'/pizza/drinks-2','drinks-2',106,109,104,80.0,105,108,107);
+INSERT INTO "Products" VALUES (15,3,'/pizza/drinks-3','drinks-3',112,115,110,60.0,111,114,113);
 INSERT INTO "Photos" VALUES (1,1,'pizza1.jpg',1,1);
 INSERT INTO "Photos" VALUES (2,2,'pizza2.jpg',1,1);
 INSERT INTO "Photos" VALUES (3,3,'pizza3.jpg',1,1);
@@ -1089,16 +1157,16 @@ INSERT INTO "Photos" VALUES (12,12,'panini3.jpg',1,1);
 INSERT INTO "Photos" VALUES (13,13,'drinks1.jpg',1,1);
 INSERT INTO "Photos" VALUES (14,14,'drinks2.jpg',1,1);
 INSERT INTO "Photos" VALUES (15,15,'drinks3.jpg',1,1);
-INSERT INTO "OrderStates" VALUES (1,'New',104,10);
-INSERT INTO "OrderStates" VALUES (2,'Confirmed',105,20);
-INSERT INTO "OrderStates" VALUES (3,'Scheduled',106,30);
-INSERT INTO "OrderStates" VALUES (4,'BeingDelivered',107,40);
-INSERT INTO "OrderStates" VALUES (5,'Delivered',108,50);
-INSERT INTO "OrderStates" VALUES (6,'Closed',109,60);
-INSERT INTO "OrderStates" VALUES (7,'Canceled',110,70);
-INSERT INTO "PaymentMethods" VALUES (1,'NotSet',111,10);
-INSERT INTO "PaymentMethods" VALUES (2,'Cash',112,20);
-INSERT INTO "DeliveryMethods" VALUES (1,'NotSet',113,10);
-INSERT INTO "DeliveryMethods" VALUES (2,'Pickup',114,20);
-INSERT INTO "DeliveryMethods" VALUES (3,'Courier',115,30);
+INSERT INTO "OrderStates" VALUES (1,'New',116,10);
+INSERT INTO "OrderStates" VALUES (2,'Confirmed',117,20);
+INSERT INTO "OrderStates" VALUES (3,'Scheduled',118,30);
+INSERT INTO "OrderStates" VALUES (4,'BeingDelivered',119,40);
+INSERT INTO "OrderStates" VALUES (5,'Delivered',120,50);
+INSERT INTO "OrderStates" VALUES (6,'Closed',121,60);
+INSERT INTO "OrderStates" VALUES (7,'Canceled',122,70);
+INSERT INTO "PaymentMethods" VALUES (1,'NotSet',123,10);
+INSERT INTO "PaymentMethods" VALUES (2,'Cash',124,20);
+INSERT INTO "DeliveryMethods" VALUES (1,'NotSet',125,10);
+INSERT INTO "DeliveryMethods" VALUES (2,'Pickup',126,20);
+INSERT INTO "DeliveryMethods" VALUES (3,'Courier',127,30);
 COMMIT;

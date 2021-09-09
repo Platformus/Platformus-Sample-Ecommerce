@@ -5,7 +5,7 @@
 -- Dumped from database version 13.2
 -- Dumped by pg_dump version 13.2
 
--- Started on 2021-03-24 12:41:08
+-- Started on 2021-09-09 18:05:43
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -23,7 +23,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- TOC entry 275 (class 1259 OID 17809)
+-- TOC entry 276 (class 1259 OID 20453)
 -- Name: Carts; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -37,7 +37,7 @@ CREATE TABLE public."Carts" (
 ALTER TABLE public."Carts" OWNER TO postgres;
 
 --
--- TOC entry 274 (class 1259 OID 17807)
+-- TOC entry 275 (class 1259 OID 20451)
 -- Name: Carts_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -53,8 +53,8 @@ CREATE SEQUENCE public."Carts_Id_seq"
 ALTER TABLE public."Carts_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3520 (class 0 OID 0)
--- Dependencies: 274
+-- TOC entry 3532 (class 0 OID 0)
+-- Dependencies: 275
 -- Name: Carts_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -62,7 +62,7 @@ ALTER SEQUENCE public."Carts_Id_seq" OWNED BY public."Carts"."Id";
 
 
 --
--- TOC entry 263 (class 1259 OID 17678)
+-- TOC entry 264 (class 1259 OID 20302)
 -- Name: Categories; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -71,16 +71,20 @@ CREATE TABLE public."Categories" (
     "CategoryId" integer,
     "Url" text NOT NULL,
     "NameId" integer NOT NULL,
-    "CSharpClassName" text NOT NULL,
-    "Parameters" text,
-    "Position" integer
+    "DescriptionId" integer NOT NULL,
+    "Position" integer,
+    "TitleId" integer NOT NULL,
+    "MetaDescriptionId" integer NOT NULL,
+    "MetaKeywordsId" integer NOT NULL,
+    "ProductProviderCSharpClassName" text NOT NULL,
+    "ProductProviderParameters" text
 );
 
 
 ALTER TABLE public."Categories" OWNER TO postgres;
 
 --
--- TOC entry 262 (class 1259 OID 17676)
+-- TOC entry 263 (class 1259 OID 20300)
 -- Name: Categories_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -96,8 +100,8 @@ CREATE SEQUENCE public."Categories_Id_seq"
 ALTER TABLE public."Categories_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3521 (class 0 OID 0)
--- Dependencies: 262
+-- TOC entry 3533 (class 0 OID 0)
+-- Dependencies: 263
 -- Name: Categories_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -105,7 +109,7 @@ ALTER SEQUENCE public."Categories_Id_seq" OWNED BY public."Categories"."Id";
 
 
 --
--- TOC entry 227 (class 1259 OID 17342)
+-- TOC entry 228 (class 1259 OID 19966)
 -- Name: Classes; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -122,7 +126,7 @@ CREATE TABLE public."Classes" (
 ALTER TABLE public."Classes" OWNER TO postgres;
 
 --
--- TOC entry 226 (class 1259 OID 17340)
+-- TOC entry 227 (class 1259 OID 19964)
 -- Name: Classes_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -138,8 +142,8 @@ CREATE SEQUENCE public."Classes_Id_seq"
 ALTER TABLE public."Classes_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3522 (class 0 OID 0)
--- Dependencies: 226
+-- TOC entry 3534 (class 0 OID 0)
+-- Dependencies: 227
 -- Name: Classes_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -147,7 +151,7 @@ ALTER SEQUENCE public."Classes_Id_seq" OWNED BY public."Classes"."Id";
 
 
 --
--- TOC entry 259 (class 1259 OID 17646)
+-- TOC entry 260 (class 1259 OID 20270)
 -- Name: CompletedFields; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -162,7 +166,7 @@ CREATE TABLE public."CompletedFields" (
 ALTER TABLE public."CompletedFields" OWNER TO postgres;
 
 --
--- TOC entry 258 (class 1259 OID 17644)
+-- TOC entry 259 (class 1259 OID 20268)
 -- Name: CompletedFields_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -178,8 +182,8 @@ CREATE SEQUENCE public."CompletedFields_Id_seq"
 ALTER TABLE public."CompletedFields_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3523 (class 0 OID 0)
--- Dependencies: 258
+-- TOC entry 3535 (class 0 OID 0)
+-- Dependencies: 259
 -- Name: CompletedFields_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -187,7 +191,7 @@ ALTER SEQUENCE public."CompletedFields_Id_seq" OWNED BY public."CompletedFields"
 
 
 --
--- TOC entry 257 (class 1259 OID 17633)
+-- TOC entry 258 (class 1259 OID 20257)
 -- Name: CompletedForms; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -201,7 +205,7 @@ CREATE TABLE public."CompletedForms" (
 ALTER TABLE public."CompletedForms" OWNER TO postgres;
 
 --
--- TOC entry 256 (class 1259 OID 17631)
+-- TOC entry 257 (class 1259 OID 20255)
 -- Name: CompletedForms_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -217,8 +221,8 @@ CREATE SEQUENCE public."CompletedForms_Id_seq"
 ALTER TABLE public."CompletedForms_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3524 (class 0 OID 0)
--- Dependencies: 256
+-- TOC entry 3536 (class 0 OID 0)
+-- Dependencies: 257
 -- Name: CompletedForms_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -226,7 +230,7 @@ ALTER SEQUENCE public."CompletedForms_Id_seq" OWNED BY public."CompletedForms"."
 
 
 --
--- TOC entry 213 (class 1259 OID 17236)
+-- TOC entry 214 (class 1259 OID 19860)
 -- Name: Configurations; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -240,7 +244,7 @@ CREATE TABLE public."Configurations" (
 ALTER TABLE public."Configurations" OWNER TO postgres;
 
 --
--- TOC entry 212 (class 1259 OID 17234)
+-- TOC entry 213 (class 1259 OID 19858)
 -- Name: Configurations_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -256,8 +260,8 @@ CREATE SEQUENCE public."Configurations_Id_seq"
 ALTER TABLE public."Configurations_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3525 (class 0 OID 0)
--- Dependencies: 212
+-- TOC entry 3537 (class 0 OID 0)
+-- Dependencies: 213
 -- Name: Configurations_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -265,7 +269,7 @@ ALTER SEQUENCE public."Configurations_Id_seq" OWNED BY public."Configurations"."
 
 
 --
--- TOC entry 203 (class 1259 OID 17152)
+-- TOC entry 204 (class 1259 OID 19776)
 -- Name: CredentialTypes; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -280,7 +284,7 @@ CREATE TABLE public."CredentialTypes" (
 ALTER TABLE public."CredentialTypes" OWNER TO postgres;
 
 --
--- TOC entry 202 (class 1259 OID 17150)
+-- TOC entry 203 (class 1259 OID 19774)
 -- Name: CredentialTypes_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -296,8 +300,8 @@ CREATE SEQUENCE public."CredentialTypes_Id_seq"
 ALTER TABLE public."CredentialTypes_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3526 (class 0 OID 0)
--- Dependencies: 202
+-- TOC entry 3538 (class 0 OID 0)
+-- Dependencies: 203
 -- Name: CredentialTypes_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -305,7 +309,7 @@ ALTER SEQUENCE public."CredentialTypes_Id_seq" OWNED BY public."CredentialTypes"
 
 
 --
--- TOC entry 205 (class 1259 OID 17163)
+-- TOC entry 206 (class 1259 OID 19787)
 -- Name: Credentials; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -322,7 +326,7 @@ CREATE TABLE public."Credentials" (
 ALTER TABLE public."Credentials" OWNER TO postgres;
 
 --
--- TOC entry 204 (class 1259 OID 17161)
+-- TOC entry 205 (class 1259 OID 19785)
 -- Name: Credentials_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -338,8 +342,8 @@ CREATE SEQUENCE public."Credentials_Id_seq"
 ALTER TABLE public."Credentials_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3527 (class 0 OID 0)
--- Dependencies: 204
+-- TOC entry 3539 (class 0 OID 0)
+-- Dependencies: 205
 -- Name: Credentials_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -347,7 +351,7 @@ ALTER SEQUENCE public."Credentials_Id_seq" OWNED BY public."Credentials"."Id";
 
 
 --
--- TOC entry 216 (class 1259 OID 17261)
+-- TOC entry 217 (class 1259 OID 19885)
 -- Name: Cultures; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -363,7 +367,7 @@ CREATE TABLE public."Cultures" (
 ALTER TABLE public."Cultures" OWNER TO postgres;
 
 --
--- TOC entry 225 (class 1259 OID 17326)
+-- TOC entry 226 (class 1259 OID 19950)
 -- Name: DataSources; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -371,15 +375,15 @@ CREATE TABLE public."DataSources" (
     "Id" integer NOT NULL,
     "EndpointId" integer NOT NULL,
     "Code" text NOT NULL,
-    "CSharpClassName" text NOT NULL,
-    "Parameters" text
+    "DataProviderCSharpClassName" text NOT NULL,
+    "DataProviderParameters" text
 );
 
 
 ALTER TABLE public."DataSources" OWNER TO postgres;
 
 --
--- TOC entry 224 (class 1259 OID 17324)
+-- TOC entry 225 (class 1259 OID 19948)
 -- Name: DataSources_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -395,8 +399,8 @@ CREATE SEQUENCE public."DataSources_Id_seq"
 ALTER TABLE public."DataSources_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3528 (class 0 OID 0)
--- Dependencies: 224
+-- TOC entry 3540 (class 0 OID 0)
+-- Dependencies: 225
 -- Name: DataSources_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -404,7 +408,7 @@ ALTER SEQUENCE public."DataSources_Id_seq" OWNED BY public."DataSources"."Id";
 
 
 --
--- TOC entry 237 (class 1259 OID 17432)
+-- TOC entry 238 (class 1259 OID 20056)
 -- Name: DataTypeParameterValues; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -419,7 +423,7 @@ CREATE TABLE public."DataTypeParameterValues" (
 ALTER TABLE public."DataTypeParameterValues" OWNER TO postgres;
 
 --
--- TOC entry 236 (class 1259 OID 17430)
+-- TOC entry 237 (class 1259 OID 20054)
 -- Name: DataTypeParameterValues_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -435,8 +439,8 @@ CREATE SEQUENCE public."DataTypeParameterValues_Id_seq"
 ALTER TABLE public."DataTypeParameterValues_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3529 (class 0 OID 0)
--- Dependencies: 236
+-- TOC entry 3541 (class 0 OID 0)
+-- Dependencies: 237
 -- Name: DataTypeParameterValues_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -444,7 +448,7 @@ ALTER SEQUENCE public."DataTypeParameterValues_Id_seq" OWNED BY public."DataType
 
 
 --
--- TOC entry 233 (class 1259 OID 17385)
+-- TOC entry 234 (class 1259 OID 20009)
 -- Name: DataTypeParameters; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -460,7 +464,7 @@ CREATE TABLE public."DataTypeParameters" (
 ALTER TABLE public."DataTypeParameters" OWNER TO postgres;
 
 --
--- TOC entry 232 (class 1259 OID 17383)
+-- TOC entry 233 (class 1259 OID 20007)
 -- Name: DataTypeParameters_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -476,8 +480,8 @@ CREATE SEQUENCE public."DataTypeParameters_Id_seq"
 ALTER TABLE public."DataTypeParameters_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3530 (class 0 OID 0)
--- Dependencies: 232
+-- TOC entry 3542 (class 0 OID 0)
+-- Dependencies: 233
 -- Name: DataTypeParameters_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -485,7 +489,7 @@ ALTER SEQUENCE public."DataTypeParameters_Id_seq" OWNED BY public."DataTypeParam
 
 
 --
--- TOC entry 231 (class 1259 OID 17374)
+-- TOC entry 232 (class 1259 OID 19998)
 -- Name: DataTypes; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -501,7 +505,7 @@ CREATE TABLE public."DataTypes" (
 ALTER TABLE public."DataTypes" OWNER TO postgres;
 
 --
--- TOC entry 230 (class 1259 OID 17372)
+-- TOC entry 231 (class 1259 OID 19996)
 -- Name: DataTypes_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -517,8 +521,8 @@ CREATE SEQUENCE public."DataTypes_Id_seq"
 ALTER TABLE public."DataTypes_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3531 (class 0 OID 0)
--- Dependencies: 230
+-- TOC entry 3543 (class 0 OID 0)
+-- Dependencies: 231
 -- Name: DataTypes_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -526,7 +530,7 @@ ALTER SEQUENCE public."DataTypes_Id_seq" OWNED BY public."DataTypes"."Id";
 
 
 --
--- TOC entry 273 (class 1259 OID 17793)
+-- TOC entry 274 (class 1259 OID 20437)
 -- Name: DeliveryMethods; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -541,7 +545,7 @@ CREATE TABLE public."DeliveryMethods" (
 ALTER TABLE public."DeliveryMethods" OWNER TO postgres;
 
 --
--- TOC entry 272 (class 1259 OID 17791)
+-- TOC entry 273 (class 1259 OID 20435)
 -- Name: DeliveryMethods_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -557,8 +561,8 @@ CREATE SEQUENCE public."DeliveryMethods_Id_seq"
 ALTER TABLE public."DeliveryMethods_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3532 (class 0 OID 0)
--- Dependencies: 272
+-- TOC entry 3544 (class 0 OID 0)
+-- Dependencies: 273
 -- Name: DeliveryMethods_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -566,7 +570,7 @@ ALTER SEQUENCE public."DeliveryMethods_Id_seq" OWNED BY public."DeliveryMethods"
 
 
 --
--- TOC entry 218 (class 1259 OID 17271)
+-- TOC entry 219 (class 1259 OID 19895)
 -- Name: Dictionaries; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -578,7 +582,7 @@ CREATE TABLE public."Dictionaries" (
 ALTER TABLE public."Dictionaries" OWNER TO postgres;
 
 --
--- TOC entry 217 (class 1259 OID 17269)
+-- TOC entry 218 (class 1259 OID 19893)
 -- Name: Dictionaries_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -594,8 +598,8 @@ CREATE SEQUENCE public."Dictionaries_Id_seq"
 ALTER TABLE public."Dictionaries_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3533 (class 0 OID 0)
--- Dependencies: 217
+-- TOC entry 3545 (class 0 OID 0)
+-- Dependencies: 218
 -- Name: Dictionaries_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -603,7 +607,7 @@ ALTER SEQUENCE public."Dictionaries_Id_seq" OWNED BY public."Dictionaries"."Id";
 
 
 --
--- TOC entry 223 (class 1259 OID 17309)
+-- TOC entry 224 (class 1259 OID 19933)
 -- Name: EndpointPermissions; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -616,7 +620,7 @@ CREATE TABLE public."EndpointPermissions" (
 ALTER TABLE public."EndpointPermissions" OWNER TO postgres;
 
 --
--- TOC entry 222 (class 1259 OID 17300)
+-- TOC entry 223 (class 1259 OID 19924)
 -- Name: Endpoints; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -627,16 +631,17 @@ CREATE TABLE public."Endpoints" (
     "Position" integer,
     "DisallowAnonymous" boolean NOT NULL,
     "SignInUrl" text,
+    "RequestProcessorCSharpClassName" text NOT NULL,
+    "RequestProcessorParameters" text,
     "ResponseCacheCSharpClassName" text,
-    "CSharpClassName" text NOT NULL,
-    "Parameters" text
+    "ResponseCacheParameters" text
 );
 
 
 ALTER TABLE public."Endpoints" OWNER TO postgres;
 
 --
--- TOC entry 221 (class 1259 OID 17298)
+-- TOC entry 222 (class 1259 OID 19922)
 -- Name: Endpoints_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -652,8 +657,8 @@ CREATE SEQUENCE public."Endpoints_Id_seq"
 ALTER TABLE public."Endpoints_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3534 (class 0 OID 0)
--- Dependencies: 221
+-- TOC entry 3546 (class 0 OID 0)
+-- Dependencies: 222
 -- Name: Endpoints_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -661,7 +666,7 @@ ALTER SEQUENCE public."Endpoints_Id_seq" OWNED BY public."Endpoints"."Id";
 
 
 --
--- TOC entry 255 (class 1259 OID 17615)
+-- TOC entry 256 (class 1259 OID 20239)
 -- Name: FieldOptions; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -676,7 +681,7 @@ CREATE TABLE public."FieldOptions" (
 ALTER TABLE public."FieldOptions" OWNER TO postgres;
 
 --
--- TOC entry 254 (class 1259 OID 17613)
+-- TOC entry 255 (class 1259 OID 20237)
 -- Name: FieldOptions_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -692,8 +697,8 @@ CREATE SEQUENCE public."FieldOptions_Id_seq"
 ALTER TABLE public."FieldOptions_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3535 (class 0 OID 0)
--- Dependencies: 254
+-- TOC entry 3547 (class 0 OID 0)
+-- Dependencies: 255
 -- Name: FieldOptions_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -701,7 +706,7 @@ ALTER SEQUENCE public."FieldOptions_Id_seq" OWNED BY public."FieldOptions"."Id";
 
 
 --
--- TOC entry 251 (class 1259 OID 17578)
+-- TOC entry 252 (class 1259 OID 20202)
 -- Name: FieldTypes; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -717,7 +722,7 @@ CREATE TABLE public."FieldTypes" (
 ALTER TABLE public."FieldTypes" OWNER TO postgres;
 
 --
--- TOC entry 250 (class 1259 OID 17576)
+-- TOC entry 251 (class 1259 OID 20200)
 -- Name: FieldTypes_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -733,8 +738,8 @@ CREATE SEQUENCE public."FieldTypes_Id_seq"
 ALTER TABLE public."FieldTypes_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3536 (class 0 OID 0)
--- Dependencies: 250
+-- TOC entry 3548 (class 0 OID 0)
+-- Dependencies: 251
 -- Name: FieldTypes_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -742,7 +747,7 @@ ALTER SEQUENCE public."FieldTypes_Id_seq" OWNED BY public."FieldTypes"."Id";
 
 
 --
--- TOC entry 253 (class 1259 OID 17589)
+-- TOC entry 254 (class 1259 OID 20213)
 -- Name: Fields; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -761,7 +766,7 @@ CREATE TABLE public."Fields" (
 ALTER TABLE public."Fields" OWNER TO postgres;
 
 --
--- TOC entry 252 (class 1259 OID 17587)
+-- TOC entry 253 (class 1259 OID 20211)
 -- Name: Fields_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -777,8 +782,8 @@ CREATE SEQUENCE public."Fields_Id_seq"
 ALTER TABLE public."Fields_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3537 (class 0 OID 0)
--- Dependencies: 252
+-- TOC entry 3549 (class 0 OID 0)
+-- Dependencies: 253
 -- Name: Fields_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -786,7 +791,7 @@ ALTER SEQUENCE public."Fields_Id_seq" OWNED BY public."Fields"."Id";
 
 
 --
--- TOC entry 261 (class 1259 OID 17667)
+-- TOC entry 262 (class 1259 OID 20291)
 -- Name: Files; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -800,7 +805,7 @@ CREATE TABLE public."Files" (
 ALTER TABLE public."Files" OWNER TO postgres;
 
 --
--- TOC entry 260 (class 1259 OID 17665)
+-- TOC entry 261 (class 1259 OID 20289)
 -- Name: Files_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -816,8 +821,8 @@ CREATE SEQUENCE public."Files_Id_seq"
 ALTER TABLE public."Files_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3538 (class 0 OID 0)
--- Dependencies: 260
+-- TOC entry 3550 (class 0 OID 0)
+-- Dependencies: 261
 -- Name: Files_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -825,7 +830,7 @@ ALTER SEQUENCE public."Files_Id_seq" OWNED BY public."Files"."Id";
 
 
 --
--- TOC entry 249 (class 1259 OID 17557)
+-- TOC entry 250 (class 1259 OID 20181)
 -- Name: Forms; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -835,15 +840,15 @@ CREATE TABLE public."Forms" (
     "NameId" integer NOT NULL,
     "SubmitButtonTitleId" integer NOT NULL,
     "ProduceCompletedForms" boolean NOT NULL,
-    "CSharpClassName" text NOT NULL,
-    "Parameters" text
+    "FormHandlerCSharpClassName" text NOT NULL,
+    "FormHandlerParameters" text
 );
 
 
 ALTER TABLE public."Forms" OWNER TO postgres;
 
 --
--- TOC entry 248 (class 1259 OID 17555)
+-- TOC entry 249 (class 1259 OID 20179)
 -- Name: Forms_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -859,8 +864,8 @@ CREATE SEQUENCE public."Forms_Id_seq"
 ALTER TABLE public."Forms_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3539 (class 0 OID 0)
--- Dependencies: 248
+-- TOC entry 3551 (class 0 OID 0)
+-- Dependencies: 249
 -- Name: Forms_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -868,7 +873,7 @@ ALTER SEQUENCE public."Forms_Id_seq" OWNED BY public."Forms"."Id";
 
 
 --
--- TOC entry 220 (class 1259 OID 17279)
+-- TOC entry 221 (class 1259 OID 19903)
 -- Name: Localizations; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -883,7 +888,7 @@ CREATE TABLE public."Localizations" (
 ALTER TABLE public."Localizations" OWNER TO postgres;
 
 --
--- TOC entry 219 (class 1259 OID 17277)
+-- TOC entry 220 (class 1259 OID 19901)
 -- Name: Localizations_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -899,8 +904,8 @@ CREATE SEQUENCE public."Localizations_Id_seq"
 ALTER TABLE public."Localizations_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3540 (class 0 OID 0)
--- Dependencies: 219
+-- TOC entry 3552 (class 0 OID 0)
+-- Dependencies: 220
 -- Name: Localizations_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -908,7 +913,7 @@ ALTER SEQUENCE public."Localizations_Id_seq" OWNED BY public."Localizations"."Id
 
 
 --
--- TOC entry 235 (class 1259 OID 17401)
+-- TOC entry 236 (class 1259 OID 20025)
 -- Name: Members; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -932,7 +937,7 @@ CREATE TABLE public."Members" (
 ALTER TABLE public."Members" OWNER TO postgres;
 
 --
--- TOC entry 234 (class 1259 OID 17399)
+-- TOC entry 235 (class 1259 OID 20023)
 -- Name: Members_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -948,8 +953,8 @@ CREATE SEQUENCE public."Members_Id_seq"
 ALTER TABLE public."Members_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3541 (class 0 OID 0)
--- Dependencies: 234
+-- TOC entry 3553 (class 0 OID 0)
+-- Dependencies: 235
 -- Name: Members_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -957,7 +962,7 @@ ALTER SEQUENCE public."Members_Id_seq" OWNED BY public."Members"."Id";
 
 
 --
--- TOC entry 247 (class 1259 OID 17531)
+-- TOC entry 248 (class 1259 OID 20155)
 -- Name: MenuItems; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -974,7 +979,7 @@ CREATE TABLE public."MenuItems" (
 ALTER TABLE public."MenuItems" OWNER TO postgres;
 
 --
--- TOC entry 246 (class 1259 OID 17529)
+-- TOC entry 247 (class 1259 OID 20153)
 -- Name: MenuItems_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -990,8 +995,8 @@ CREATE SEQUENCE public."MenuItems_Id_seq"
 ALTER TABLE public."MenuItems_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3542 (class 0 OID 0)
--- Dependencies: 246
+-- TOC entry 3554 (class 0 OID 0)
+-- Dependencies: 247
 -- Name: MenuItems_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -999,7 +1004,7 @@ ALTER SEQUENCE public."MenuItems_Id_seq" OWNED BY public."MenuItems"."Id";
 
 
 --
--- TOC entry 245 (class 1259 OID 17515)
+-- TOC entry 246 (class 1259 OID 20139)
 -- Name: Menus; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1013,7 +1018,7 @@ CREATE TABLE public."Menus" (
 ALTER TABLE public."Menus" OWNER TO postgres;
 
 --
--- TOC entry 244 (class 1259 OID 17513)
+-- TOC entry 245 (class 1259 OID 20137)
 -- Name: Menus_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1029,8 +1034,8 @@ CREATE SEQUENCE public."Menus_Id_seq"
 ALTER TABLE public."Menus_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3543 (class 0 OID 0)
--- Dependencies: 244
+-- TOC entry 3555 (class 0 OID 0)
+-- Dependencies: 245
 -- Name: Menus_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -1038,7 +1043,21 @@ ALTER SEQUENCE public."Menus_Id_seq" OWNED BY public."Menus"."Id";
 
 
 --
--- TOC entry 239 (class 1259 OID 17453)
+-- TOC entry 200 (class 1259 OID 19755)
+-- Name: ModelStates; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public."ModelStates" (
+    "Id" text NOT NULL,
+    "Value" text NOT NULL,
+    "Created" timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public."ModelStates" OWNER TO postgres;
+
+--
+-- TOC entry 240 (class 1259 OID 20077)
 -- Name: Objects; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1051,7 +1070,7 @@ CREATE TABLE public."Objects" (
 ALTER TABLE public."Objects" OWNER TO postgres;
 
 --
--- TOC entry 238 (class 1259 OID 17451)
+-- TOC entry 239 (class 1259 OID 20075)
 -- Name: Objects_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1067,8 +1086,8 @@ CREATE SEQUENCE public."Objects_Id_seq"
 ALTER TABLE public."Objects_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3544 (class 0 OID 0)
--- Dependencies: 238
+-- TOC entry 3556 (class 0 OID 0)
+-- Dependencies: 239
 -- Name: Objects_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -1076,7 +1095,7 @@ ALTER SEQUENCE public."Objects_Id_seq" OWNED BY public."Objects"."Id";
 
 
 --
--- TOC entry 269 (class 1259 OID 17761)
+-- TOC entry 270 (class 1259 OID 20405)
 -- Name: OrderStates; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1091,7 +1110,7 @@ CREATE TABLE public."OrderStates" (
 ALTER TABLE public."OrderStates" OWNER TO postgres;
 
 --
--- TOC entry 268 (class 1259 OID 17759)
+-- TOC entry 269 (class 1259 OID 20403)
 -- Name: OrderStates_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1107,8 +1126,8 @@ CREATE SEQUENCE public."OrderStates_Id_seq"
 ALTER TABLE public."OrderStates_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3545 (class 0 OID 0)
--- Dependencies: 268
+-- TOC entry 3557 (class 0 OID 0)
+-- Dependencies: 269
 -- Name: OrderStates_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -1116,7 +1135,7 @@ ALTER SEQUENCE public."OrderStates_Id_seq" OWNED BY public."OrderStates"."Id";
 
 
 --
--- TOC entry 277 (class 1259 OID 17820)
+-- TOC entry 278 (class 1259 OID 20464)
 -- Name: Orders; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1138,7 +1157,7 @@ CREATE TABLE public."Orders" (
 ALTER TABLE public."Orders" OWNER TO postgres;
 
 --
--- TOC entry 276 (class 1259 OID 17818)
+-- TOC entry 277 (class 1259 OID 20462)
 -- Name: Orders_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1154,8 +1173,8 @@ CREATE SEQUENCE public."Orders_Id_seq"
 ALTER TABLE public."Orders_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3546 (class 0 OID 0)
--- Dependencies: 276
+-- TOC entry 3558 (class 0 OID 0)
+-- Dependencies: 277
 -- Name: Orders_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -1163,7 +1182,7 @@ ALTER SEQUENCE public."Orders_Id_seq" OWNED BY public."Orders"."Id";
 
 
 --
--- TOC entry 271 (class 1259 OID 17777)
+-- TOC entry 272 (class 1259 OID 20421)
 -- Name: PaymentMethods; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1178,7 +1197,7 @@ CREATE TABLE public."PaymentMethods" (
 ALTER TABLE public."PaymentMethods" OWNER TO postgres;
 
 --
--- TOC entry 270 (class 1259 OID 17775)
+-- TOC entry 271 (class 1259 OID 20419)
 -- Name: PaymentMethods_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1194,8 +1213,8 @@ CREATE SEQUENCE public."PaymentMethods_Id_seq"
 ALTER TABLE public."PaymentMethods_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3547 (class 0 OID 0)
--- Dependencies: 270
+-- TOC entry 3559 (class 0 OID 0)
+-- Dependencies: 271
 -- Name: PaymentMethods_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -1203,7 +1222,7 @@ ALTER SEQUENCE public."PaymentMethods_Id_seq" OWNED BY public."PaymentMethods"."
 
 
 --
--- TOC entry 210 (class 1259 OID 17210)
+-- TOC entry 211 (class 1259 OID 19834)
 -- Name: Permissions; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1218,7 +1237,7 @@ CREATE TABLE public."Permissions" (
 ALTER TABLE public."Permissions" OWNER TO postgres;
 
 --
--- TOC entry 209 (class 1259 OID 17208)
+-- TOC entry 210 (class 1259 OID 19832)
 -- Name: Permissions_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1234,8 +1253,8 @@ CREATE SEQUENCE public."Permissions_Id_seq"
 ALTER TABLE public."Permissions_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3548 (class 0 OID 0)
--- Dependencies: 209
+-- TOC entry 3560 (class 0 OID 0)
+-- Dependencies: 210
 -- Name: Permissions_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -1243,7 +1262,7 @@ ALTER SEQUENCE public."Permissions_Id_seq" OWNED BY public."Permissions"."Id";
 
 
 --
--- TOC entry 267 (class 1259 OID 17745)
+-- TOC entry 268 (class 1259 OID 20389)
 -- Name: Photos; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1259,7 +1278,7 @@ CREATE TABLE public."Photos" (
 ALTER TABLE public."Photos" OWNER TO postgres;
 
 --
--- TOC entry 266 (class 1259 OID 17743)
+-- TOC entry 267 (class 1259 OID 20387)
 -- Name: Photos_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1275,8 +1294,8 @@ CREATE SEQUENCE public."Photos_Id_seq"
 ALTER TABLE public."Photos_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3549 (class 0 OID 0)
--- Dependencies: 266
+-- TOC entry 3561 (class 0 OID 0)
+-- Dependencies: 267
 -- Name: Photos_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -1284,7 +1303,7 @@ ALTER SEQUENCE public."Photos_Id_seq" OWNED BY public."Photos"."Id";
 
 
 --
--- TOC entry 279 (class 1259 OID 17846)
+-- TOC entry 280 (class 1259 OID 20490)
 -- Name: Positions; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1302,7 +1321,7 @@ CREATE TABLE public."Positions" (
 ALTER TABLE public."Positions" OWNER TO postgres;
 
 --
--- TOC entry 278 (class 1259 OID 17844)
+-- TOC entry 279 (class 1259 OID 20488)
 -- Name: Positions_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1318,8 +1337,8 @@ CREATE SEQUENCE public."Positions_Id_seq"
 ALTER TABLE public."Positions_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3550 (class 0 OID 0)
--- Dependencies: 278
+-- TOC entry 3562 (class 0 OID 0)
+-- Dependencies: 279
 -- Name: Positions_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -1327,7 +1346,7 @@ ALTER SEQUENCE public."Positions_Id_seq" OWNED BY public."Positions"."Id";
 
 
 --
--- TOC entry 265 (class 1259 OID 17699)
+-- TOC entry 266 (class 1259 OID 20343)
 -- Name: Products; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1349,7 +1368,7 @@ CREATE TABLE public."Products" (
 ALTER TABLE public."Products" OWNER TO postgres;
 
 --
--- TOC entry 264 (class 1259 OID 17697)
+-- TOC entry 265 (class 1259 OID 20341)
 -- Name: Products_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1365,8 +1384,8 @@ CREATE SEQUENCE public."Products_Id_seq"
 ALTER TABLE public."Products_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3551 (class 0 OID 0)
--- Dependencies: 264
+-- TOC entry 3563 (class 0 OID 0)
+-- Dependencies: 265
 -- Name: Products_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -1374,7 +1393,7 @@ ALTER SEQUENCE public."Products_Id_seq" OWNED BY public."Products"."Id";
 
 
 --
--- TOC entry 241 (class 1259 OID 17466)
+-- TOC entry 242 (class 1259 OID 20090)
 -- Name: Properties; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1392,7 +1411,7 @@ CREATE TABLE public."Properties" (
 ALTER TABLE public."Properties" OWNER TO postgres;
 
 --
--- TOC entry 240 (class 1259 OID 17464)
+-- TOC entry 241 (class 1259 OID 20088)
 -- Name: Properties_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1408,8 +1427,8 @@ CREATE SEQUENCE public."Properties_Id_seq"
 ALTER TABLE public."Properties_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3552 (class 0 OID 0)
--- Dependencies: 240
+-- TOC entry 3564 (class 0 OID 0)
+-- Dependencies: 241
 -- Name: Properties_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -1417,7 +1436,7 @@ ALTER SEQUENCE public."Properties_Id_seq" OWNED BY public."Properties"."Id";
 
 
 --
--- TOC entry 243 (class 1259 OID 17492)
+-- TOC entry 244 (class 1259 OID 20116)
 -- Name: Relations; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1432,7 +1451,7 @@ CREATE TABLE public."Relations" (
 ALTER TABLE public."Relations" OWNER TO postgres;
 
 --
--- TOC entry 242 (class 1259 OID 17490)
+-- TOC entry 243 (class 1259 OID 20114)
 -- Name: Relations_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1448,8 +1467,8 @@ CREATE SEQUENCE public."Relations_Id_seq"
 ALTER TABLE public."Relations_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3553 (class 0 OID 0)
--- Dependencies: 242
+-- TOC entry 3565 (class 0 OID 0)
+-- Dependencies: 243
 -- Name: Relations_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -1457,7 +1476,7 @@ ALTER SEQUENCE public."Relations_Id_seq" OWNED BY public."Relations"."Id";
 
 
 --
--- TOC entry 211 (class 1259 OID 17219)
+-- TOC entry 212 (class 1259 OID 19843)
 -- Name: RolePermissions; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1470,7 +1489,7 @@ CREATE TABLE public."RolePermissions" (
 ALTER TABLE public."RolePermissions" OWNER TO postgres;
 
 --
--- TOC entry 207 (class 1259 OID 17184)
+-- TOC entry 208 (class 1259 OID 19808)
 -- Name: Roles; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1485,7 +1504,7 @@ CREATE TABLE public."Roles" (
 ALTER TABLE public."Roles" OWNER TO postgres;
 
 --
--- TOC entry 206 (class 1259 OID 17182)
+-- TOC entry 207 (class 1259 OID 19806)
 -- Name: Roles_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1501,8 +1520,8 @@ CREATE SEQUENCE public."Roles_Id_seq"
 ALTER TABLE public."Roles_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3554 (class 0 OID 0)
--- Dependencies: 206
+-- TOC entry 3566 (class 0 OID 0)
+-- Dependencies: 207
 -- Name: Roles_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -1510,7 +1529,7 @@ ALTER SEQUENCE public."Roles_Id_seq" OWNED BY public."Roles"."Id";
 
 
 --
--- TOC entry 229 (class 1259 OID 17358)
+-- TOC entry 230 (class 1259 OID 19982)
 -- Name: Tabs; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1525,7 +1544,7 @@ CREATE TABLE public."Tabs" (
 ALTER TABLE public."Tabs" OWNER TO postgres;
 
 --
--- TOC entry 228 (class 1259 OID 17356)
+-- TOC entry 229 (class 1259 OID 19980)
 -- Name: Tabs_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1541,8 +1560,8 @@ CREATE SEQUENCE public."Tabs_Id_seq"
 ALTER TABLE public."Tabs_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3555 (class 0 OID 0)
--- Dependencies: 228
+-- TOC entry 3567 (class 0 OID 0)
+-- Dependencies: 229
 -- Name: Tabs_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -1550,7 +1569,7 @@ ALTER SEQUENCE public."Tabs_Id_seq" OWNED BY public."Tabs"."Id";
 
 
 --
--- TOC entry 208 (class 1259 OID 17193)
+-- TOC entry 209 (class 1259 OID 19817)
 -- Name: UserRoles; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1563,7 +1582,7 @@ CREATE TABLE public."UserRoles" (
 ALTER TABLE public."UserRoles" OWNER TO postgres;
 
 --
--- TOC entry 201 (class 1259 OID 17141)
+-- TOC entry 202 (class 1259 OID 19765)
 -- Name: Users; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1577,7 +1596,7 @@ CREATE TABLE public."Users" (
 ALTER TABLE public."Users" OWNER TO postgres;
 
 --
--- TOC entry 200 (class 1259 OID 17139)
+-- TOC entry 201 (class 1259 OID 19763)
 -- Name: Users_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1593,8 +1612,8 @@ CREATE SEQUENCE public."Users_Id_seq"
 ALTER TABLE public."Users_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3556 (class 0 OID 0)
--- Dependencies: 200
+-- TOC entry 3568 (class 0 OID 0)
+-- Dependencies: 201
 -- Name: Users_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -1602,7 +1621,7 @@ ALTER SEQUENCE public."Users_Id_seq" OWNED BY public."Users"."Id";
 
 
 --
--- TOC entry 215 (class 1259 OID 17247)
+-- TOC entry 216 (class 1259 OID 19871)
 -- Name: Variables; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1619,7 +1638,7 @@ CREATE TABLE public."Variables" (
 ALTER TABLE public."Variables" OWNER TO postgres;
 
 --
--- TOC entry 214 (class 1259 OID 17245)
+-- TOC entry 215 (class 1259 OID 19869)
 -- Name: Variables_Id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1635,8 +1654,8 @@ CREATE SEQUENCE public."Variables_Id_seq"
 ALTER TABLE public."Variables_Id_seq" OWNER TO postgres;
 
 --
--- TOC entry 3557 (class 0 OID 0)
--- Dependencies: 214
+-- TOC entry 3569 (class 0 OID 0)
+-- Dependencies: 215
 -- Name: Variables_Id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -1644,7 +1663,7 @@ ALTER SEQUENCE public."Variables_Id_seq" OWNED BY public."Variables"."Id";
 
 
 --
--- TOC entry 3157 (class 2604 OID 17812)
+-- TOC entry 3162 (class 2604 OID 20456)
 -- Name: Carts Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1652,7 +1671,7 @@ ALTER TABLE ONLY public."Carts" ALTER COLUMN "Id" SET DEFAULT nextval('public."C
 
 
 --
--- TOC entry 3151 (class 2604 OID 17681)
+-- TOC entry 3156 (class 2604 OID 20305)
 -- Name: Categories Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1660,7 +1679,7 @@ ALTER TABLE ONLY public."Categories" ALTER COLUMN "Id" SET DEFAULT nextval('publ
 
 
 --
--- TOC entry 3133 (class 2604 OID 17345)
+-- TOC entry 3138 (class 2604 OID 19969)
 -- Name: Classes Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1668,7 +1687,7 @@ ALTER TABLE ONLY public."Classes" ALTER COLUMN "Id" SET DEFAULT nextval('public.
 
 
 --
--- TOC entry 3149 (class 2604 OID 17649)
+-- TOC entry 3154 (class 2604 OID 20273)
 -- Name: CompletedFields Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1676,7 +1695,7 @@ ALTER TABLE ONLY public."CompletedFields" ALTER COLUMN "Id" SET DEFAULT nextval(
 
 
 --
--- TOC entry 3148 (class 2604 OID 17636)
+-- TOC entry 3153 (class 2604 OID 20260)
 -- Name: CompletedForms Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1684,7 +1703,7 @@ ALTER TABLE ONLY public."CompletedForms" ALTER COLUMN "Id" SET DEFAULT nextval('
 
 
 --
--- TOC entry 3127 (class 2604 OID 17239)
+-- TOC entry 3132 (class 2604 OID 19863)
 -- Name: Configurations Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1692,7 +1711,7 @@ ALTER TABLE ONLY public."Configurations" ALTER COLUMN "Id" SET DEFAULT nextval('
 
 
 --
--- TOC entry 3123 (class 2604 OID 17155)
+-- TOC entry 3128 (class 2604 OID 19779)
 -- Name: CredentialTypes Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1700,7 +1719,7 @@ ALTER TABLE ONLY public."CredentialTypes" ALTER COLUMN "Id" SET DEFAULT nextval(
 
 
 --
--- TOC entry 3124 (class 2604 OID 17166)
+-- TOC entry 3129 (class 2604 OID 19790)
 -- Name: Credentials Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1708,7 +1727,7 @@ ALTER TABLE ONLY public."Credentials" ALTER COLUMN "Id" SET DEFAULT nextval('pub
 
 
 --
--- TOC entry 3132 (class 2604 OID 17329)
+-- TOC entry 3137 (class 2604 OID 19953)
 -- Name: DataSources Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1716,7 +1735,7 @@ ALTER TABLE ONLY public."DataSources" ALTER COLUMN "Id" SET DEFAULT nextval('pub
 
 
 --
--- TOC entry 3138 (class 2604 OID 17435)
+-- TOC entry 3143 (class 2604 OID 20059)
 -- Name: DataTypeParameterValues Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1724,7 +1743,7 @@ ALTER TABLE ONLY public."DataTypeParameterValues" ALTER COLUMN "Id" SET DEFAULT 
 
 
 --
--- TOC entry 3136 (class 2604 OID 17388)
+-- TOC entry 3141 (class 2604 OID 20012)
 -- Name: DataTypeParameters Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1732,7 +1751,7 @@ ALTER TABLE ONLY public."DataTypeParameters" ALTER COLUMN "Id" SET DEFAULT nextv
 
 
 --
--- TOC entry 3135 (class 2604 OID 17377)
+-- TOC entry 3140 (class 2604 OID 20001)
 -- Name: DataTypes Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1740,7 +1759,7 @@ ALTER TABLE ONLY public."DataTypes" ALTER COLUMN "Id" SET DEFAULT nextval('publi
 
 
 --
--- TOC entry 3156 (class 2604 OID 17796)
+-- TOC entry 3161 (class 2604 OID 20440)
 -- Name: DeliveryMethods Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1748,7 +1767,7 @@ ALTER TABLE ONLY public."DeliveryMethods" ALTER COLUMN "Id" SET DEFAULT nextval(
 
 
 --
--- TOC entry 3129 (class 2604 OID 17274)
+-- TOC entry 3134 (class 2604 OID 19898)
 -- Name: Dictionaries Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1756,7 +1775,7 @@ ALTER TABLE ONLY public."Dictionaries" ALTER COLUMN "Id" SET DEFAULT nextval('pu
 
 
 --
--- TOC entry 3131 (class 2604 OID 17303)
+-- TOC entry 3136 (class 2604 OID 19927)
 -- Name: Endpoints Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1764,7 +1783,7 @@ ALTER TABLE ONLY public."Endpoints" ALTER COLUMN "Id" SET DEFAULT nextval('publi
 
 
 --
--- TOC entry 3147 (class 2604 OID 17618)
+-- TOC entry 3152 (class 2604 OID 20242)
 -- Name: FieldOptions Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1772,7 +1791,7 @@ ALTER TABLE ONLY public."FieldOptions" ALTER COLUMN "Id" SET DEFAULT nextval('pu
 
 
 --
--- TOC entry 3145 (class 2604 OID 17581)
+-- TOC entry 3150 (class 2604 OID 20205)
 -- Name: FieldTypes Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1780,7 +1799,7 @@ ALTER TABLE ONLY public."FieldTypes" ALTER COLUMN "Id" SET DEFAULT nextval('publ
 
 
 --
--- TOC entry 3146 (class 2604 OID 17592)
+-- TOC entry 3151 (class 2604 OID 20216)
 -- Name: Fields Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1788,7 +1807,7 @@ ALTER TABLE ONLY public."Fields" ALTER COLUMN "Id" SET DEFAULT nextval('public."
 
 
 --
--- TOC entry 3150 (class 2604 OID 17670)
+-- TOC entry 3155 (class 2604 OID 20294)
 -- Name: Files Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1796,7 +1815,7 @@ ALTER TABLE ONLY public."Files" ALTER COLUMN "Id" SET DEFAULT nextval('public."F
 
 
 --
--- TOC entry 3144 (class 2604 OID 17560)
+-- TOC entry 3149 (class 2604 OID 20184)
 -- Name: Forms Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1804,7 +1823,7 @@ ALTER TABLE ONLY public."Forms" ALTER COLUMN "Id" SET DEFAULT nextval('public."F
 
 
 --
--- TOC entry 3130 (class 2604 OID 17282)
+-- TOC entry 3135 (class 2604 OID 19906)
 -- Name: Localizations Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1812,7 +1831,7 @@ ALTER TABLE ONLY public."Localizations" ALTER COLUMN "Id" SET DEFAULT nextval('p
 
 
 --
--- TOC entry 3137 (class 2604 OID 17404)
+-- TOC entry 3142 (class 2604 OID 20028)
 -- Name: Members Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1820,7 +1839,7 @@ ALTER TABLE ONLY public."Members" ALTER COLUMN "Id" SET DEFAULT nextval('public.
 
 
 --
--- TOC entry 3143 (class 2604 OID 17534)
+-- TOC entry 3148 (class 2604 OID 20158)
 -- Name: MenuItems Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1828,7 +1847,7 @@ ALTER TABLE ONLY public."MenuItems" ALTER COLUMN "Id" SET DEFAULT nextval('publi
 
 
 --
--- TOC entry 3142 (class 2604 OID 17518)
+-- TOC entry 3147 (class 2604 OID 20142)
 -- Name: Menus Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1836,7 +1855,7 @@ ALTER TABLE ONLY public."Menus" ALTER COLUMN "Id" SET DEFAULT nextval('public."M
 
 
 --
--- TOC entry 3139 (class 2604 OID 17456)
+-- TOC entry 3144 (class 2604 OID 20080)
 -- Name: Objects Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1844,7 +1863,7 @@ ALTER TABLE ONLY public."Objects" ALTER COLUMN "Id" SET DEFAULT nextval('public.
 
 
 --
--- TOC entry 3154 (class 2604 OID 17764)
+-- TOC entry 3159 (class 2604 OID 20408)
 -- Name: OrderStates Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1852,7 +1871,7 @@ ALTER TABLE ONLY public."OrderStates" ALTER COLUMN "Id" SET DEFAULT nextval('pub
 
 
 --
--- TOC entry 3158 (class 2604 OID 17823)
+-- TOC entry 3163 (class 2604 OID 20467)
 -- Name: Orders Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1860,7 +1879,7 @@ ALTER TABLE ONLY public."Orders" ALTER COLUMN "Id" SET DEFAULT nextval('public."
 
 
 --
--- TOC entry 3155 (class 2604 OID 17780)
+-- TOC entry 3160 (class 2604 OID 20424)
 -- Name: PaymentMethods Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1868,7 +1887,7 @@ ALTER TABLE ONLY public."PaymentMethods" ALTER COLUMN "Id" SET DEFAULT nextval('
 
 
 --
--- TOC entry 3126 (class 2604 OID 17213)
+-- TOC entry 3131 (class 2604 OID 19837)
 -- Name: Permissions Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1876,7 +1895,7 @@ ALTER TABLE ONLY public."Permissions" ALTER COLUMN "Id" SET DEFAULT nextval('pub
 
 
 --
--- TOC entry 3153 (class 2604 OID 17748)
+-- TOC entry 3158 (class 2604 OID 20392)
 -- Name: Photos Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1884,7 +1903,7 @@ ALTER TABLE ONLY public."Photos" ALTER COLUMN "Id" SET DEFAULT nextval('public."
 
 
 --
--- TOC entry 3159 (class 2604 OID 17849)
+-- TOC entry 3164 (class 2604 OID 20493)
 -- Name: Positions Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1892,7 +1911,7 @@ ALTER TABLE ONLY public."Positions" ALTER COLUMN "Id" SET DEFAULT nextval('publi
 
 
 --
--- TOC entry 3152 (class 2604 OID 17702)
+-- TOC entry 3157 (class 2604 OID 20346)
 -- Name: Products Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1900,7 +1919,7 @@ ALTER TABLE ONLY public."Products" ALTER COLUMN "Id" SET DEFAULT nextval('public
 
 
 --
--- TOC entry 3140 (class 2604 OID 17469)
+-- TOC entry 3145 (class 2604 OID 20093)
 -- Name: Properties Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1908,7 +1927,7 @@ ALTER TABLE ONLY public."Properties" ALTER COLUMN "Id" SET DEFAULT nextval('publ
 
 
 --
--- TOC entry 3141 (class 2604 OID 17495)
+-- TOC entry 3146 (class 2604 OID 20119)
 -- Name: Relations Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1916,7 +1935,7 @@ ALTER TABLE ONLY public."Relations" ALTER COLUMN "Id" SET DEFAULT nextval('publi
 
 
 --
--- TOC entry 3125 (class 2604 OID 17187)
+-- TOC entry 3130 (class 2604 OID 19811)
 -- Name: Roles Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1924,7 +1943,7 @@ ALTER TABLE ONLY public."Roles" ALTER COLUMN "Id" SET DEFAULT nextval('public."R
 
 
 --
--- TOC entry 3134 (class 2604 OID 17361)
+-- TOC entry 3139 (class 2604 OID 19985)
 -- Name: Tabs Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1932,7 +1951,7 @@ ALTER TABLE ONLY public."Tabs" ALTER COLUMN "Id" SET DEFAULT nextval('public."Ta
 
 
 --
--- TOC entry 3122 (class 2604 OID 17144)
+-- TOC entry 3127 (class 2604 OID 19768)
 -- Name: Users Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1940,7 +1959,7 @@ ALTER TABLE ONLY public."Users" ALTER COLUMN "Id" SET DEFAULT nextval('public."U
 
 
 --
--- TOC entry 3128 (class 2604 OID 17250)
+-- TOC entry 3133 (class 2604 OID 19874)
 -- Name: Variables Id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1948,27 +1967,27 @@ ALTER TABLE ONLY public."Variables" ALTER COLUMN "Id" SET DEFAULT nextval('publi
 
 
 --
--- TOC entry 3510 (class 0 OID 17809)
--- Dependencies: 275
+-- TOC entry 3522 (class 0 OID 20453)
+-- Dependencies: 276
 -- Data for Name: Carts; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 3498 (class 0 OID 17678)
--- Dependencies: 263
+-- TOC entry 3510 (class 0 OID 20302)
+-- Dependencies: 264
 -- Data for Name: Categories; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public."Categories" ("Id", "CategoryId", "Url", "NameId", "CSharpClassName", "Parameters", "Position") VALUES (1, NULL, '/pizza', 11, 'Platformus.ECommerce.ProductProviders.DefaultProductProvider', NULL, 10);
-INSERT INTO public."Categories" ("Id", "CategoryId", "Url", "NameId", "CSharpClassName", "Parameters", "Position") VALUES (2, NULL, '/panini', 12, 'Platformus.ECommerce.ProductProviders.DefaultProductProvider', NULL, 20);
-INSERT INTO public."Categories" ("Id", "CategoryId", "Url", "NameId", "CSharpClassName", "Parameters", "Position") VALUES (3, NULL, '/drinks', 13, 'Platformus.ECommerce.ProductProviders.DefaultProductProvider', NULL, 30);
+INSERT INTO public."Categories" ("Id", "CategoryId", "Url", "NameId", "DescriptionId", "Position", "TitleId", "MetaDescriptionId", "MetaKeywordsId", "ProductProviderCSharpClassName", "ProductProviderParameters") VALUES (1, NULL, '/pizza', 14, 12, 10, 15, 11, 13, 'Platformus.ECommerce.ProductProviders.DefaultProductProvider', NULL);
+INSERT INTO public."Categories" ("Id", "CategoryId", "Url", "NameId", "DescriptionId", "Position", "TitleId", "MetaDescriptionId", "MetaKeywordsId", "ProductProviderCSharpClassName", "ProductProviderParameters") VALUES (2, NULL, '/panini', 17, 20, 20, 16, 19, 18, 'Platformus.ECommerce.ProductProviders.DefaultProductProvider', NULL);
+INSERT INTO public."Categories" ("Id", "CategoryId", "Url", "NameId", "DescriptionId", "Position", "TitleId", "MetaDescriptionId", "MetaKeywordsId", "ProductProviderCSharpClassName", "ProductProviderParameters") VALUES (3, NULL, '/drinks', 22, 25, 30, 21, 24, 23, 'Platformus.ECommerce.ProductProviders.DefaultProductProvider', NULL);
 
 
 --
--- TOC entry 3462 (class 0 OID 17342)
--- Dependencies: 227
+-- TOC entry 3474 (class 0 OID 19966)
+-- Dependencies: 228
 -- Data for Name: Classes; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -1977,24 +1996,24 @@ INSERT INTO public."Classes" ("Id", "ClassId", "Code", "Name", "PluralizedName",
 
 
 --
--- TOC entry 3494 (class 0 OID 17646)
--- Dependencies: 259
+-- TOC entry 3506 (class 0 OID 20270)
+-- Dependencies: 260
 -- Data for Name: CompletedFields; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 3492 (class 0 OID 17633)
--- Dependencies: 257
+-- TOC entry 3504 (class 0 OID 20257)
+-- Dependencies: 258
 -- Data for Name: CompletedForms; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 3448 (class 0 OID 17236)
--- Dependencies: 213
+-- TOC entry 3460 (class 0 OID 19860)
+-- Dependencies: 214
 -- Data for Name: Configurations; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2003,8 +2022,8 @@ INSERT INTO public."Configurations" ("Id", "Code", "Name") VALUES (2, 'Globaliza
 
 
 --
--- TOC entry 3438 (class 0 OID 17152)
--- Dependencies: 203
+-- TOC entry 3450 (class 0 OID 19776)
+-- Dependencies: 204
 -- Data for Name: CredentialTypes; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2012,8 +2031,8 @@ INSERT INTO public."CredentialTypes" ("Id", "Code", "Name", "Position") VALUES (
 
 
 --
--- TOC entry 3440 (class 0 OID 17163)
--- Dependencies: 205
+-- TOC entry 3452 (class 0 OID 19787)
+-- Dependencies: 206
 -- Data for Name: Credentials; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2021,8 +2040,8 @@ INSERT INTO public."Credentials" ("Id", "UserId", "CredentialTypeId", "Identifie
 
 
 --
--- TOC entry 3451 (class 0 OID 17261)
--- Dependencies: 216
+-- TOC entry 3463 (class 0 OID 19885)
+-- Dependencies: 217
 -- Data for Name: Cultures; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2033,20 +2052,19 @@ INSERT INTO public."Cultures" ("Id", "Name", "IsNeutral", "IsFrontendDefault", "
 
 
 --
--- TOC entry 3460 (class 0 OID 17326)
--- Dependencies: 225
+-- TOC entry 3472 (class 0 OID 19950)
+-- Dependencies: 226
 -- Data for Name: DataSources; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public."DataSources" ("Id", "EndpointId", "Code", "CSharpClassName", "Parameters") VALUES (1, 1, 'Page', 'Platformus.Website.Frontend.DataSources.PageObjectDataSource', NULL);
-INSERT INTO public."DataSources" ("Id", "EndpointId", "Code", "CSharpClassName", "Parameters") VALUES (2, 2, 'Page', 'Platformus.Website.Frontend.DataSources.PageObjectDataSource', NULL);
-INSERT INTO public."DataSources" ("Id", "EndpointId", "Code", "CSharpClassName", "Parameters") VALUES (3, 3, 'Page', 'Platformus.Website.Frontend.DataSources.PageObjectDataSource', NULL);
-INSERT INTO public."DataSources" ("Id", "EndpointId", "Code", "CSharpClassName", "Parameters") VALUES (4, 4, 'Page', 'Platformus.Website.Frontend.DataSources.PageObjectDataSource', NULL);
+INSERT INTO public."DataSources" ("Id", "EndpointId", "Code", "DataProviderCSharpClassName", "DataProviderParameters") VALUES (1, 1, 'Page', 'Platformus.Website.Frontend.DataProviders.PageObjectDataProvider', NULL);
+INSERT INTO public."DataSources" ("Id", "EndpointId", "Code", "DataProviderCSharpClassName", "DataProviderParameters") VALUES (2, 2, 'Page', 'Platformus.Website.Frontend.DataProviders.PageObjectDataProvider', NULL);
+INSERT INTO public."DataSources" ("Id", "EndpointId", "Code", "DataProviderCSharpClassName", "DataProviderParameters") VALUES (3, 3, 'Page', 'Platformus.Website.Frontend.DataProviders.PageObjectDataProvider', NULL);
 
 
 --
--- TOC entry 3472 (class 0 OID 17432)
--- Dependencies: 237
+-- TOC entry 3484 (class 0 OID 20056)
+-- Dependencies: 238
 -- Data for Name: DataTypeParameterValues; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2061,8 +2079,8 @@ INSERT INTO public."DataTypeParameterValues" ("Id", "DataTypeParameterId", "Memb
 
 
 --
--- TOC entry 3468 (class 0 OID 17385)
--- Dependencies: 233
+-- TOC entry 3480 (class 0 OID 20009)
+-- Dependencies: 234
 -- Data for Name: DataTypeParameters; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2070,15 +2088,21 @@ INSERT INTO public."DataTypeParameters" ("Id", "DataTypeId", "JavaScriptEditorCl
 INSERT INTO public."DataTypeParameters" ("Id", "DataTypeId", "JavaScriptEditorClassName", "Code", "Name") VALUES (2, 1, 'numericTextBox', 'MaxLength', 'Max length');
 INSERT INTO public."DataTypeParameters" ("Id", "DataTypeId", "JavaScriptEditorClassName", "Code", "Name") VALUES (3, 2, 'checkbox', 'IsRequired', 'Is required');
 INSERT INTO public."DataTypeParameters" ("Id", "DataTypeId", "JavaScriptEditorClassName", "Code", "Name") VALUES (4, 2, 'numericTextBox', 'MaxLength', 'Max length');
-INSERT INTO public."DataTypeParameters" ("Id", "DataTypeId", "JavaScriptEditorClassName", "Code", "Name") VALUES (5, 7, 'checkbox', 'IsRequired', 'Is required');
-INSERT INTO public."DataTypeParameters" ("Id", "DataTypeId", "JavaScriptEditorClassName", "Code", "Name") VALUES (6, 8, 'numericTextBox', 'Width', 'Width');
-INSERT INTO public."DataTypeParameters" ("Id", "DataTypeId", "JavaScriptEditorClassName", "Code", "Name") VALUES (7, 8, 'numericTextBox', 'Height', 'Height');
-INSERT INTO public."DataTypeParameters" ("Id", "DataTypeId", "JavaScriptEditorClassName", "Code", "Name") VALUES (8, 9, 'textBox', 'Mode', 'Mode');
+INSERT INTO public."DataTypeParameters" ("Id", "DataTypeId", "JavaScriptEditorClassName", "Code", "Name") VALUES (5, 4, 'checkbox', 'IsRequired', 'Is required');
+INSERT INTO public."DataTypeParameters" ("Id", "DataTypeId", "JavaScriptEditorClassName", "Code", "Name") VALUES (6, 4, 'numericTextBox', 'MinValue', 'Min value');
+INSERT INTO public."DataTypeParameters" ("Id", "DataTypeId", "JavaScriptEditorClassName", "Code", "Name") VALUES (7, 4, 'numericTextBox', 'MaxValue', 'Max value');
+INSERT INTO public."DataTypeParameters" ("Id", "DataTypeId", "JavaScriptEditorClassName", "Code", "Name") VALUES (8, 5, 'checkbox', 'IsRequired', 'Is required');
+INSERT INTO public."DataTypeParameters" ("Id", "DataTypeId", "JavaScriptEditorClassName", "Code", "Name") VALUES (9, 5, 'numericTextBox', 'MinValue', 'Min value');
+INSERT INTO public."DataTypeParameters" ("Id", "DataTypeId", "JavaScriptEditorClassName", "Code", "Name") VALUES (10, 5, 'numericTextBox', 'MaxValue', 'Max value');
+INSERT INTO public."DataTypeParameters" ("Id", "DataTypeId", "JavaScriptEditorClassName", "Code", "Name") VALUES (11, 7, 'checkbox', 'IsRequired', 'Is required');
+INSERT INTO public."DataTypeParameters" ("Id", "DataTypeId", "JavaScriptEditorClassName", "Code", "Name") VALUES (12, 8, 'numericTextBox', 'Width', 'Width');
+INSERT INTO public."DataTypeParameters" ("Id", "DataTypeId", "JavaScriptEditorClassName", "Code", "Name") VALUES (13, 8, 'numericTextBox', 'Height', 'Height');
+INSERT INTO public."DataTypeParameters" ("Id", "DataTypeId", "JavaScriptEditorClassName", "Code", "Name") VALUES (14, 9, 'textBox', 'Mode', 'Mode');
 
 
 --
--- TOC entry 3466 (class 0 OID 17374)
--- Dependencies: 231
+-- TOC entry 3478 (class 0 OID 19998)
+-- Dependencies: 232
 -- Data for Name: DataTypes; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2089,24 +2113,25 @@ INSERT INTO public."DataTypes" ("Id", "StorageDataType", "JavaScriptEditorClassN
 INSERT INTO public."DataTypes" ("Id", "StorageDataType", "JavaScriptEditorClassName", "Name", "Position") VALUES (5, 'decimal', 'decimalNumber', 'Decimal number', 5);
 INSERT INTO public."DataTypes" ("Id", "StorageDataType", "JavaScriptEditorClassName", "Name", "Position") VALUES (6, 'integer', 'booleanFlag', 'Boolean flag', 6);
 INSERT INTO public."DataTypes" ("Id", "StorageDataType", "JavaScriptEditorClassName", "Name", "Position") VALUES (7, 'datetime', 'date', 'Date', 7);
-INSERT INTO public."DataTypes" ("Id", "StorageDataType", "JavaScriptEditorClassName", "Name", "Position") VALUES (8, 'string', 'image', 'Image', 8);
-INSERT INTO public."DataTypes" ("Id", "StorageDataType", "JavaScriptEditorClassName", "Name", "Position") VALUES (9, 'string', 'sourceCode', 'Source code', 9);
+INSERT INTO public."DataTypes" ("Id", "StorageDataType", "JavaScriptEditorClassName", "Name", "Position") VALUES (8, 'datetime', 'dateTime', 'DateTime', 8);
+INSERT INTO public."DataTypes" ("Id", "StorageDataType", "JavaScriptEditorClassName", "Name", "Position") VALUES (9, 'string', 'image', 'Image', 9);
+INSERT INTO public."DataTypes" ("Id", "StorageDataType", "JavaScriptEditorClassName", "Name", "Position") VALUES (10, 'string', 'sourceCode', 'Source code', 10);
 
 
 --
--- TOC entry 3508 (class 0 OID 17793)
--- Dependencies: 273
+-- TOC entry 3520 (class 0 OID 20437)
+-- Dependencies: 274
 -- Data for Name: DeliveryMethods; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public."DeliveryMethods" ("Id", "Code", "NameId", "Position") VALUES (1, 'NotSet', 113, 10);
-INSERT INTO public."DeliveryMethods" ("Id", "Code", "NameId", "Position") VALUES (2, 'Pickup', 114, 20);
-INSERT INTO public."DeliveryMethods" ("Id", "Code", "NameId", "Position") VALUES (3, 'Courier', 115, 30);
+INSERT INTO public."DeliveryMethods" ("Id", "Code", "NameId", "Position") VALUES (1, 'NotSet', 125, 10);
+INSERT INTO public."DeliveryMethods" ("Id", "Code", "NameId", "Position") VALUES (2, 'Pickup', 126, 20);
+INSERT INTO public."DeliveryMethods" ("Id", "Code", "NameId", "Position") VALUES (3, 'Courier', 127, 30);
 
 
 --
--- TOC entry 3453 (class 0 OID 17271)
--- Dependencies: 218
+-- TOC entry 3465 (class 0 OID 19895)
+-- Dependencies: 219
 -- Data for Name: Dictionaries; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2245,39 +2270,50 @@ INSERT INTO public."Dictionaries" ("Id") VALUES (132);
 INSERT INTO public."Dictionaries" ("Id") VALUES (133);
 INSERT INTO public."Dictionaries" ("Id") VALUES (134);
 INSERT INTO public."Dictionaries" ("Id") VALUES (135);
+INSERT INTO public."Dictionaries" ("Id") VALUES (136);
+INSERT INTO public."Dictionaries" ("Id") VALUES (137);
+INSERT INTO public."Dictionaries" ("Id") VALUES (138);
+INSERT INTO public."Dictionaries" ("Id") VALUES (139);
+INSERT INTO public."Dictionaries" ("Id") VALUES (140);
+INSERT INTO public."Dictionaries" ("Id") VALUES (141);
+INSERT INTO public."Dictionaries" ("Id") VALUES (142);
+INSERT INTO public."Dictionaries" ("Id") VALUES (143);
+INSERT INTO public."Dictionaries" ("Id") VALUES (144);
+INSERT INTO public."Dictionaries" ("Id") VALUES (145);
+INSERT INTO public."Dictionaries" ("Id") VALUES (146);
+INSERT INTO public."Dictionaries" ("Id") VALUES (147);
 
 
 --
--- TOC entry 3458 (class 0 OID 17309)
--- Dependencies: 223
+-- TOC entry 3470 (class 0 OID 19933)
+-- Dependencies: 224
 -- Data for Name: EndpointPermissions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 3457 (class 0 OID 17300)
--- Dependencies: 222
+-- TOC entry 3469 (class 0 OID 19924)
+-- Dependencies: 223
 -- Data for Name: Endpoints; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public."Endpoints" ("Id", "Name", "UrlTemplate", "Position", "DisallowAnonymous", "SignInUrl", "ResponseCacheCSharpClassName", "CSharpClassName", "Parameters") VALUES (1, 'Default', '{*url}', 1000, false, NULL, NULL, 'Platformus.Website.Frontend.DefaultEndpoint', 'ViewName=RegularPage');
-INSERT INTO public."Endpoints" ("Id", "Name", "UrlTemplate", "Position", "DisallowAnonymous", "SignInUrl", "ResponseCacheCSharpClassName", "CSharpClassName", "Parameters") VALUES (2, 'Contacts', 'about-us', 10, false, NULL, NULL, 'Platformus.Website.Frontend.DefaultEndpoint', 'ViewName=RegularPage');
-INSERT INTO public."Endpoints" ("Id", "Name", "UrlTemplate", "Position", "DisallowAnonymous", "SignInUrl", "ResponseCacheCSharpClassName", "CSharpClassName", "Parameters") VALUES (3, 'Contacts', 'contacts', 20, false, NULL, NULL, 'Platformus.Website.Frontend.DefaultEndpoint', 'ViewName=ContactsPage');
-INSERT INTO public."Endpoints" ("Id", "Name", "UrlTemplate", "Position", "DisallowAnonymous", "SignInUrl", "ResponseCacheCSharpClassName", "CSharpClassName", "Parameters") VALUES (4, 'Cart', 'cart', 20, false, NULL, NULL, 'Platformus.Website.Frontend.DefaultEndpoint', 'ViewName=CartPage');
+INSERT INTO public."Endpoints" ("Id", "Name", "UrlTemplate", "Position", "DisallowAnonymous", "SignInUrl", "RequestProcessorCSharpClassName", "RequestProcessorParameters", "ResponseCacheCSharpClassName", "ResponseCacheParameters") VALUES (1, 'Default', '{*url}', 1000, false, NULL, 'Platformus.Website.Frontend.RequestProcessors.DefaultRequestProcessor', 'ViewName=RegularPage', NULL, NULL);
+INSERT INTO public."Endpoints" ("Id", "Name", "UrlTemplate", "Position", "DisallowAnonymous", "SignInUrl", "RequestProcessorCSharpClassName", "RequestProcessorParameters", "ResponseCacheCSharpClassName", "ResponseCacheParameters") VALUES (2, 'Contacts', 'contacts', 10, false, NULL, 'Platformus.Website.Frontend.RequestProcessors.DefaultRequestProcessor', 'ViewName=ContactsPage', NULL, NULL);
+INSERT INTO public."Endpoints" ("Id", "Name", "UrlTemplate", "Position", "DisallowAnonymous", "SignInUrl", "RequestProcessorCSharpClassName", "RequestProcessorParameters", "ResponseCacheCSharpClassName", "ResponseCacheParameters") VALUES (3, 'Cart', 'cart', 20, false, NULL, 'Platformus.Website.Frontend.RequestProcessors.DefaultRequestProcessor', 'ViewName=CartPage', NULL, NULL);
 
 
 --
--- TOC entry 3490 (class 0 OID 17615)
--- Dependencies: 255
+-- TOC entry 3502 (class 0 OID 20239)
+-- Dependencies: 256
 -- Data for Name: FieldOptions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 3486 (class 0 OID 17578)
--- Dependencies: 251
+-- TOC entry 3498 (class 0 OID 20202)
+-- Dependencies: 252
 -- Data for Name: FieldTypes; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2287,12 +2323,12 @@ INSERT INTO public."FieldTypes" ("Id", "Code", "Name", "Position", "ValidatorCSh
 INSERT INTO public."FieldTypes" ("Id", "Code", "Name", "Position", "ValidatorCSharpClassName") VALUES (4, 'RadioButtonList', 'Radio button list', 4, NULL);
 INSERT INTO public."FieldTypes" ("Id", "Code", "Name", "Position", "ValidatorCSharpClassName") VALUES (5, 'DropDownList', 'Drop down list', 5, NULL);
 INSERT INTO public."FieldTypes" ("Id", "Code", "Name", "Position", "ValidatorCSharpClassName") VALUES (6, 'FileUpload', 'File upload', 6, NULL);
-INSERT INTO public."FieldTypes" ("Id", "Code", "Name", "Position", "ValidatorCSharpClassName") VALUES (7, 'ReCAPTCHA', 'ReCAPTCHA', 7, 'Platformus.Website.Frontend.FormHandlers.ReCaptchaFieldValidator');
+INSERT INTO public."FieldTypes" ("Id", "Code", "Name", "Position", "ValidatorCSharpClassName") VALUES (7, 'ReCAPTCHA', 'ReCAPTCHA', 7, 'Platformus.Website.Frontend.FieldValidators.ReCaptchaFieldValidator');
 
 
 --
--- TOC entry 3488 (class 0 OID 17589)
--- Dependencies: 253
+-- TOC entry 3500 (class 0 OID 20213)
+-- Dependencies: 254
 -- Data for Name: Fields; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2302,25 +2338,25 @@ INSERT INTO public."Fields" ("Id", "FormId", "FieldTypeId", "Code", "NameId", "I
 
 
 --
--- TOC entry 3496 (class 0 OID 17667)
--- Dependencies: 261
+-- TOC entry 3508 (class 0 OID 20291)
+-- Dependencies: 262
 -- Data for Name: Files; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 3484 (class 0 OID 17557)
--- Dependencies: 249
+-- TOC entry 3496 (class 0 OID 20181)
+-- Dependencies: 250
 -- Data for Name: Forms; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public."Forms" ("Id", "Code", "NameId", "SubmitButtonTitleId", "ProduceCompletedForms", "CSharpClassName", "Parameters") VALUES (1, 'Feedback', 6, 7, true, 'Platformus.Website.Frontend.FormHandlers.EmailFormHandler', 'RecipientEmails=test@test.com;RedirectUrl=/contacts');
+INSERT INTO public."Forms" ("Id", "Code", "NameId", "SubmitButtonTitleId", "ProduceCompletedForms", "FormHandlerCSharpClassName", "FormHandlerParameters") VALUES (1, 'Feedback', 6, 7, true, 'Platformus.Website.Frontend.FormHandlers.EmailFormHandler', 'RecipientEmails=test@test.com;RedirectUrl=/contacts');
 
 
 --
--- TOC entry 3455 (class 0 OID 17279)
--- Dependencies: 220
+-- TOC entry 3467 (class 0 OID 19903)
+-- Dependencies: 221
 -- Data for Name: Localizations; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2354,71 +2390,69 @@ INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") 
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (28, 10, 'uk', 'Ваше повідомлення');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (29, 10, 'ru', 'Ваше сообщение');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (30, 10, 'en', 'Your message');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (31, 11, 'uk', 'Піца');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (32, 11, 'ru', 'Пицца');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (33, 11, 'en', 'Pizza');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (34, 12, 'uk', 'Паніні');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (35, 12, 'ru', 'Панини');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (36, 12, 'en', 'Panini');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (37, 13, 'uk', 'Напої');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (38, 13, 'ru', 'Напитки');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (39, 13, 'en', 'Drinks');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (40, 14, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (41, 19, 'en', '430 g');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (42, 18, 'uk', 'Піца 1');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (43, 18, 'ru', 'Пицца 1');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (44, 18, 'en', 'Pizza 1');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (45, 17, 'uk', 'Піца 1');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (46, 17, 'ru', 'Пицца 1');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (47, 19, 'ru', '430 г');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (48, 17, 'en', 'Pizza 1');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (49, 16, 'ru', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (50, 16, 'en', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (51, 15, 'en', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (52, 15, 'ru', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (53, 15, 'uk', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (54, 14, 'en', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (55, 14, 'ru', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (56, 16, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (57, 19, 'uk', '430 г');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (58, 20, 'uk', '430 г');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (59, 25, 'ru', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (60, 25, 'uk', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (61, 24, 'en', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (62, 24, 'ru', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (63, 24, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (64, 23, 'en', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (65, 23, 'ru', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (66, 25, 'en', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (31, 11, 'uk', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (32, 11, 'ru', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (33, 11, 'en', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (34, 12, 'uk', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (35, 12, 'ru', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (36, 12, 'en', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (37, 13, 'en', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (38, 13, 'ru', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (39, 13, 'uk', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (40, 14, 'en', 'Pizza');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (41, 14, 'ru', 'Пицца');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (42, 14, 'uk', 'Піца');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (43, 15, 'en', 'Pizza');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (44, 15, 'ru', 'Пицца');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (45, 15, 'uk', 'Піца');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (46, 16, 'uk', 'Паніні');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (47, 16, 'ru', 'Панини');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (48, 16, 'en', 'Panini');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (49, 17, 'uk', 'Паніні');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (50, 17, 'ru', 'Панини');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (51, 17, 'en', 'Panini');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (52, 18, 'uk', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (53, 18, 'ru', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (54, 18, 'en', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (55, 19, 'uk', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (56, 19, 'ru', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (57, 19, 'en', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (58, 20, 'uk', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (59, 20, 'ru', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (60, 20, 'en', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (61, 21, 'uk', 'Напої');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (62, 21, 'ru', 'Напитки');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (63, 21, 'en', 'Drinks');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (64, 22, 'uk', 'Напої');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (65, 22, 'ru', 'Напитки');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (66, 22, 'en', 'Drinks');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (67, 23, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (68, 22, 'ru', 'Пицца 2');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (69, 22, 'uk', 'Піца 2');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (70, 21, 'en', 'Pizza 2');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (71, 21, 'ru', 'Пицца 2');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (72, 21, 'uk', 'Піца 2');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (73, 20, 'en', '430 g');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (74, 20, 'ru', '430 г');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (75, 22, 'en', 'Pizza 2');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (76, 26, 'uk', '480 г');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (77, 31, 'ru', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (78, 31, 'uk', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (79, 30, 'en', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (80, 30, 'ru', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (81, 30, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (82, 29, 'en', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (83, 29, 'ru', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (313, 105, 'uk', 'Підтверджений');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (314, 105, 'ru', 'Подтвержден');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (84, 31, 'en', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (85, 29, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (86, 28, 'ru', 'Пицца 3');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (87, 28, 'uk', 'Піца 3');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (88, 27, 'en', 'Pizza 3');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (89, 27, 'ru', 'Пицца 3');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (90, 27, 'uk', 'Піца 3');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (91, 26, 'en', '480 g');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (92, 26, 'ru', '480 г');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (93, 28, 'en', 'Pizza 3');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (68, 23, 'ru', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (69, 23, 'en', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (70, 24, 'uk', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (71, 24, 'ru', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (72, 24, 'en', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (73, 25, 'uk', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (74, 25, 'ru', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (75, 25, 'en', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (76, 26, 'uk', 'Піца 1');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (77, 31, 'en', '440 g');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (78, 30, 'en', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (79, 30, 'ru', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (80, 30, 'uk', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (81, 29, 'en', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (82, 29, 'ru', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (83, 31, 'ru', '440 г');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (84, 29, 'uk', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (85, 28, 'ru', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (86, 28, 'uk', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (87, 27, 'en', 'Pizza 1');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (88, 27, 'ru', 'Пицца 1');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (89, 27, 'uk', 'Піца 1');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (90, 26, 'en', 'Pizza 1');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (91, 26, 'ru', 'Пицца 1');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (92, 28, 'en', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (93, 31, 'uk', '440 г');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (94, 32, 'uk', '430 г');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (95, 37, 'ru', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (96, 37, 'uk', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
@@ -2429,14 +2463,14 @@ INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") 
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (101, 35, 'ru', '');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (102, 37, 'en', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (103, 35, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (104, 34, 'ru', 'Пицца 4');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (105, 34, 'uk', 'Піца 4');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (106, 33, 'en', 'Pizza 4');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (107, 33, 'ru', 'Пицца 4');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (108, 33, 'uk', 'Піца 4');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (104, 34, 'ru', 'Пицца 2');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (105, 34, 'uk', 'Піца 2');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (106, 33, 'en', 'Pizza 2');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (107, 33, 'ru', 'Пицца 2');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (108, 33, 'uk', 'Піца 2');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (109, 32, 'en', '430 g');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (110, 32, 'ru', '430 г');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (111, 34, 'en', 'Pizza 4');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (111, 34, 'en', 'Pizza 2');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (112, 38, 'uk', '450 г');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (113, 43, 'ru', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (114, 43, 'uk', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
@@ -2447,15 +2481,15 @@ INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") 
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (119, 41, 'ru', '');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (120, 43, 'en', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (121, 41, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (122, 40, 'ru', 'Пицца 5');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (123, 40, 'uk', 'Піца 5');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (124, 39, 'en', 'Pizza 5');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (125, 39, 'ru', 'Пицца 5');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (126, 39, 'uk', 'Піца 5');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (122, 40, 'ru', 'Пицца 3');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (123, 40, 'uk', 'Піца 3');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (124, 39, 'en', 'Pizza 3');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (125, 39, 'ru', 'Пицца 3');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (126, 39, 'uk', 'Піца 3');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (127, 38, 'en', '450 g');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (128, 38, 'ru', '450 г');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (129, 40, 'en', 'Pizza 5');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (130, 44, 'uk', '420 г');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (129, 40, 'en', 'Pizza 3');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (130, 44, 'uk', '410 г');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (131, 49, 'ru', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (132, 49, 'uk', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (133, 48, 'en', '');
@@ -2465,22 +2499,15 @@ INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") 
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (137, 47, 'ru', '');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (138, 49, 'en', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (139, 47, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (140, 46, 'ru', 'Пицца 6');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (141, 46, 'uk', 'Піца 6');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (142, 45, 'en', 'Pizza 6');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (143, 45, 'ru', 'Пицца 6');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (144, 45, 'uk', 'Піца 6');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (145, 44, 'en', '420 g');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (146, 44, 'ru', '420 г');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (147, 46, 'en', 'Pizza 6');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (148, 50, 'uk', '450 г');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (315, 105, 'en', 'Confirmed');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (319, 107, 'uk', 'Доставляється');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (320, 107, 'ru', 'Доставляется');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (321, 107, 'en', 'Being delivered');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (325, 109, 'uk', 'Закритий');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (326, 109, 'ru', 'Закрыт');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (327, 109, 'en', 'Closed');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (140, 46, 'ru', 'Пицца 4');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (141, 46, 'uk', 'Піца 4');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (142, 45, 'en', 'Pizza 4');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (143, 45, 'ru', 'Пицца 4');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (144, 45, 'uk', 'Піца 4');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (145, 44, 'en', '410 g');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (146, 44, 'ru', '410 г');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (147, 46, 'en', 'Pizza 4');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (148, 50, 'uk', '440 г');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (149, 55, 'ru', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (150, 55, 'uk', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (151, 54, 'en', '');
@@ -2490,15 +2517,15 @@ INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") 
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (155, 53, 'ru', '');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (156, 55, 'en', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (157, 53, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (158, 52, 'ru', 'Пицца 7');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (159, 52, 'uk', 'Піца 7');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (160, 51, 'en', 'Pizza 7');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (161, 51, 'ru', 'Пицца 7');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (162, 51, 'uk', 'Піца 7');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (163, 50, 'en', '450 g');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (164, 50, 'ru', '450 г');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (165, 52, 'en', 'Pizza 7');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (166, 56, 'uk', '420 г');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (158, 52, 'ru', 'Пицца 5');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (159, 52, 'uk', 'Піца 5');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (160, 51, 'en', 'Pizza 5');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (161, 51, 'ru', 'Пицца 5');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (162, 51, 'uk', 'Піца 5');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (163, 50, 'en', '440 g');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (164, 50, 'ru', '440 г');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (165, 52, 'en', 'Pizza 5');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (166, 56, 'uk', '440 г');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (167, 61, 'ru', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (168, 61, 'uk', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (169, 60, 'en', '');
@@ -2508,15 +2535,15 @@ INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") 
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (173, 59, 'ru', '');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (174, 61, 'en', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (175, 59, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (176, 58, 'ru', 'Пицца 8');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (177, 58, 'uk', 'Піца 8');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (178, 57, 'en', 'Pizza 8');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (179, 57, 'ru', 'Пицца 8');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (180, 57, 'uk', 'Піца 8');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (181, 56, 'en', '420 g');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (182, 56, 'ru', '420 г');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (183, 58, 'en', 'Pizza 8');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (184, 62, 'uk', '420 г');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (176, 58, 'ru', 'Пицца 6');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (177, 58, 'uk', 'Піца 6');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (178, 57, 'en', 'Pizza 6');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (179, 57, 'ru', 'Пицца 6');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (180, 57, 'uk', 'Піца 6');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (181, 56, 'en', '440 g');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (182, 56, 'ru', '440 г');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (183, 58, 'en', 'Pizza 6');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (184, 62, 'uk', '480 г');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (185, 67, 'ru', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (186, 67, 'uk', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (187, 66, 'en', '');
@@ -2526,15 +2553,15 @@ INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") 
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (191, 65, 'ru', '');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (192, 67, 'en', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (193, 65, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (194, 64, 'ru', 'Пицца 9');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (195, 64, 'uk', 'Піца 9');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (196, 63, 'en', 'Pizza 9');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (197, 63, 'ru', 'Пицца 9');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (198, 63, 'uk', 'Піца 9');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (199, 62, 'en', '420 g');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (200, 62, 'ru', '420 г');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (201, 64, 'en', 'Pizza 9');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (202, 68, 'uk', '150 г');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (194, 64, 'ru', 'Пицца 7');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (195, 64, 'uk', 'Піца 7');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (196, 63, 'en', 'Pizza 7');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (197, 63, 'ru', 'Пицца 7');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (198, 63, 'uk', 'Піца 7');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (199, 62, 'en', '480 g');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (200, 62, 'ru', '480 г');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (201, 64, 'en', 'Pizza 7');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (202, 68, 'uk', '450 г');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (203, 73, 'ru', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (204, 73, 'uk', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (205, 72, 'en', '');
@@ -2542,21 +2569,17 @@ INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") 
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (207, 72, 'uk', '');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (208, 71, 'en', '');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (209, 71, 'ru', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (331, 111, 'uk', 'Не вказано');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (332, 111, 'ru', 'Не указан');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (333, 111, 'en', 'Not set');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (337, 113, 'uk', 'Не вказано');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (210, 73, 'en', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (211, 71, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (212, 70, 'ru', 'Панини 1');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (213, 70, 'uk', 'Паніні 1');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (214, 69, 'en', 'Panini 1');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (215, 69, 'ru', 'Панини 1');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (216, 69, 'uk', 'Паніні 1');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (217, 68, 'en', '150 g');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (218, 68, 'ru', '150 г');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (219, 70, 'en', 'Panini 1');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (220, 74, 'uk', '160 г');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (212, 70, 'ru', 'Пицца 8');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (213, 70, 'uk', 'Піца 8');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (214, 69, 'en', 'Pizza 8');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (215, 69, 'ru', 'Пицца 8');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (216, 69, 'uk', 'Піца 8');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (217, 68, 'en', '450 g');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (218, 68, 'ru', '450 г');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (219, 70, 'en', 'Pizza 8');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (220, 74, 'uk', '410 г');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (221, 79, 'ru', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (222, 79, 'uk', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (223, 78, 'en', '');
@@ -2566,15 +2589,15 @@ INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") 
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (227, 77, 'ru', '');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (228, 79, 'en', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (229, 77, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (230, 76, 'ru', 'Панини 2');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (231, 76, 'uk', 'Паніні 2');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (232, 75, 'en', 'Panini 2');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (233, 75, 'ru', 'Панини 2');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (234, 75, 'uk', 'Паніні 2');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (235, 74, 'en', '160 g');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (236, 74, 'ru', '160 г');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (237, 76, 'en', 'Panini 2');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (238, 80, 'uk', '170 г');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (230, 76, 'ru', 'Пицца 9');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (231, 76, 'uk', 'Піца 9');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (232, 75, 'en', 'Pizza 9');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (233, 75, 'ru', 'Пицца 9');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (234, 75, 'uk', 'Піца 9');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (235, 74, 'en', '410 g');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (236, 74, 'ru', '410 г');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (237, 76, 'en', 'Pizza 9');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (238, 80, 'uk', '130 г');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (239, 85, 'ru', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (240, 85, 'uk', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (241, 84, 'en', '');
@@ -2584,15 +2607,15 @@ INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") 
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (245, 83, 'ru', '');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (246, 85, 'en', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (247, 83, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (248, 82, 'ru', 'Панини 3');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (249, 82, 'uk', 'Паніні 3');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (250, 81, 'en', 'Panini 3');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (251, 81, 'ru', 'Панини 3');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (252, 81, 'uk', 'Паніні 3');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (253, 80, 'en', '170 g');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (254, 80, 'ru', '170 г');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (255, 82, 'en', 'Panini 3');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (256, 86, 'uk', '1 л');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (248, 82, 'ru', 'Панини 1');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (249, 82, 'uk', 'Паніні 1');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (250, 81, 'en', 'Panini 1');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (251, 81, 'ru', 'Панини 1');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (252, 81, 'uk', 'Паніні 1');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (253, 80, 'en', '130 g');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (254, 80, 'ru', '130 г');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (255, 82, 'en', 'Panini 1');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (256, 86, 'uk', '160 г');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (257, 91, 'ru', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (258, 91, 'uk', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (259, 90, 'en', '');
@@ -2602,21 +2625,15 @@ INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") 
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (263, 89, 'ru', '');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (264, 91, 'en', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (265, 89, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (266, 88, 'ru', 'Напитки 1');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (267, 88, 'uk', 'Напої 1');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (268, 87, 'en', 'Drinks 1');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (269, 87, 'ru', 'Напитки 1');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (270, 87, 'uk', 'Напої 1');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (271, 86, 'en', '1 l');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (272, 86, 'ru', '1 л');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (273, 88, 'en', 'Drinks 1');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (274, 92, 'uk', '1 л');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (338, 113, 'ru', 'Не указан');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (339, 113, 'en', 'Not set');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (343, 115, 'uk', 'Кур’єр');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (344, 115, 'ru', 'Курьер');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (345, 115, 'en', 'Courier');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (359, 121, '__', '/about-us');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (266, 88, 'ru', 'Панини 2');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (267, 88, 'uk', 'Паніні 2');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (268, 87, 'en', 'Panini 2');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (269, 87, 'ru', 'Панини 2');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (270, 87, 'uk', 'Паніні 2');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (271, 86, 'en', '160 g');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (272, 86, 'ru', '160 г');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (273, 88, 'en', 'Panini 2');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (274, 92, 'uk', '140 г');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (275, 97, 'ru', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (276, 97, 'uk', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (277, 96, 'en', '');
@@ -2626,14 +2643,14 @@ INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") 
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (281, 95, 'ru', '');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (282, 97, 'en', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (283, 95, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (284, 94, 'ru', 'Напитки 2');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (285, 94, 'uk', 'Напої 2');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (286, 93, 'en', 'Drinks 2');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (287, 93, 'ru', 'Напитки 2');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (288, 93, 'uk', 'Напої 2');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (289, 92, 'en', '1 l');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (290, 92, 'ru', '1 л');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (291, 94, 'en', 'Drinks 2');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (284, 94, 'ru', 'Панини 3');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (285, 94, 'uk', 'Паніні 3');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (286, 93, 'en', 'Panini 3');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (287, 93, 'ru', 'Панини 3');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (288, 93, 'uk', 'Паніні 3');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (289, 92, 'en', '140 g');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (290, 92, 'ru', '140 г');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (291, 94, 'en', 'Panini 3');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (292, 98, 'uk', '1 л');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (293, 103, 'ru', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (294, 103, 'uk', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
@@ -2644,88 +2661,143 @@ INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") 
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (299, 101, 'ru', '');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (300, 103, 'en', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (301, 101, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (302, 100, 'ru', 'Напитки 3');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (303, 100, 'uk', 'Напої 3');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (304, 99, 'en', 'Drinks 3');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (305, 99, 'ru', 'Напитки 3');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (306, 99, 'uk', 'Напої 3');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (302, 100, 'ru', 'Напитки 1');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (303, 100, 'uk', 'Напої 1');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (304, 99, 'en', 'Drinks 1');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (305, 99, 'ru', 'Напитки 1');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (306, 99, 'uk', 'Напої 1');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (307, 98, 'en', '1 l');
 INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (308, 98, 'ru', '1 л');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (309, 100, 'en', 'Drinks 3');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (310, 104, 'uk', 'Новий');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (311, 104, 'ru', 'Новый');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (312, 104, 'en', 'New');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (316, 106, 'uk', 'Запланований');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (317, 106, 'ru', 'Запланирован');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (318, 106, 'en', 'Scheduled');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (322, 108, 'uk', 'Доставлений');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (323, 108, 'ru', 'Доставлен');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (324, 108, 'en', 'Delivered');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (328, 110, 'uk', 'Скасований');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (329, 110, 'ru', 'Отменен');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (330, 110, 'en', 'Canceled');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (334, 112, 'uk', 'Готівка');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (335, 112, 'ru', 'Наличные');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (336, 112, 'en', 'Cash');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (340, 114, 'uk', 'Самовивіз');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (341, 114, 'ru', 'Самовывоз');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (342, 114, 'en', 'Pickup');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (346, 116, '__', '/');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (347, 117, 'uk', '<h1>Ваш веб-сайт електронної комерції</h1><p>Вітаємо! Це ваш веб-сайт електронної комерції, він працює на базі системи керування вмістом &laquo;<a href="http://platformus.net/" target="_blank" rel="noopener">Платформус</a>&raquo;. Ви можете керувати ним (створювати сторінки, елементи меню, форми і так далі) за допомогою <a href="/backend">бекенду</a>. Для входу використовуйте, будь ласка, ім&rsquo;я користувача і пароль, вказані під час установки (за замовчуванням це &laquo;admin@platformus.net&raquo; і &laquo;admin&raquo; відповідно).</p><p>Щоб дізнатися більше про Платформус і про те, як ним користуватися, будь ласка, скористайтеся <a href="http://docs.platformus.net/" target="_blank" rel="noopener">документацією</a>, там є декілька прикладів, що стануть у нагоді початківцям. При виникненні труднощів або питань ви можете звернутися в наш <a href="https://gitter.im/Platformus/Platformus" target="_blank" rel="noopener">чат</a>, де вам обов&rsquo;язково допоможуть.</p><p>Приємної роботи!</p>');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (360, 122, 'uk', '<h1>Про нас</h1><p>Розкажіть про ваш веб-сайт електронної комерції. Ви можете додати сюди фотографії або відео.</p>');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (361, 122, 'ru', '<h1>О нас</h1><p>Расскажите о вашем веб-сайте электронной коммерции. Вы можете добавить сюда фотографии или видео.</p>');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (362, 122, 'en', '<h1>About Us</h1><p>Tell us about your ecommerce website. You can add photos or videos here.</p>');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (363, 123, 'uk', 'Про нас');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (364, 123, 'ru', 'О нас');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (365, 123, 'en', 'About Us');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (366, 124, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (367, 124, 'ru', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (368, 124, 'en', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (369, 125, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (370, 125, 'ru', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (371, 125, 'en', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (385, 131, '__', '/cart');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (348, 117, 'ru', '<h1>Ваш веб-сайт электронной коммерции</h1><p>Здравствуйте! Это ваш веб-сайт электронной коммерции, он работает на базе системы управления содержимым &laquo;<a href="http://platformus.net/" target="_blank" rel="noopener">Платформус</a>&raquo;. Вы можете управлять им (создавать страницы, элементы меню, формы и так далее) с помощью <a href="/backend">бекенда</a>. Для входа используйте, пожалуйста, имя пользователя и пароль, указанные при установке (по умолчанию это &laquo;admin@platformus.net&raquo; и &laquo;admin&raquo; соответственно).</p><p>Чтобы узнать больше о Платформусе и о том, как им пользоваться, пожалуйста, воспользуйтесь <a href="http://docs.platformus.net/" target="_blank" rel="noopener">документацией</a>, там есть несколько примеров, которые пригодятся начинающим. При возникновении сложностей или вопросов вы можете обратиться в наш <a href="https://gitter.im/Platformus/Platformus" target="_blank" rel="noopener">чат</a>, где вам обязательно помогут.</p><p>Приятной работы!</p>');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (349, 117, 'en', '<h1>Your Ecommerce Website</h1><p>Hello! This is your ecommerce website, it is based on the <a href="http://platformus.net/" target="_blank" rel="noopener">Platformus</a> content management system. You can manage it (create pages, menu items, forms and so on) using the <a href="/backend">backend</a>. Please use the username and password specified during the installation to sign in (it is &ldquo;admin@platformus.net&rdquo; and &ldquo;admin&rdquo; by default).</p><p>Please use the <a href="http://docs.platformus.net/" target="_blank" rel="noopener">documentation</a> to learn more about Platformus and how to use it. There are several examples that could be useful for the beginners. Also, you can get help in our <a href="https://gitter.im/Platformus/Platformus" target="_blank" rel="noopener">chat</a>.</p><p>Have a nice work!</p>');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (350, 118, 'uk', 'Ваш веб-сайт електронної комерції');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (351, 118, 'ru', 'Ваш веб-сайт электронной коммерции');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (352, 118, 'en', 'Your Ecommerce Website');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (353, 119, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (354, 119, 'ru', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (355, 119, 'en', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (356, 120, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (357, 120, 'ru', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (358, 120, 'en', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (372, 126, '__', '/contacts');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (373, 127, 'uk', '<h1>Контакти</h1><p>Додайте свої контакти на цій сторінці. Номер телефону, месенджери, посилання на соціальні мережі. Форма зворотного зв&rsquo;язку, розташована нижче (до речі, ви можете її змінити або перенести в інше місце), допоможе відвідувачам написати вам повідомлення прямо з сайту, лише вкажіть для цього адресу, на яку потрібно надсилати повідомлення.</p><h2>Форма зворотного зв&rsquo;язку</h2>');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (374, 127, 'ru', '<h1>Контакты</h1><p>Добавьте свои контакты на этой странице. Телефонный номер, мессенджеры, ссылки на социальные сети. Форма обратной связи, расположенная ниже (кстати, вы можете ее изменить или перенести в другое место), поможет посетителям написать вам сообщение прямо с сайта, лишь укажите для этого адрес, на который нужно присылать сообщения.</p><h2>Форма обратной связи</h2>');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (375, 127, 'en', '<h1>Contacts</h1><p>Add your contacts on this page. Phone number, messengers, social links. The feedback form below (by the way, you can edit or move it to a different place) allows your visitors to write you directly from the website, just don&rsquo;t forget to specify the email address for the messages.</p><h2>Feedback from</h2>');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (376, 128, 'uk', 'Контакти');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (377, 128, 'ru', 'Контакты');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (378, 128, 'en', 'Contacts');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (379, 129, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (380, 129, 'ru', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (381, 129, 'en', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (382, 130, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (383, 130, 'ru', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (384, 130, 'en', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (386, 132, 'uk', '<h1>Кошик</h1>');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (387, 132, 'ru', '<h1>Корзина</h1>');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (388, 132, 'en', '<h1>Cart</h1>');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (389, 133, 'uk', 'Кошик');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (390, 133, 'ru', 'Корзина');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (391, 133, 'en', 'Cart');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (392, 134, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (393, 134, 'ru', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (394, 134, 'en', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (395, 135, 'uk', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (396, 135, 'ru', '');
-INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (397, 135, 'en', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (309, 100, 'en', 'Drinks 1');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (310, 104, 'uk', '1 л');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (311, 109, 'ru', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (312, 109, 'uk', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (313, 108, 'en', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (314, 108, 'ru', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (315, 108, 'uk', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (316, 107, 'en', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (317, 107, 'ru', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (318, 109, 'en', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (319, 107, 'uk', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (320, 106, 'ru', 'Напитки 2');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (321, 106, 'uk', 'Напої 2');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (322, 105, 'en', 'Drinks 2');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (323, 105, 'ru', 'Напитки 2');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (324, 105, 'uk', 'Напої 2');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (325, 104, 'en', '1 l');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (326, 104, 'ru', '1 л');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (327, 106, 'en', 'Drinks 2');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (328, 110, 'uk', '1 л');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (329, 115, 'ru', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (330, 115, 'uk', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (331, 114, 'en', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (332, 114, 'ru', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (333, 114, 'uk', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (334, 113, 'en', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (335, 113, 'ru', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (336, 115, 'en', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (337, 113, 'uk', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (338, 112, 'ru', 'Напитки 3');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (339, 112, 'uk', 'Напої 3');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (340, 111, 'en', 'Drinks 3');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (341, 111, 'ru', 'Напитки 3');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (342, 111, 'uk', 'Напої 3');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (343, 110, 'en', '1 l');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (344, 110, 'ru', '1 л');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (345, 112, 'en', 'Drinks 3');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (346, 116, 'uk', 'Новий');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (347, 116, 'ru', 'Новый');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (348, 116, 'en', 'New');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (349, 117, 'uk', 'Підтверджений');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (350, 117, 'ru', 'Подтвержден');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (351, 117, 'en', 'Confirmed');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (352, 118, 'uk', 'Запланований');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (353, 118, 'ru', 'Запланирован');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (354, 118, 'en', 'Scheduled');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (355, 119, 'uk', 'Доставляється');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (356, 119, 'ru', 'Доставляется');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (357, 119, 'en', 'Being delivered');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (358, 120, 'uk', 'Доставлений');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (359, 120, 'ru', 'Доставлен');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (360, 120, 'en', 'Delivered');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (361, 121, 'uk', 'Закритий');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (362, 121, 'ru', 'Закрыт');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (363, 121, 'en', 'Closed');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (364, 122, 'uk', 'Скасований');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (365, 122, 'ru', 'Отменен');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (366, 122, 'en', 'Canceled');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (367, 123, 'uk', 'Не вказано');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (368, 123, 'ru', 'Не указан');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (369, 123, 'en', 'Not set');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (370, 124, 'uk', 'Готівка');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (371, 124, 'ru', 'Наличные');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (372, 124, 'en', 'Cash');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (373, 125, 'uk', 'Не вказано');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (374, 125, 'ru', 'Не указан');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (375, 125, 'en', 'Not set');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (376, 126, 'uk', 'Самовивіз');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (377, 126, 'ru', 'Самовывоз');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (378, 126, 'en', 'Pickup');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (379, 127, 'uk', 'Кур’єр');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (380, 127, 'ru', 'Курьер');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (381, 127, 'en', 'Courier');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (382, 128, '__', '/');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (383, 129, 'uk', '<h1>Ваш веб-сайт електронної комерції</h1><p>Вітаємо! Це ваш веб-сайт електронної комерції, він працює на базі системи керування вмістом &laquo;<a href="http://platformus.net/" target="_blank" rel="noopener">Платформус</a>&raquo;. Ви можете керувати ним (створювати сторінки, елементи меню, форми і так далі) за допомогою <a href="/backend">бекенду</a>. Для входу використовуйте, будь ласка, ім&rsquo;я користувача і пароль, вказані під час установки (за замовчуванням це &laquo;admin@platformus.net&raquo; і &laquo;admin&raquo; відповідно).</p><p>Щоб дізнатися більше про Платформус і про те, як ним користуватися, будь ласка, скористайтеся <a href="http://docs.platformus.net/" target="_blank" rel="noopener">документацією</a>, там є декілька прикладів, що стануть у нагоді початківцям. При виникненні труднощів або питань ви можете звернутися в наш <a href="https://gitter.im/Platformus/Platformus" target="_blank" rel="noopener">чат</a>, де вам обов&rsquo;язково допоможуть.</p><p>Приємної роботи!</p>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (384, 129, 'ru', '<h1>Ваш веб-сайт электронной коммерции</h1><p>Здравствуйте! Это ваш веб-сайт электронной коммерции, он работает на базе системы управления содержимым &laquo;<a href="http://platformus.net/" target="_blank" rel="noopener">Платформус</a>&raquo;. Вы можете управлять им (создавать страницы, элементы меню, формы и так далее) с помощью <a href="/backend">бекенда</a>. Для входа используйте, пожалуйста, имя пользователя и пароль, указанные при установке (по умолчанию это &laquo;admin@platformus.net&raquo; и &laquo;admin&raquo; соответственно).</p><p>Чтобы узнать больше о Платформусе и о том, как им пользоваться, пожалуйста, воспользуйтесь <a href="http://docs.platformus.net/" target="_blank" rel="noopener">документацией</a>, там есть несколько примеров, которые пригодятся начинающим. При возникновении сложностей или вопросов вы можете обратиться в наш <a href="https://gitter.im/Platformus/Platformus" target="_blank" rel="noopener">чат</a>, где вам обязательно помогут.</p><p>Приятной работы!</p>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (385, 129, 'en', '<h1>Your Ecommerce Website</h1><p>Hello! This is your ecommerce website, it is based on the <a href="http://platformus.net/" target="_blank" rel="noopener">Platformus</a> content management system. You can manage it (create pages, menu items, forms and so on) using the <a href="/backend">backend</a>. Please use the username and password specified during the installation to sign in (it is &ldquo;admin@platformus.net&rdquo; and &ldquo;admin&rdquo; by default).</p><p>Please use the <a href="http://docs.platformus.net/" target="_blank" rel="noopener">documentation</a> to learn more about Platformus and how to use it. There are several examples that could be useful for the beginners. Also, you can get help in our <a href="https://gitter.im/Platformus/Platformus" target="_blank" rel="noopener">chat</a>.</p><p>Have a nice work!</p>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (386, 130, 'uk', 'Ваш веб-сайт електронної комерції');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (387, 130, 'ru', 'Ваш веб-сайт электронной коммерции');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (388, 130, 'en', 'Your Ecommerce Website');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (389, 131, 'uk', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (390, 131, 'ru', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (391, 131, 'en', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (392, 132, 'uk', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (393, 132, 'ru', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (394, 132, 'en', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (395, 133, '__', '/about-us');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (396, 134, 'uk', '<h1>Про нас</h1><p>Розкажіть про ваш веб-сайт електронної комерції. Ви можете додати сюди фотографії або відео.</p>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (397, 134, 'ru', '<h1>О нас</h1><p>Расскажите о вашем веб-сайте электронной коммерции. Вы можете добавить сюда фотографии или видео.</p>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (398, 134, 'en', '<h1>About Us</h1><p>Tell us about your ecommerce website. You can add photos or videos here.</p>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (399, 135, 'uk', 'Про нас');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (400, 135, 'ru', 'О нас');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (401, 135, 'en', 'About Us');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (402, 136, 'uk', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (403, 136, 'ru', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (404, 136, 'en', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (405, 137, 'uk', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (406, 137, 'ru', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (407, 137, 'en', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (408, 138, '__', '/contacts');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (409, 139, 'uk', '<h1>Контакти</h1><p>Додайте свої контакти на цій сторінці. Номер телефону, месенджери, посилання на соціальні мережі. Форма зворотного зв&rsquo;язку, розташована нижче (до речі, ви можете її змінити або перенести в інше місце), допоможе відвідувачам написати вам повідомлення прямо з сайту, лише вкажіть для цього адресу, на яку потрібно надсилати повідомлення.</p><h2>Форма зворотного зв&rsquo;язку</h2>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (410, 139, 'ru', '<h1>Контакты</h1><p>Добавьте свои контакты на этой странице. Телефонный номер, мессенджеры, ссылки на социальные сети. Форма обратной связи, расположенная ниже (кстати, вы можете ее изменить или перенести в другое место), поможет посетителям написать вам сообщение прямо с сайта, лишь укажите для этого адрес, на который нужно присылать сообщения.</p><h2>Форма обратной связи</h2>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (411, 139, 'en', '<h1>Contacts</h1><p>Add your contacts on this page. Phone number, messengers, social links. The feedback form below (by the way, you can edit or move it to a different place) allows your visitors to write you directly from the website, just don&rsquo;t forget to specify the email address for the messages.</p><h2>Feedback from</h2>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (412, 140, 'uk', 'Контакти');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (413, 140, 'ru', 'Контакты');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (414, 140, 'en', 'Contacts');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (415, 141, 'uk', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (416, 141, 'ru', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (417, 141, 'en', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (418, 142, 'uk', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (419, 142, 'ru', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (420, 142, 'en', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (421, 143, '__', '/cart');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (422, 144, 'uk', '<h1>Кошик</h1>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (423, 144, 'ru', '<h1>Корзина</h1>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (424, 144, 'en', '<h1>Cart</h1>');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (425, 145, 'uk', 'Кошик');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (426, 145, 'ru', 'Корзина');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (427, 145, 'en', 'Cart');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (428, 146, 'uk', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (429, 146, 'ru', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (430, 146, 'en', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (431, 147, 'uk', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (432, 147, 'ru', '');
+INSERT INTO public."Localizations" ("Id", "DictionaryId", "CultureId", "Value") VALUES (433, 147, 'en', '');
 
 
 --
--- TOC entry 3470 (class 0 OID 17401)
--- Dependencies: 235
+-- TOC entry 3482 (class 0 OID 20025)
+-- Dependencies: 236
 -- Data for Name: Members; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2737,8 +2809,8 @@ INSERT INTO public."Members" ("Id", "ClassId", "TabId", "Code", "Name", "Positio
 
 
 --
--- TOC entry 3482 (class 0 OID 17531)
--- Dependencies: 247
+-- TOC entry 3494 (class 0 OID 20155)
+-- Dependencies: 248
 -- Data for Name: MenuItems; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2749,8 +2821,8 @@ INSERT INTO public."MenuItems" ("Id", "MenuId", "MenuItemId", "NameId", "Url", "
 
 
 --
--- TOC entry 3480 (class 0 OID 17515)
--- Dependencies: 245
+-- TOC entry 3492 (class 0 OID 20139)
+-- Dependencies: 246
 -- Data for Name: Menus; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2758,8 +2830,16 @@ INSERT INTO public."Menus" ("Id", "Code", "NameId") VALUES (1, 'Main', 1);
 
 
 --
--- TOC entry 3474 (class 0 OID 17453)
--- Dependencies: 239
+-- TOC entry 3446 (class 0 OID 19755)
+-- Dependencies: 200
+-- Data for Name: ModelStates; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 3486 (class 0 OID 20077)
+-- Dependencies: 240
 -- Data for Name: Objects; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2770,41 +2850,41 @@ INSERT INTO public."Objects" ("Id", "ClassId") VALUES (4, 2);
 
 
 --
--- TOC entry 3504 (class 0 OID 17761)
--- Dependencies: 269
+-- TOC entry 3516 (class 0 OID 20405)
+-- Dependencies: 270
 -- Data for Name: OrderStates; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public."OrderStates" ("Id", "Code", "NameId", "Position") VALUES (1, 'New', 104, 10);
-INSERT INTO public."OrderStates" ("Id", "Code", "NameId", "Position") VALUES (2, 'Confirmed', 105, 20);
-INSERT INTO public."OrderStates" ("Id", "Code", "NameId", "Position") VALUES (3, 'Scheduled', 106, 30);
-INSERT INTO public."OrderStates" ("Id", "Code", "NameId", "Position") VALUES (4, 'BeingDelivered', 107, 40);
-INSERT INTO public."OrderStates" ("Id", "Code", "NameId", "Position") VALUES (5, 'Delivered', 108, 50);
-INSERT INTO public."OrderStates" ("Id", "Code", "NameId", "Position") VALUES (6, 'Closed', 109, 60);
-INSERT INTO public."OrderStates" ("Id", "Code", "NameId", "Position") VALUES (7, 'Canceled', 110, 70);
+INSERT INTO public."OrderStates" ("Id", "Code", "NameId", "Position") VALUES (1, 'New', 116, 10);
+INSERT INTO public."OrderStates" ("Id", "Code", "NameId", "Position") VALUES (2, 'Confirmed', 117, 20);
+INSERT INTO public."OrderStates" ("Id", "Code", "NameId", "Position") VALUES (3, 'Scheduled', 118, 30);
+INSERT INTO public."OrderStates" ("Id", "Code", "NameId", "Position") VALUES (4, 'BeingDelivered', 119, 40);
+INSERT INTO public."OrderStates" ("Id", "Code", "NameId", "Position") VALUES (5, 'Delivered', 120, 50);
+INSERT INTO public."OrderStates" ("Id", "Code", "NameId", "Position") VALUES (6, 'Closed', 121, 60);
+INSERT INTO public."OrderStates" ("Id", "Code", "NameId", "Position") VALUES (7, 'Canceled', 122, 70);
 
 
 --
--- TOC entry 3512 (class 0 OID 17820)
--- Dependencies: 277
+-- TOC entry 3524 (class 0 OID 20464)
+-- Dependencies: 278
 -- Data for Name: Orders; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 3506 (class 0 OID 17777)
--- Dependencies: 271
+-- TOC entry 3518 (class 0 OID 20421)
+-- Dependencies: 272
 -- Data for Name: PaymentMethods; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public."PaymentMethods" ("Id", "Code", "NameId", "Position") VALUES (1, 'NotSet', 111, 10);
-INSERT INTO public."PaymentMethods" ("Id", "Code", "NameId", "Position") VALUES (2, 'Cash', 112, 20);
+INSERT INTO public."PaymentMethods" ("Id", "Code", "NameId", "Position") VALUES (1, 'NotSet', 123, 10);
+INSERT INTO public."PaymentMethods" ("Id", "Code", "NameId", "Position") VALUES (2, 'Cash', 124, 20);
 
 
 --
--- TOC entry 3445 (class 0 OID 17210)
--- Dependencies: 210
+-- TOC entry 3457 (class 0 OID 19834)
+-- Dependencies: 211
 -- Data for Name: Permissions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2831,8 +2911,8 @@ INSERT INTO public."Permissions" ("Id", "Code", "Name", "Position") VALUES (20, 
 
 
 --
--- TOC entry 3502 (class 0 OID 17745)
--- Dependencies: 267
+-- TOC entry 3514 (class 0 OID 20389)
+-- Dependencies: 268
 -- Data for Name: Photos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2854,75 +2934,75 @@ INSERT INTO public."Photos" ("Id", "ProductId", "Filename", "IsCover", "Position
 
 
 --
--- TOC entry 3514 (class 0 OID 17846)
--- Dependencies: 279
+-- TOC entry 3526 (class 0 OID 20490)
+-- Dependencies: 280
 -- Data for Name: Positions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 3500 (class 0 OID 17699)
--- Dependencies: 265
+-- TOC entry 3512 (class 0 OID 20343)
+-- Dependencies: 266
 -- Data for Name: Products; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (1, 1, '/pizza/pizza-1', 'pizza-1', 17, 15, 19, 180, 18, 14, 16);
-INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (2, 1, '/pizza/pizza-2', 'pizza-2', 22, 25, 20, 180, 21, 24, 23);
-INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (3, 1, '/pizza/pizza-3', 'pizza-3', 28, 31, 26, 110, 27, 30, 29);
-INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (4, 1, '/pizza/pizza-4', 'pizza-4', 34, 37, 32, 130, 33, 36, 35);
-INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (5, 1, '/pizza/pizza-5', 'pizza-5', 40, 43, 38, 130, 39, 42, 41);
-INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (6, 1, '/pizza/pizza-6', 'pizza-6', 46, 49, 44, 140, 45, 48, 47);
-INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (7, 1, '/pizza/pizza-7', 'pizza-7', 52, 55, 50, 110, 51, 54, 53);
-INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (8, 1, '/pizza/pizza-8', 'pizza-8', 58, 61, 56, 120, 57, 60, 59);
-INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (9, 1, '/pizza/pizza-9', 'pizza-9', 64, 67, 62, 130, 63, 66, 65);
-INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (10, 2, '/panini/panini-1', 'panini-1', 70, 73, 68, 30, 69, 72, 71);
-INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (11, 2, '/panini/panini-2', 'panini-2', 76, 79, 74, 70, 75, 78, 77);
-INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (12, 2, '/panini/panini-3', 'panini-3', 82, 85, 80, 70, 81, 84, 83);
-INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (13, 3, '/pizza/drinks-1', 'drinks-1', 88, 91, 86, 80, 87, 90, 89);
-INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (14, 3, '/pizza/drinks-2', 'drinks-2', 94, 97, 92, 30, 93, 96, 95);
-INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (15, 3, '/pizza/drinks-3', 'drinks-3', 100, 103, 98, 10, 99, 102, 101);
+INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (1, 1, '/pizza/pizza-1', 'pizza-1', 27, 30, 31, 150, 26, 29, 28);
+INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (2, 1, '/pizza/pizza-2', 'pizza-2', 34, 37, 32, 140, 33, 36, 35);
+INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (3, 1, '/pizza/pizza-3', 'pizza-3', 40, 43, 38, 110, 39, 42, 41);
+INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (4, 1, '/pizza/pizza-4', 'pizza-4', 46, 49, 44, 110, 45, 48, 47);
+INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (5, 1, '/pizza/pizza-5', 'pizza-5', 52, 55, 50, 120, 51, 54, 53);
+INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (6, 1, '/pizza/pizza-6', 'pizza-6', 58, 61, 56, 140, 57, 60, 59);
+INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (7, 1, '/pizza/pizza-7', 'pizza-7', 64, 67, 62, 140, 63, 66, 65);
+INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (8, 1, '/pizza/pizza-8', 'pizza-8', 70, 73, 68, 120, 69, 72, 71);
+INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (9, 1, '/pizza/pizza-9', 'pizza-9', 76, 79, 74, 130, 75, 78, 77);
+INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (10, 2, '/panini/panini-1', 'panini-1', 82, 85, 80, 30, 81, 84, 83);
+INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (11, 2, '/panini/panini-2', 'panini-2', 88, 91, 86, 10, 87, 90, 89);
+INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (12, 2, '/panini/panini-3', 'panini-3', 94, 97, 92, 20, 93, 96, 95);
+INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (13, 3, '/pizza/drinks-1', 'drinks-1', 100, 103, 98, 20, 99, 102, 101);
+INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (14, 3, '/pizza/drinks-2', 'drinks-2', 106, 109, 104, 30, 105, 108, 107);
+INSERT INTO public."Products" ("Id", "CategoryId", "Url", "Code", "NameId", "DescriptionId", "UnitsId", "Price", "TitleId", "MetaDescriptionId", "MetaKeywordsId") VALUES (15, 3, '/pizza/drinks-3', 'drinks-3', 112, 115, 110, 10, 111, 114, 113);
 
 
 --
--- TOC entry 3476 (class 0 OID 17466)
--- Dependencies: 241
+-- TOC entry 3488 (class 0 OID 20090)
+-- Dependencies: 242
 -- Data for Name: Properties; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (1, 1, 1, NULL, NULL, 116, NULL);
-INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (2, 1, 2, NULL, NULL, 117, NULL);
-INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (3, 1, 3, NULL, NULL, 118, NULL);
-INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (4, 1, 4, NULL, NULL, 119, NULL);
-INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (5, 1, 5, NULL, NULL, 120, NULL);
-INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (6, 2, 1, NULL, NULL, 121, NULL);
-INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (7, 2, 2, NULL, NULL, 122, NULL);
-INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (8, 2, 3, NULL, NULL, 123, NULL);
-INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (9, 2, 4, NULL, NULL, 124, NULL);
-INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (10, 2, 5, NULL, NULL, 125, NULL);
-INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (11, 3, 1, NULL, NULL, 126, NULL);
-INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (12, 3, 2, NULL, NULL, 127, NULL);
-INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (13, 3, 3, NULL, NULL, 128, NULL);
-INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (14, 3, 4, NULL, NULL, 129, NULL);
-INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (15, 3, 5, NULL, NULL, 130, NULL);
-INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (16, 4, 1, NULL, NULL, 131, NULL);
-INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (17, 4, 2, NULL, NULL, 132, NULL);
-INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (18, 4, 3, NULL, NULL, 133, NULL);
-INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (19, 4, 4, NULL, NULL, 134, NULL);
-INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (20, 4, 5, NULL, NULL, 135, NULL);
+INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (1, 1, 1, NULL, NULL, 128, NULL);
+INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (2, 1, 2, NULL, NULL, 129, NULL);
+INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (3, 1, 3, NULL, NULL, 130, NULL);
+INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (4, 1, 4, NULL, NULL, 131, NULL);
+INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (5, 1, 5, NULL, NULL, 132, NULL);
+INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (6, 2, 1, NULL, NULL, 133, NULL);
+INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (7, 2, 2, NULL, NULL, 134, NULL);
+INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (8, 2, 3, NULL, NULL, 135, NULL);
+INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (9, 2, 4, NULL, NULL, 136, NULL);
+INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (10, 2, 5, NULL, NULL, 137, NULL);
+INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (11, 3, 1, NULL, NULL, 138, NULL);
+INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (12, 3, 2, NULL, NULL, 139, NULL);
+INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (13, 3, 3, NULL, NULL, 140, NULL);
+INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (14, 3, 4, NULL, NULL, 141, NULL);
+INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (15, 3, 5, NULL, NULL, 142, NULL);
+INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (16, 4, 1, NULL, NULL, 143, NULL);
+INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (17, 4, 2, NULL, NULL, 144, NULL);
+INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (18, 4, 3, NULL, NULL, 145, NULL);
+INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (19, 4, 4, NULL, NULL, 146, NULL);
+INSERT INTO public."Properties" ("Id", "ObjectId", "MemberId", "IntegerValue", "DecimalValue", "StringValueId", "DateTimeValue") VALUES (20, 4, 5, NULL, NULL, 147, NULL);
 
 
 --
--- TOC entry 3478 (class 0 OID 17492)
--- Dependencies: 243
+-- TOC entry 3490 (class 0 OID 20116)
+-- Dependencies: 244
 -- Data for Name: Relations; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 
 
 --
--- TOC entry 3446 (class 0 OID 17219)
--- Dependencies: 211
+-- TOC entry 3458 (class 0 OID 19843)
+-- Dependencies: 212
 -- Data for Name: RolePermissions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2935,8 +3015,8 @@ INSERT INTO public."RolePermissions" ("RoleId", "PermissionId") VALUES (3, 13);
 
 
 --
--- TOC entry 3442 (class 0 OID 17184)
--- Dependencies: 207
+-- TOC entry 3454 (class 0 OID 19808)
+-- Dependencies: 208
 -- Data for Name: Roles; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2946,8 +3026,8 @@ INSERT INTO public."Roles" ("Id", "Code", "Name", "Position") VALUES (3, 'Conten
 
 
 --
--- TOC entry 3464 (class 0 OID 17358)
--- Dependencies: 229
+-- TOC entry 3476 (class 0 OID 19982)
+-- Dependencies: 230
 -- Data for Name: Tabs; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2955,8 +3035,8 @@ INSERT INTO public."Tabs" ("Id", "ClassId", "Name", "Position") VALUES (1, 1, 'S
 
 
 --
--- TOC entry 3443 (class 0 OID 17193)
--- Dependencies: 208
+-- TOC entry 3455 (class 0 OID 19817)
+-- Dependencies: 209
 -- Data for Name: UserRoles; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2965,8 +3045,8 @@ INSERT INTO public."UserRoles" ("UserId", "RoleId") VALUES (1, 2);
 
 
 --
--- TOC entry 3436 (class 0 OID 17141)
--- Dependencies: 201
+-- TOC entry 3448 (class 0 OID 19765)
+-- Dependencies: 202
 -- Data for Name: Users; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2974,8 +3054,8 @@ INSERT INTO public."Users" ("Id", "Name", "Created") VALUES (1, 'Administrator',
 
 
 --
--- TOC entry 3450 (class 0 OID 17247)
--- Dependencies: 215
+-- TOC entry 3462 (class 0 OID 19871)
+-- Dependencies: 216
 -- Data for Name: Variables; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2990,8 +3070,8 @@ INSERT INTO public."Variables" ("Id", "ConfigurationId", "Code", "Name", "Value"
 
 
 --
--- TOC entry 3558 (class 0 OID 0)
--- Dependencies: 274
+-- TOC entry 3570 (class 0 OID 0)
+-- Dependencies: 275
 -- Name: Carts_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -2999,8 +3079,8 @@ SELECT pg_catalog.setval('public."Carts_Id_seq"', 1, false);
 
 
 --
--- TOC entry 3559 (class 0 OID 0)
--- Dependencies: 262
+-- TOC entry 3571 (class 0 OID 0)
+-- Dependencies: 263
 -- Name: Categories_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3008,8 +3088,8 @@ SELECT pg_catalog.setval('public."Categories_Id_seq"', 3, true);
 
 
 --
--- TOC entry 3560 (class 0 OID 0)
--- Dependencies: 226
+-- TOC entry 3572 (class 0 OID 0)
+-- Dependencies: 227
 -- Name: Classes_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3017,8 +3097,8 @@ SELECT pg_catalog.setval('public."Classes_Id_seq"', 2, true);
 
 
 --
--- TOC entry 3561 (class 0 OID 0)
--- Dependencies: 258
+-- TOC entry 3573 (class 0 OID 0)
+-- Dependencies: 259
 -- Name: CompletedFields_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3026,8 +3106,8 @@ SELECT pg_catalog.setval('public."CompletedFields_Id_seq"', 1, false);
 
 
 --
--- TOC entry 3562 (class 0 OID 0)
--- Dependencies: 256
+-- TOC entry 3574 (class 0 OID 0)
+-- Dependencies: 257
 -- Name: CompletedForms_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3035,8 +3115,8 @@ SELECT pg_catalog.setval('public."CompletedForms_Id_seq"', 1, false);
 
 
 --
--- TOC entry 3563 (class 0 OID 0)
--- Dependencies: 212
+-- TOC entry 3575 (class 0 OID 0)
+-- Dependencies: 213
 -- Name: Configurations_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3044,8 +3124,8 @@ SELECT pg_catalog.setval('public."Configurations_Id_seq"', 3, false);
 
 
 --
--- TOC entry 3564 (class 0 OID 0)
--- Dependencies: 202
+-- TOC entry 3576 (class 0 OID 0)
+-- Dependencies: 203
 -- Name: CredentialTypes_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3053,8 +3133,8 @@ SELECT pg_catalog.setval('public."CredentialTypes_Id_seq"', 2, false);
 
 
 --
--- TOC entry 3565 (class 0 OID 0)
--- Dependencies: 204
+-- TOC entry 3577 (class 0 OID 0)
+-- Dependencies: 205
 -- Name: Credentials_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3062,17 +3142,17 @@ SELECT pg_catalog.setval('public."Credentials_Id_seq"', 2, false);
 
 
 --
--- TOC entry 3566 (class 0 OID 0)
--- Dependencies: 224
+-- TOC entry 3578 (class 0 OID 0)
+-- Dependencies: 225
 -- Name: DataSources_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."DataSources_Id_seq"', 4, true);
+SELECT pg_catalog.setval('public."DataSources_Id_seq"', 3, true);
 
 
 --
--- TOC entry 3567 (class 0 OID 0)
--- Dependencies: 236
+-- TOC entry 3579 (class 0 OID 0)
+-- Dependencies: 237
 -- Name: DataTypeParameterValues_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3080,8 +3160,8 @@ SELECT pg_catalog.setval('public."DataTypeParameterValues_Id_seq"', 8, true);
 
 
 --
--- TOC entry 3568 (class 0 OID 0)
--- Dependencies: 232
+-- TOC entry 3580 (class 0 OID 0)
+-- Dependencies: 233
 -- Name: DataTypeParameters_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3089,8 +3169,8 @@ SELECT pg_catalog.setval('public."DataTypeParameters_Id_seq"', 8, false);
 
 
 --
--- TOC entry 3569 (class 0 OID 0)
--- Dependencies: 230
+-- TOC entry 3581 (class 0 OID 0)
+-- Dependencies: 231
 -- Name: DataTypes_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3098,8 +3178,8 @@ SELECT pg_catalog.setval('public."DataTypes_Id_seq"', 9, false);
 
 
 --
--- TOC entry 3570 (class 0 OID 0)
--- Dependencies: 272
+-- TOC entry 3582 (class 0 OID 0)
+-- Dependencies: 273
 -- Name: DeliveryMethods_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3107,26 +3187,26 @@ SELECT pg_catalog.setval('public."DeliveryMethods_Id_seq"', 3, true);
 
 
 --
--- TOC entry 3571 (class 0 OID 0)
--- Dependencies: 217
+-- TOC entry 3583 (class 0 OID 0)
+-- Dependencies: 218
 -- Name: Dictionaries_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."Dictionaries_Id_seq"', 135, true);
+SELECT pg_catalog.setval('public."Dictionaries_Id_seq"', 147, true);
 
 
 --
--- TOC entry 3572 (class 0 OID 0)
--- Dependencies: 221
+-- TOC entry 3584 (class 0 OID 0)
+-- Dependencies: 222
 -- Name: Endpoints_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."Endpoints_Id_seq"', 4, true);
+SELECT pg_catalog.setval('public."Endpoints_Id_seq"', 3, true);
 
 
 --
--- TOC entry 3573 (class 0 OID 0)
--- Dependencies: 254
+-- TOC entry 3585 (class 0 OID 0)
+-- Dependencies: 255
 -- Name: FieldOptions_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3134,8 +3214,8 @@ SELECT pg_catalog.setval('public."FieldOptions_Id_seq"', 1, false);
 
 
 --
--- TOC entry 3574 (class 0 OID 0)
--- Dependencies: 250
+-- TOC entry 3586 (class 0 OID 0)
+-- Dependencies: 251
 -- Name: FieldTypes_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3143,8 +3223,8 @@ SELECT pg_catalog.setval('public."FieldTypes_Id_seq"', 8, false);
 
 
 --
--- TOC entry 3575 (class 0 OID 0)
--- Dependencies: 252
+-- TOC entry 3587 (class 0 OID 0)
+-- Dependencies: 253
 -- Name: Fields_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3152,8 +3232,8 @@ SELECT pg_catalog.setval('public."Fields_Id_seq"', 3, true);
 
 
 --
--- TOC entry 3576 (class 0 OID 0)
--- Dependencies: 260
+-- TOC entry 3588 (class 0 OID 0)
+-- Dependencies: 261
 -- Name: Files_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3161,8 +3241,8 @@ SELECT pg_catalog.setval('public."Files_Id_seq"', 1, false);
 
 
 --
--- TOC entry 3577 (class 0 OID 0)
--- Dependencies: 248
+-- TOC entry 3589 (class 0 OID 0)
+-- Dependencies: 249
 -- Name: Forms_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3170,17 +3250,17 @@ SELECT pg_catalog.setval('public."Forms_Id_seq"', 1, true);
 
 
 --
--- TOC entry 3578 (class 0 OID 0)
--- Dependencies: 219
+-- TOC entry 3590 (class 0 OID 0)
+-- Dependencies: 220
 -- Name: Localizations_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."Localizations_Id_seq"', 397, true);
+SELECT pg_catalog.setval('public."Localizations_Id_seq"', 433, true);
 
 
 --
--- TOC entry 3579 (class 0 OID 0)
--- Dependencies: 234
+-- TOC entry 3591 (class 0 OID 0)
+-- Dependencies: 235
 -- Name: Members_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3188,8 +3268,8 @@ SELECT pg_catalog.setval('public."Members_Id_seq"', 5, true);
 
 
 --
--- TOC entry 3580 (class 0 OID 0)
--- Dependencies: 246
+-- TOC entry 3592 (class 0 OID 0)
+-- Dependencies: 247
 -- Name: MenuItems_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3197,8 +3277,8 @@ SELECT pg_catalog.setval('public."MenuItems_Id_seq"', 4, true);
 
 
 --
--- TOC entry 3581 (class 0 OID 0)
--- Dependencies: 244
+-- TOC entry 3593 (class 0 OID 0)
+-- Dependencies: 245
 -- Name: Menus_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3206,8 +3286,8 @@ SELECT pg_catalog.setval('public."Menus_Id_seq"', 1, true);
 
 
 --
--- TOC entry 3582 (class 0 OID 0)
--- Dependencies: 238
+-- TOC entry 3594 (class 0 OID 0)
+-- Dependencies: 239
 -- Name: Objects_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3215,8 +3295,8 @@ SELECT pg_catalog.setval('public."Objects_Id_seq"', 4, true);
 
 
 --
--- TOC entry 3583 (class 0 OID 0)
--- Dependencies: 268
+-- TOC entry 3595 (class 0 OID 0)
+-- Dependencies: 269
 -- Name: OrderStates_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3224,8 +3304,8 @@ SELECT pg_catalog.setval('public."OrderStates_Id_seq"', 7, true);
 
 
 --
--- TOC entry 3584 (class 0 OID 0)
--- Dependencies: 276
+-- TOC entry 3596 (class 0 OID 0)
+-- Dependencies: 277
 -- Name: Orders_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3233,8 +3313,8 @@ SELECT pg_catalog.setval('public."Orders_Id_seq"', 1, false);
 
 
 --
--- TOC entry 3585 (class 0 OID 0)
--- Dependencies: 270
+-- TOC entry 3597 (class 0 OID 0)
+-- Dependencies: 271
 -- Name: PaymentMethods_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3242,8 +3322,8 @@ SELECT pg_catalog.setval('public."PaymentMethods_Id_seq"', 2, true);
 
 
 --
--- TOC entry 3586 (class 0 OID 0)
--- Dependencies: 209
+-- TOC entry 3598 (class 0 OID 0)
+-- Dependencies: 210
 -- Name: Permissions_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3251,8 +3331,8 @@ SELECT pg_catalog.setval('public."Permissions_Id_seq"', 27, false);
 
 
 --
--- TOC entry 3587 (class 0 OID 0)
--- Dependencies: 266
+-- TOC entry 3599 (class 0 OID 0)
+-- Dependencies: 267
 -- Name: Photos_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3260,8 +3340,8 @@ SELECT pg_catalog.setval('public."Photos_Id_seq"', 15, true);
 
 
 --
--- TOC entry 3588 (class 0 OID 0)
--- Dependencies: 278
+-- TOC entry 3600 (class 0 OID 0)
+-- Dependencies: 279
 -- Name: Positions_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3269,8 +3349,8 @@ SELECT pg_catalog.setval('public."Positions_Id_seq"', 1, false);
 
 
 --
--- TOC entry 3589 (class 0 OID 0)
--- Dependencies: 264
+-- TOC entry 3601 (class 0 OID 0)
+-- Dependencies: 265
 -- Name: Products_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3278,8 +3358,8 @@ SELECT pg_catalog.setval('public."Products_Id_seq"', 15, true);
 
 
 --
--- TOC entry 3590 (class 0 OID 0)
--- Dependencies: 240
+-- TOC entry 3602 (class 0 OID 0)
+-- Dependencies: 241
 -- Name: Properties_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3287,8 +3367,8 @@ SELECT pg_catalog.setval('public."Properties_Id_seq"', 20, true);
 
 
 --
--- TOC entry 3591 (class 0 OID 0)
--- Dependencies: 242
+-- TOC entry 3603 (class 0 OID 0)
+-- Dependencies: 243
 -- Name: Relations_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3296,8 +3376,8 @@ SELECT pg_catalog.setval('public."Relations_Id_seq"', 1, false);
 
 
 --
--- TOC entry 3592 (class 0 OID 0)
--- Dependencies: 206
+-- TOC entry 3604 (class 0 OID 0)
+-- Dependencies: 207
 -- Name: Roles_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3305,8 +3385,8 @@ SELECT pg_catalog.setval('public."Roles_Id_seq"', 4, false);
 
 
 --
--- TOC entry 3593 (class 0 OID 0)
--- Dependencies: 228
+-- TOC entry 3605 (class 0 OID 0)
+-- Dependencies: 229
 -- Name: Tabs_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3314,8 +3394,8 @@ SELECT pg_catalog.setval('public."Tabs_Id_seq"', 1, true);
 
 
 --
--- TOC entry 3594 (class 0 OID 0)
--- Dependencies: 200
+-- TOC entry 3606 (class 0 OID 0)
+-- Dependencies: 201
 -- Name: Users_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3323,8 +3403,8 @@ SELECT pg_catalog.setval('public."Users_Id_seq"', 2, false);
 
 
 --
--- TOC entry 3595 (class 0 OID 0)
--- Dependencies: 214
+-- TOC entry 3607 (class 0 OID 0)
+-- Dependencies: 215
 -- Name: Variables_Id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -3332,7 +3412,7 @@ SELECT pg_catalog.setval('public."Variables_Id_seq"', 8, false);
 
 
 --
--- TOC entry 3239 (class 2606 OID 17817)
+-- TOC entry 3246 (class 2606 OID 20461)
 -- Name: Carts PK_Carts; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3341,7 +3421,7 @@ ALTER TABLE ONLY public."Carts"
 
 
 --
--- TOC entry 3227 (class 2606 OID 17686)
+-- TOC entry 3234 (class 2606 OID 20310)
 -- Name: Categories PK_Categories; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3350,7 +3430,7 @@ ALTER TABLE ONLY public."Categories"
 
 
 --
--- TOC entry 3191 (class 2606 OID 17350)
+-- TOC entry 3198 (class 2606 OID 19974)
 -- Name: Classes PK_Classes; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3359,7 +3439,7 @@ ALTER TABLE ONLY public."Classes"
 
 
 --
--- TOC entry 3223 (class 2606 OID 17654)
+-- TOC entry 3230 (class 2606 OID 20278)
 -- Name: CompletedFields PK_CompletedFields; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3368,7 +3448,7 @@ ALTER TABLE ONLY public."CompletedFields"
 
 
 --
--- TOC entry 3221 (class 2606 OID 17638)
+-- TOC entry 3228 (class 2606 OID 20262)
 -- Name: CompletedForms PK_CompletedForms; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3377,7 +3457,7 @@ ALTER TABLE ONLY public."CompletedForms"
 
 
 --
--- TOC entry 3175 (class 2606 OID 17244)
+-- TOC entry 3182 (class 2606 OID 19868)
 -- Name: Configurations PK_Configurations; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3386,7 +3466,7 @@ ALTER TABLE ONLY public."Configurations"
 
 
 --
--- TOC entry 3163 (class 2606 OID 17160)
+-- TOC entry 3170 (class 2606 OID 19784)
 -- Name: CredentialTypes PK_CredentialTypes; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3395,7 +3475,7 @@ ALTER TABLE ONLY public."CredentialTypes"
 
 
 --
--- TOC entry 3165 (class 2606 OID 17171)
+-- TOC entry 3172 (class 2606 OID 19795)
 -- Name: Credentials PK_Credentials; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3404,7 +3484,7 @@ ALTER TABLE ONLY public."Credentials"
 
 
 --
--- TOC entry 3179 (class 2606 OID 17268)
+-- TOC entry 3186 (class 2606 OID 19892)
 -- Name: Cultures PK_Cultures; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3413,7 +3493,7 @@ ALTER TABLE ONLY public."Cultures"
 
 
 --
--- TOC entry 3189 (class 2606 OID 17334)
+-- TOC entry 3196 (class 2606 OID 19958)
 -- Name: DataSources PK_DataSources; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3422,7 +3502,7 @@ ALTER TABLE ONLY public."DataSources"
 
 
 --
--- TOC entry 3201 (class 2606 OID 17440)
+-- TOC entry 3208 (class 2606 OID 20064)
 -- Name: DataTypeParameterValues PK_DataTypeParameterValues; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3431,7 +3511,7 @@ ALTER TABLE ONLY public."DataTypeParameterValues"
 
 
 --
--- TOC entry 3197 (class 2606 OID 17393)
+-- TOC entry 3204 (class 2606 OID 20017)
 -- Name: DataTypeParameters PK_DataTypeParameters; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3440,7 +3520,7 @@ ALTER TABLE ONLY public."DataTypeParameters"
 
 
 --
--- TOC entry 3195 (class 2606 OID 17382)
+-- TOC entry 3202 (class 2606 OID 20006)
 -- Name: DataTypes PK_DataTypes; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3449,7 +3529,7 @@ ALTER TABLE ONLY public."DataTypes"
 
 
 --
--- TOC entry 3237 (class 2606 OID 17801)
+-- TOC entry 3244 (class 2606 OID 20445)
 -- Name: DeliveryMethods PK_DeliveryMethods; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3458,7 +3538,7 @@ ALTER TABLE ONLY public."DeliveryMethods"
 
 
 --
--- TOC entry 3181 (class 2606 OID 17276)
+-- TOC entry 3188 (class 2606 OID 19900)
 -- Name: Dictionaries PK_Dictionaries; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3467,7 +3547,7 @@ ALTER TABLE ONLY public."Dictionaries"
 
 
 --
--- TOC entry 3187 (class 2606 OID 17313)
+-- TOC entry 3194 (class 2606 OID 19937)
 -- Name: EndpointPermissions PK_EndpointPermissions; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3476,7 +3556,7 @@ ALTER TABLE ONLY public."EndpointPermissions"
 
 
 --
--- TOC entry 3185 (class 2606 OID 17308)
+-- TOC entry 3192 (class 2606 OID 19932)
 -- Name: Endpoints PK_Endpoints; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3485,7 +3565,7 @@ ALTER TABLE ONLY public."Endpoints"
 
 
 --
--- TOC entry 3219 (class 2606 OID 17620)
+-- TOC entry 3226 (class 2606 OID 20244)
 -- Name: FieldOptions PK_FieldOptions; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3494,7 +3574,7 @@ ALTER TABLE ONLY public."FieldOptions"
 
 
 --
--- TOC entry 3215 (class 2606 OID 17586)
+-- TOC entry 3222 (class 2606 OID 20210)
 -- Name: FieldTypes PK_FieldTypes; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3503,7 +3583,7 @@ ALTER TABLE ONLY public."FieldTypes"
 
 
 --
--- TOC entry 3217 (class 2606 OID 17597)
+-- TOC entry 3224 (class 2606 OID 20221)
 -- Name: Fields PK_Fields; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3512,7 +3592,7 @@ ALTER TABLE ONLY public."Fields"
 
 
 --
--- TOC entry 3225 (class 2606 OID 17675)
+-- TOC entry 3232 (class 2606 OID 20299)
 -- Name: Files PK_Files; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3521,7 +3601,7 @@ ALTER TABLE ONLY public."Files"
 
 
 --
--- TOC entry 3213 (class 2606 OID 17565)
+-- TOC entry 3220 (class 2606 OID 20189)
 -- Name: Forms PK_Forms; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3530,7 +3610,7 @@ ALTER TABLE ONLY public."Forms"
 
 
 --
--- TOC entry 3183 (class 2606 OID 17287)
+-- TOC entry 3190 (class 2606 OID 19911)
 -- Name: Localizations PK_Localizations; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3539,7 +3619,7 @@ ALTER TABLE ONLY public."Localizations"
 
 
 --
--- TOC entry 3199 (class 2606 OID 17409)
+-- TOC entry 3206 (class 2606 OID 20033)
 -- Name: Members PK_Members; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3548,7 +3628,7 @@ ALTER TABLE ONLY public."Members"
 
 
 --
--- TOC entry 3211 (class 2606 OID 17539)
+-- TOC entry 3218 (class 2606 OID 20163)
 -- Name: MenuItems PK_MenuItems; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3557,7 +3637,7 @@ ALTER TABLE ONLY public."MenuItems"
 
 
 --
--- TOC entry 3209 (class 2606 OID 17523)
+-- TOC entry 3216 (class 2606 OID 20147)
 -- Name: Menus PK_Menus; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3566,7 +3646,16 @@ ALTER TABLE ONLY public."Menus"
 
 
 --
--- TOC entry 3203 (class 2606 OID 17458)
+-- TOC entry 3166 (class 2606 OID 19762)
+-- Name: ModelStates PK_ModelStates; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."ModelStates"
+    ADD CONSTRAINT "PK_ModelStates" PRIMARY KEY ("Id");
+
+
+--
+-- TOC entry 3210 (class 2606 OID 20082)
 -- Name: Objects PK_Objects; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3575,7 +3664,7 @@ ALTER TABLE ONLY public."Objects"
 
 
 --
--- TOC entry 3233 (class 2606 OID 17769)
+-- TOC entry 3240 (class 2606 OID 20413)
 -- Name: OrderStates PK_OrderStates; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3584,7 +3673,7 @@ ALTER TABLE ONLY public."OrderStates"
 
 
 --
--- TOC entry 3241 (class 2606 OID 17828)
+-- TOC entry 3248 (class 2606 OID 20472)
 -- Name: Orders PK_Orders; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3593,7 +3682,7 @@ ALTER TABLE ONLY public."Orders"
 
 
 --
--- TOC entry 3235 (class 2606 OID 17785)
+-- TOC entry 3242 (class 2606 OID 20429)
 -- Name: PaymentMethods PK_PaymentMethods; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3602,7 +3691,7 @@ ALTER TABLE ONLY public."PaymentMethods"
 
 
 --
--- TOC entry 3171 (class 2606 OID 17218)
+-- TOC entry 3178 (class 2606 OID 19842)
 -- Name: Permissions PK_Permissions; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3611,7 +3700,7 @@ ALTER TABLE ONLY public."Permissions"
 
 
 --
--- TOC entry 3231 (class 2606 OID 17753)
+-- TOC entry 3238 (class 2606 OID 20397)
 -- Name: Photos PK_Photos; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3620,7 +3709,7 @@ ALTER TABLE ONLY public."Photos"
 
 
 --
--- TOC entry 3243 (class 2606 OID 17854)
+-- TOC entry 3250 (class 2606 OID 20498)
 -- Name: Positions PK_Positions; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3629,7 +3718,7 @@ ALTER TABLE ONLY public."Positions"
 
 
 --
--- TOC entry 3229 (class 2606 OID 17707)
+-- TOC entry 3236 (class 2606 OID 20351)
 -- Name: Products PK_Products; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3638,7 +3727,7 @@ ALTER TABLE ONLY public."Products"
 
 
 --
--- TOC entry 3205 (class 2606 OID 17474)
+-- TOC entry 3212 (class 2606 OID 20098)
 -- Name: Properties PK_Properties; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3647,7 +3736,7 @@ ALTER TABLE ONLY public."Properties"
 
 
 --
--- TOC entry 3207 (class 2606 OID 17497)
+-- TOC entry 3214 (class 2606 OID 20121)
 -- Name: Relations PK_Relations; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3656,7 +3745,7 @@ ALTER TABLE ONLY public."Relations"
 
 
 --
--- TOC entry 3173 (class 2606 OID 17223)
+-- TOC entry 3180 (class 2606 OID 19847)
 -- Name: RolePermissions PK_RolePermissions; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3665,7 +3754,7 @@ ALTER TABLE ONLY public."RolePermissions"
 
 
 --
--- TOC entry 3167 (class 2606 OID 17192)
+-- TOC entry 3174 (class 2606 OID 19816)
 -- Name: Roles PK_Roles; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3674,7 +3763,7 @@ ALTER TABLE ONLY public."Roles"
 
 
 --
--- TOC entry 3193 (class 2606 OID 17366)
+-- TOC entry 3200 (class 2606 OID 19990)
 -- Name: Tabs PK_Tabs; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3683,7 +3772,7 @@ ALTER TABLE ONLY public."Tabs"
 
 
 --
--- TOC entry 3169 (class 2606 OID 17197)
+-- TOC entry 3176 (class 2606 OID 19821)
 -- Name: UserRoles PK_UserRoles; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3692,7 +3781,7 @@ ALTER TABLE ONLY public."UserRoles"
 
 
 --
--- TOC entry 3161 (class 2606 OID 17149)
+-- TOC entry 3168 (class 2606 OID 19773)
 -- Name: Users PK_Users; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3701,7 +3790,7 @@ ALTER TABLE ONLY public."Users"
 
 
 --
--- TOC entry 3177 (class 2606 OID 17255)
+-- TOC entry 3184 (class 2606 OID 19879)
 -- Name: Variables PK_Variable; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3710,7 +3799,7 @@ ALTER TABLE ONLY public."Variables"
 
 
 --
--- TOC entry 3286 (class 2606 OID 17687)
+-- TOC entry 3293 (class 2606 OID 20311)
 -- Name: Categories FK_Categories_Categories; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3719,7 +3808,7 @@ ALTER TABLE ONLY public."Categories"
 
 
 --
--- TOC entry 3287 (class 2606 OID 17692)
+-- TOC entry 3294 (class 2606 OID 20316)
 -- Name: Categories FK_Categories_Dictionaries; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3728,7 +3817,43 @@ ALTER TABLE ONLY public."Categories"
 
 
 --
--- TOC entry 3256 (class 2606 OID 17351)
+-- TOC entry 3295 (class 2606 OID 20321)
+-- Name: Categories FK_Categories_Dictionaries_DescriptionId; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."Categories"
+    ADD CONSTRAINT "FK_Categories_Dictionaries_DescriptionId" FOREIGN KEY ("DescriptionId") REFERENCES public."Dictionaries"("Id");
+
+
+--
+-- TOC entry 3297 (class 2606 OID 20331)
+-- Name: Categories FK_Categories_Dictionaries_MetaDescriptionId; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."Categories"
+    ADD CONSTRAINT "FK_Categories_Dictionaries_MetaDescriptionId" FOREIGN KEY ("MetaDescriptionId") REFERENCES public."Dictionaries"("Id");
+
+
+--
+-- TOC entry 3298 (class 2606 OID 20336)
+-- Name: Categories FK_Categories_Dictionaries_MetaKeywordsId; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."Categories"
+    ADD CONSTRAINT "FK_Categories_Dictionaries_MetaKeywordsId" FOREIGN KEY ("MetaKeywordsId") REFERENCES public."Dictionaries"("Id");
+
+
+--
+-- TOC entry 3296 (class 2606 OID 20326)
+-- Name: Categories FK_Categories_Dictionaries_TitleId; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."Categories"
+    ADD CONSTRAINT "FK_Categories_Dictionaries_TitleId" FOREIGN KEY ("TitleId") REFERENCES public."Dictionaries"("Id");
+
+
+--
+-- TOC entry 3263 (class 2606 OID 19975)
 -- Name: Classes FK_Classes_Classes; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3737,7 +3862,7 @@ ALTER TABLE ONLY public."Classes"
 
 
 --
--- TOC entry 3284 (class 2606 OID 17655)
+-- TOC entry 3291 (class 2606 OID 20279)
 -- Name: CompletedFields FK_CompletedFields_CompletedForms; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3746,7 +3871,7 @@ ALTER TABLE ONLY public."CompletedFields"
 
 
 --
--- TOC entry 3285 (class 2606 OID 17660)
+-- TOC entry 3292 (class 2606 OID 20284)
 -- Name: CompletedFields FK_CompletedFields_Fields; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3755,7 +3880,7 @@ ALTER TABLE ONLY public."CompletedFields"
 
 
 --
--- TOC entry 3283 (class 2606 OID 17639)
+-- TOC entry 3290 (class 2606 OID 20263)
 -- Name: CompletedForms FK_CompletedForms_Forms; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3764,7 +3889,7 @@ ALTER TABLE ONLY public."CompletedForms"
 
 
 --
--- TOC entry 3245 (class 2606 OID 17177)
+-- TOC entry 3252 (class 2606 OID 19801)
 -- Name: Credentials FK_Credentials_CredentialTypes; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3773,7 +3898,7 @@ ALTER TABLE ONLY public."Credentials"
 
 
 --
--- TOC entry 3244 (class 2606 OID 17172)
+-- TOC entry 3251 (class 2606 OID 19796)
 -- Name: Credentials FK_Credentials_Users; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3782,7 +3907,7 @@ ALTER TABLE ONLY public."Credentials"
 
 
 --
--- TOC entry 3255 (class 2606 OID 17335)
+-- TOC entry 3262 (class 2606 OID 19959)
 -- Name: DataSources FK_DataSources_Endpoints; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3791,7 +3916,7 @@ ALTER TABLE ONLY public."DataSources"
 
 
 --
--- TOC entry 3263 (class 2606 OID 17441)
+-- TOC entry 3270 (class 2606 OID 20065)
 -- Name: DataTypeParameterValues FK_DataTypeParameterValues_DataTypeParameters_DataTypeParameter; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3800,7 +3925,7 @@ ALTER TABLE ONLY public."DataTypeParameterValues"
 
 
 --
--- TOC entry 3264 (class 2606 OID 17446)
+-- TOC entry 3271 (class 2606 OID 20070)
 -- Name: DataTypeParameterValues FK_DataTypeParameterValues_Members_MemberId; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3809,7 +3934,7 @@ ALTER TABLE ONLY public."DataTypeParameterValues"
 
 
 --
--- TOC entry 3258 (class 2606 OID 17394)
+-- TOC entry 3265 (class 2606 OID 20018)
 -- Name: DataTypeParameters FK_DataTypeParameters_DataTypes_DataTypeId; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3818,7 +3943,7 @@ ALTER TABLE ONLY public."DataTypeParameters"
 
 
 --
--- TOC entry 3298 (class 2606 OID 17802)
+-- TOC entry 3309 (class 2606 OID 20446)
 -- Name: DeliveryMethods FK_DeliveryMethods_Dictionaries; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3827,7 +3952,7 @@ ALTER TABLE ONLY public."DeliveryMethods"
 
 
 --
--- TOC entry 3253 (class 2606 OID 17314)
+-- TOC entry 3260 (class 2606 OID 19938)
 -- Name: EndpointPermissions FK_EndpointPermissions_Roles; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3836,7 +3961,7 @@ ALTER TABLE ONLY public."EndpointPermissions"
 
 
 --
--- TOC entry 3282 (class 2606 OID 17626)
+-- TOC entry 3289 (class 2606 OID 20250)
 -- Name: FieldOptions FK_FieldOptions_Dictionaries; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3845,7 +3970,7 @@ ALTER TABLE ONLY public."FieldOptions"
 
 
 --
--- TOC entry 3281 (class 2606 OID 17621)
+-- TOC entry 3288 (class 2606 OID 20245)
 -- Name: FieldOptions FK_FieldOptions_Fields; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3854,7 +3979,7 @@ ALTER TABLE ONLY public."FieldOptions"
 
 
 --
--- TOC entry 3280 (class 2606 OID 17608)
+-- TOC entry 3287 (class 2606 OID 20232)
 -- Name: Fields FK_Fields_Dictionaries; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3863,7 +3988,7 @@ ALTER TABLE ONLY public."Fields"
 
 
 --
--- TOC entry 3279 (class 2606 OID 17603)
+-- TOC entry 3286 (class 2606 OID 20227)
 -- Name: Fields FK_Fields_FieldTypes; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3872,7 +3997,7 @@ ALTER TABLE ONLY public."Fields"
 
 
 --
--- TOC entry 3278 (class 2606 OID 17598)
+-- TOC entry 3285 (class 2606 OID 20222)
 -- Name: Fields FK_Fields_Forms; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3881,7 +4006,7 @@ ALTER TABLE ONLY public."Fields"
 
 
 --
--- TOC entry 3276 (class 2606 OID 17566)
+-- TOC entry 3283 (class 2606 OID 20190)
 -- Name: Forms FK_Forms_Dictionaries_NameId; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3890,7 +4015,7 @@ ALTER TABLE ONLY public."Forms"
 
 
 --
--- TOC entry 3277 (class 2606 OID 17571)
+-- TOC entry 3284 (class 2606 OID 20195)
 -- Name: Forms FK_Forms_Dictionaries_SubmitButtonTitleId; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3899,7 +4024,7 @@ ALTER TABLE ONLY public."Forms"
 
 
 --
--- TOC entry 3252 (class 2606 OID 17293)
+-- TOC entry 3259 (class 2606 OID 19917)
 -- Name: Localizations FK_Localizations_Cultures; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3908,7 +4033,7 @@ ALTER TABLE ONLY public."Localizations"
 
 
 --
--- TOC entry 3251 (class 2606 OID 17288)
+-- TOC entry 3258 (class 2606 OID 19912)
 -- Name: Localizations FK_Localizations_Dictionaries; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3917,7 +4042,7 @@ ALTER TABLE ONLY public."Localizations"
 
 
 --
--- TOC entry 3259 (class 2606 OID 17410)
+-- TOC entry 3266 (class 2606 OID 20034)
 -- Name: Members FK_Members_Classes_ClassId; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3926,7 +4051,7 @@ ALTER TABLE ONLY public."Members"
 
 
 --
--- TOC entry 3262 (class 2606 OID 17425)
+-- TOC entry 3269 (class 2606 OID 20049)
 -- Name: Members FK_Members_Classes_RelationClassId; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3935,7 +4060,7 @@ ALTER TABLE ONLY public."Members"
 
 
 --
--- TOC entry 3261 (class 2606 OID 17420)
+-- TOC entry 3268 (class 2606 OID 20044)
 -- Name: Members FK_Members_DataTypes; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3944,7 +4069,7 @@ ALTER TABLE ONLY public."Members"
 
 
 --
--- TOC entry 3260 (class 2606 OID 17415)
+-- TOC entry 3267 (class 2606 OID 20039)
 -- Name: Members FK_Members_Tabs; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3953,7 +4078,7 @@ ALTER TABLE ONLY public."Members"
 
 
 --
--- TOC entry 3275 (class 2606 OID 17550)
+-- TOC entry 3282 (class 2606 OID 20174)
 -- Name: MenuItems FK_MenuItems_Dictionaries; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3962,7 +4087,7 @@ ALTER TABLE ONLY public."MenuItems"
 
 
 --
--- TOC entry 3274 (class 2606 OID 17545)
+-- TOC entry 3281 (class 2606 OID 20169)
 -- Name: MenuItems FK_MenuItems_MenuItems; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3971,7 +4096,7 @@ ALTER TABLE ONLY public."MenuItems"
 
 
 --
--- TOC entry 3273 (class 2606 OID 17540)
+-- TOC entry 3280 (class 2606 OID 20164)
 -- Name: MenuItems FK_MenuItems_Menus; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3980,7 +4105,7 @@ ALTER TABLE ONLY public."MenuItems"
 
 
 --
--- TOC entry 3272 (class 2606 OID 17524)
+-- TOC entry 3279 (class 2606 OID 20148)
 -- Name: Menus FK_Menus_Dictionaries; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3989,7 +4114,7 @@ ALTER TABLE ONLY public."Menus"
 
 
 --
--- TOC entry 3265 (class 2606 OID 17459)
+-- TOC entry 3272 (class 2606 OID 20083)
 -- Name: Objects FK_Objects_Classes; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -3998,7 +4123,7 @@ ALTER TABLE ONLY public."Objects"
 
 
 --
--- TOC entry 3296 (class 2606 OID 17770)
+-- TOC entry 3307 (class 2606 OID 20414)
 -- Name: OrderStates FK_OrderStates_Dictionaries; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4007,7 +4132,7 @@ ALTER TABLE ONLY public."OrderStates"
 
 
 --
--- TOC entry 3301 (class 2606 OID 17839)
+-- TOC entry 3312 (class 2606 OID 20483)
 -- Name: Orders FK_Orders_DeliveryMethods; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4016,7 +4141,7 @@ ALTER TABLE ONLY public."Orders"
 
 
 --
--- TOC entry 3299 (class 2606 OID 17829)
+-- TOC entry 3310 (class 2606 OID 20473)
 -- Name: Orders FK_Orders_OrderStates; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4025,7 +4150,7 @@ ALTER TABLE ONLY public."Orders"
 
 
 --
--- TOC entry 3300 (class 2606 OID 17834)
+-- TOC entry 3311 (class 2606 OID 20478)
 -- Name: Orders FK_Orders_PaymentMethods; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4034,7 +4159,7 @@ ALTER TABLE ONLY public."Orders"
 
 
 --
--- TOC entry 3297 (class 2606 OID 17786)
+-- TOC entry 3308 (class 2606 OID 20430)
 -- Name: PaymentMethods FK_PaymentMethods_Dictionaries; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4043,7 +4168,7 @@ ALTER TABLE ONLY public."PaymentMethods"
 
 
 --
--- TOC entry 3295 (class 2606 OID 17754)
+-- TOC entry 3306 (class 2606 OID 20398)
 -- Name: Photos FK_Photos_Products; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4052,7 +4177,7 @@ ALTER TABLE ONLY public."Photos"
 
 
 --
--- TOC entry 3302 (class 2606 OID 17855)
+-- TOC entry 3313 (class 2606 OID 20499)
 -- Name: Positions FK_Positions_Carts; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4061,7 +4186,7 @@ ALTER TABLE ONLY public."Positions"
 
 
 --
--- TOC entry 3303 (class 2606 OID 17860)
+-- TOC entry 3314 (class 2606 OID 20504)
 -- Name: Positions FK_Positions_Orders; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4070,7 +4195,7 @@ ALTER TABLE ONLY public."Positions"
 
 
 --
--- TOC entry 3304 (class 2606 OID 17865)
+-- TOC entry 3315 (class 2606 OID 20509)
 -- Name: Positions FK_Positions_Products; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4079,7 +4204,7 @@ ALTER TABLE ONLY public."Positions"
 
 
 --
--- TOC entry 3288 (class 2606 OID 17708)
+-- TOC entry 3299 (class 2606 OID 20352)
 -- Name: Products FK_Products_Categories; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4088,7 +4213,7 @@ ALTER TABLE ONLY public."Products"
 
 
 --
--- TOC entry 3290 (class 2606 OID 17718)
+-- TOC entry 3301 (class 2606 OID 20362)
 -- Name: Products FK_Products_Dictionaries_DescriptionId; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4097,7 +4222,7 @@ ALTER TABLE ONLY public."Products"
 
 
 --
--- TOC entry 3293 (class 2606 OID 17733)
+-- TOC entry 3304 (class 2606 OID 20377)
 -- Name: Products FK_Products_Dictionaries_MetaDescriptionId; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4106,7 +4231,7 @@ ALTER TABLE ONLY public."Products"
 
 
 --
--- TOC entry 3294 (class 2606 OID 17738)
+-- TOC entry 3305 (class 2606 OID 20382)
 -- Name: Products FK_Products_Dictionaries_MetaKeywordsId; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4115,7 +4240,7 @@ ALTER TABLE ONLY public."Products"
 
 
 --
--- TOC entry 3289 (class 2606 OID 17713)
+-- TOC entry 3300 (class 2606 OID 20357)
 -- Name: Products FK_Products_Dictionaries_NameId; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4124,7 +4249,7 @@ ALTER TABLE ONLY public."Products"
 
 
 --
--- TOC entry 3292 (class 2606 OID 17728)
+-- TOC entry 3303 (class 2606 OID 20372)
 -- Name: Products FK_Products_Dictionaries_TitleId; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4133,7 +4258,7 @@ ALTER TABLE ONLY public."Products"
 
 
 --
--- TOC entry 3291 (class 2606 OID 17723)
+-- TOC entry 3302 (class 2606 OID 20367)
 -- Name: Products FK_Products_Dictionaries_UnitsId; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4142,7 +4267,7 @@ ALTER TABLE ONLY public."Products"
 
 
 --
--- TOC entry 3268 (class 2606 OID 17485)
+-- TOC entry 3275 (class 2606 OID 20109)
 -- Name: Properties FK_Properties_Dictionaries; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4151,7 +4276,7 @@ ALTER TABLE ONLY public."Properties"
 
 
 --
--- TOC entry 3267 (class 2606 OID 17480)
+-- TOC entry 3274 (class 2606 OID 20104)
 -- Name: Properties FK_Properties_Members; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4160,7 +4285,7 @@ ALTER TABLE ONLY public."Properties"
 
 
 --
--- TOC entry 3266 (class 2606 OID 17475)
+-- TOC entry 3273 (class 2606 OID 20099)
 -- Name: Properties FK_Properties_Objects; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4169,7 +4294,7 @@ ALTER TABLE ONLY public."Properties"
 
 
 --
--- TOC entry 3269 (class 2606 OID 17498)
+-- TOC entry 3276 (class 2606 OID 20122)
 -- Name: Relations FK_Relations_Members; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4178,7 +4303,7 @@ ALTER TABLE ONLY public."Relations"
 
 
 --
--- TOC entry 3271 (class 2606 OID 17508)
+-- TOC entry 3278 (class 2606 OID 20132)
 -- Name: Relations FK_Relations_Objects_ForeignId; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4187,7 +4312,7 @@ ALTER TABLE ONLY public."Relations"
 
 
 --
--- TOC entry 3270 (class 2606 OID 17503)
+-- TOC entry 3277 (class 2606 OID 20127)
 -- Name: Relations FK_Relations_Objects_PrimaryId; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4196,7 +4321,7 @@ ALTER TABLE ONLY public."Relations"
 
 
 --
--- TOC entry 3249 (class 2606 OID 17229)
+-- TOC entry 3256 (class 2606 OID 19853)
 -- Name: RolePermissions FK_RolePermissions_Permissions; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4205,7 +4330,7 @@ ALTER TABLE ONLY public."RolePermissions"
 
 
 --
--- TOC entry 3254 (class 2606 OID 17319)
+-- TOC entry 3261 (class 2606 OID 19943)
 -- Name: EndpointPermissions FK_RolePermissions_Permissions; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4214,7 +4339,7 @@ ALTER TABLE ONLY public."EndpointPermissions"
 
 
 --
--- TOC entry 3248 (class 2606 OID 17224)
+-- TOC entry 3255 (class 2606 OID 19848)
 -- Name: RolePermissions FK_RolePermissions_Roles; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4223,7 +4348,7 @@ ALTER TABLE ONLY public."RolePermissions"
 
 
 --
--- TOC entry 3257 (class 2606 OID 17367)
+-- TOC entry 3264 (class 2606 OID 19991)
 -- Name: Tabs FK_Tabs_Classes; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4232,7 +4357,7 @@ ALTER TABLE ONLY public."Tabs"
 
 
 --
--- TOC entry 3247 (class 2606 OID 17203)
+-- TOC entry 3254 (class 2606 OID 19827)
 -- Name: UserRoles FK_UserRoles_Roles; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4241,7 +4366,7 @@ ALTER TABLE ONLY public."UserRoles"
 
 
 --
--- TOC entry 3246 (class 2606 OID 17198)
+-- TOC entry 3253 (class 2606 OID 19822)
 -- Name: UserRoles FK_UserRoles_Users; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4250,7 +4375,7 @@ ALTER TABLE ONLY public."UserRoles"
 
 
 --
--- TOC entry 3250 (class 2606 OID 17256)
+-- TOC entry 3257 (class 2606 OID 19880)
 -- Name: Variables FK_Variables_Configurations; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4258,7 +4383,7 @@ ALTER TABLE ONLY public."Variables"
     ADD CONSTRAINT "FK_Variables_Configurations" FOREIGN KEY ("ConfigurationId") REFERENCES public."Configurations"("Id") ON DELETE CASCADE;
 
 
--- Completed on 2021-03-24 12:41:09
+-- Completed on 2021-09-09 18:05:44
 
 --
 -- PostgreSQL database dump complete
