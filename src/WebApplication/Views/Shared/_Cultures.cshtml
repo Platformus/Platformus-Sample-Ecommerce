@@ -1,0 +1,12 @@
+﻿@* Copyright © 2021 Dmitry Sikorsky. All rights reserved. *@
+@* Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information. *@
+@model Platformus.Core.Frontend.ViewModels.Shared.CulturesViewModel
+<div class="cultures @Model.AdditionalCssClass">
+  @foreach (var culture in this.Model.Cultures)
+  {
+    if (culture.Id != System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName)
+    {
+      <partial name="_Culture" model="culture" />
+    }
+  }
+</div>

@@ -1,20 +1,36 @@
-﻿@* Copyright © 2017 Dmitry Sikorsky. All rights reserved. *@
+﻿@* Copyright © 2021 Dmitry Sikorsky. All rights reserved. *@
 @* Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information. *@
 @model Platformus.ECommerce.Frontend.ViewModels.ECommerce.ProductPageViewModel
+@inject IViewLocalizer Localizer
 @{
   this.ViewBag.Title = this.Model.Title;
   this.ViewBag.MetaKeywords = this.Model.MetaKeywords;
   this.ViewBag.MetaDescription = this.Model.MetaDescription;
+  this.ViewBag.IsFullscreenPage = true;
 }
-<div class="product-page">
-  <img class="product-page__cover" src="/img?url=/images/products/@Model.Photos.FirstOrDefault().Filename&w=960&h=960" />
-  <h1>@Model.Name</h1>
-  @Html.Raw(this.Model.Description)
-  <div class="product-page__price">
-    $@Model.Price
+<div class="product product--fullscreen">
+  @{
+    var cover = this.Model.Photos.FirstOrDefault(p => p.IsCover);
+  }
+  <img class="product__cover product__cover--fullscreen" src="/images/products/@cover.Filename" alt="@Model.Name" />
+  <div class="product__details">
+    @{
+      Platformus.ECommerce.Frontend.ViewModels.Shared.CategoryViewModel category = this.Model.Category;
+
+      while (category != null)
+      {
+        <a href="@category.Url">@category.Name</a>
+        category = category.Category;
+      }
+    }
+    <h1 class="product__name">@Model.Name</h1>
+    <div class="product__price-and-units price-and-units">
+      <span class="price-and-units__price">₴@Model.Price.ToString("0")</span>
+      <span class="price-and-units__weight"> / @Model.Units</span>
+    </div>
+    <div class="product__description">
+      @Html.Raw(this.Model.Description)
+    </div>
+    <div class="product__add-to-cart product__add-to-cart--fullscreen add-to-cart" tabindex="0" title="@Localizer["Add to cart"]" onclick="return addToCart(@Model.Id);"></div>
   </div>
-  <div class="product__units">
-    @Model.Units
-  </div>
-  <a class="product-page__add-to-cart button button--positive" onclick="return addToCart(@Model.Id);">Add to cart</a>
 </div>

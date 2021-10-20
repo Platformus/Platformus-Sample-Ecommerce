@@ -1,7 +1,8 @@
-﻿@* Copyright © 2017 Dmitry Sikorsky. All rights reserved. *@
+﻿@* Copyright © 2020 Dmitry Sikorsky. All rights reserved. *@
 @* Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information. *@
+@inject Platformus.ECommerce.Services.Abstractions.ICartManager CartManager
 <!DOCTYPE html>
-<html>
+<html class="@(string.IsNullOrEmpty(this.Context.Request.Cookies["CartId"]) ? "cart-is-empty" : "cart-is-not-empty")" lang="@System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName">
 <head>
   <meta charset="utf-8" />
   <meta name="description" content="@Html.Raw(this.ViewBag.MetaDescription as string)" />
@@ -11,21 +12,76 @@
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400&subset=latin,cyrillic" type="text/css" rel="stylesheet" />
   <link href="~/css/platformus.min.css" rel="stylesheet" />
 </head>
-<body>
-  <div class="header">
-    <a class="header__logo logo" href="/@System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName/">Your brand</a>
-    @await Component.InvokeAsync("Menu", new { code = "Main", additionalCssClass = "header__menu" })
-    @await Component.InvokeAsync("Catalog", new { additionalCssClass = "header__catalog" })
-    @await Component.InvokeAsync("Cultures", new { additionalCssClass = "header__cultures" })
-  </div>
-  <div class="mobile-header">
-    <div class="mobile-header__menu-toggle" onclick="toggleHeader();"></div>
-  </div>
-  <div class="content">
-    @RenderBody()
-  </div>
-  <div class="footer">
-    &copy; Your brand, @DateTime.Now.Year
+<body class="@(string.IsNullOrEmpty(this.Context.Request.Cookies["CartId"]) ? "cart-is-empty" : "cart-is-not-empty")">
+  <div class="container">
+    <div class="container__workspace">
+      <div class="container__header header" id="header">
+        <div class="header__secondary">
+          <div class="header__contacts-and-menu">
+            <div class="header__phones phones">
+              <a class="phones__phone phone" href="callto:+380675051878">067 123-45-67</a>
+              <a class="phones__phone phone" href="callto:+380675051878">067 234-56-78</a>
+            </div>
+            <div class="header__messengers messengers">
+              <a class="messengers__messenger messenger messenger--telegram" href="#"></a>
+              <a class="messengers__messenger messenger messenger--viber" href="#"></a>
+              <a class="messengers__messenger messenger messenger--whatsapp" href="#"></a>
+            </div>
+            @await Component.InvokeAsync("Menu", new { code = "Main", additionalCssClass = "header__menu" })
+          </div>
+          @await Component.InvokeAsync("Cultures", new { additionalCssClass = "header__cultures" })
+        </div>
+        <div class="header__primary">
+          <a class="header__logo logo" href="@Platformus.Core.Frontend.GlobalizedUrlFormatter.Format(this.Context, "/")">
+            <img class="logo__image" src="/images/logo.png" alt="" />
+            <div class="logo__name-and-slogan">
+              <div class="logo__name">Пан Італія</div>
+              <div class="logo__slogan">адаптована італійська кухня</div>
+            </div>
+          </a>
+          @await Component.InvokeAsync("Catalog", new { additionalCssClass = "header__catalog" })
+        </div>
+      </div>
+      <div class="content @(this.ViewBag.IsFullscreenPage == true ? "content--fullscreen" : null)">
+        @RenderBody()
+      </div>
+      <div class="footer">
+        Copyright &copy; 2020, Пан Італія<br />
+      </div>
+    </div>
+    @if (!this.CartManager.IsEmpty)
+    {
+      <div class="container__cart cart" id="cart">
+        <div class="cart__title">
+          Your order
+        </div>
+        @await Component.InvokeAsync("Positions", new { additionalCssClass = "cart__positions" })
+        <div class="cart__total">
+          ₴@((await CartManager.GetTotalAsync()).ToString("0.00"))
+        </div>
+        @if (!this.Context.Request.Path.Value.Contains("/checkout"))
+        {
+          <div class="cart__buttons buttons">
+            <a class="buttons__button button button--positive" href="/@System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName/ecommerce/checkout">Checkout</a>
+          </div>
+        }
+      </div>
+    }
+    <div class="container__burger-button burger-button" id="burgerButton" onclick="return onBurgerButtonClick();">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="container__cart-button cart-button" id="cartButton" onclick="return onCartButtonClick();">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div class="cart-button__quantity">
+        @await CartManager.GetQuantityAsync()
+      </div>
+    </div>
   </div>
   <script src="//ajax.aspnetcdn.com/ajax/jquery/jquery-1.11.3.min.js"></script>
   <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>

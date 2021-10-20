@@ -1,16 +1,14 @@
-﻿@* Copyright © 2018 Dmitry Sikorsky. All rights reserved. *@
+﻿@* Copyright © 2021Dmitry Sikorsky. All rights reserved. *@
 @* Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information. *@
 @model Platformus.ECommerce.Frontend.ViewModels.Shared.ProductViewModel
-<div class="products__product product">
-  <a href="/@System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName@Model.Url">
-    <img class="product__cover" src="/img?url=/images/products/@Model.Cover.Filename&w=640&h=640" />
-  </a>
-  <a class="product__name" href="/@System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName@Model.Url">@Model.Name</a>
-  <div class="product__price">
-    $@Model.Price
+@using Platformus.Core.Frontend
+@inject IViewLocalizer Localizer
+<a class="products__product product" href="@GlobalizedUrlFormatter.Format(this.ViewContext.HttpContext, this.Model.Url)">
+  <img class="product__cover" src="/images/products/@Model.Cover.Filename" alt="@Model.Name" />
+  <div class="product__name">@Model.Name</div>
+  <div class="product__price-and-units price-and-units">
+    <span class="price-and-units__price">₴@Model.Price.ToString("0")</span>
+    <span class="price-and-units__weight"> / @Model.Units</span>
   </div>
-  <div class="product__units">
-    @Model.Units
-  </div>
-  <a class="product__add-to-cart button button--positive" onclick="return addToCart(@Model.Id);">Add to cart</a>
-</div>
+  <div class="product__add-to-cart add-to-cart" tabindex="0" title="@Localizer["Add to cart"]" onclick="return addToCart(@Model.Id);"></div>
+</a>

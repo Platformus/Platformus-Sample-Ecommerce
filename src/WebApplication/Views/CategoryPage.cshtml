@@ -1,15 +1,15 @@
-﻿@* Copyright © 2017 Dmitry Sikorsky. All rights reserved. *@
+﻿@* Copyright © 2020 Dmitry Sikorsky. All rights reserved. *@
 @* Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information. *@
 @model Platformus.ECommerce.Frontend.ViewModels.ECommerce.CategoryPageViewModel
 @{
-  this.ViewBag.Title = this.Model.Name;
+  this.ViewBag.Title = this.Model.Title;
+  this.ViewBag.MetaKeywords = this.Model.MetaKeywords;
+  this.ViewBag.MetaDescription = this.Model.MetaDescription;
+  this.ViewBag.IsFullscreenPage = true;
 }
-<h1>
-  @Model.Name
-</h1>
 <div class="products">
   @foreach (var product in this.Model.Products)
   {
-    @Html.Partial("_Product", product)
+    <partial name="_Product" model="product" />
   }
 </div>

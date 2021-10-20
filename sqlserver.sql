@@ -1,6 +1,6 @@
 USE [Platformus]
 GO
-/****** Object:  Table [dbo].[Carts]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Carts]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -15,7 +15,7 @@ CREATE TABLE [dbo].[Carts](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Categories]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Categories]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -38,7 +38,7 @@ CREATE TABLE [dbo].[Categories](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Classes]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Classes]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -56,7 +56,7 @@ CREATE TABLE [dbo].[Classes](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CompletedFields]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[CompletedFields]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -72,7 +72,7 @@ CREATE TABLE [dbo].[CompletedFields](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CompletedForms]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[CompletedForms]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -87,7 +87,7 @@ CREATE TABLE [dbo].[CompletedForms](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Configurations]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Configurations]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -102,7 +102,7 @@ CREATE TABLE [dbo].[Configurations](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Credentials]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Credentials]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -120,7 +120,7 @@ CREATE TABLE [dbo].[Credentials](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CredentialTypes]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[CredentialTypes]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -136,7 +136,7 @@ CREATE TABLE [dbo].[CredentialTypes](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Cultures]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Cultures]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -153,7 +153,7 @@ CREATE TABLE [dbo].[Cultures](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DataSources]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[DataSources]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -170,7 +170,7 @@ CREATE TABLE [dbo].[DataSources](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DataTypeParameters]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[DataTypeParameters]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -187,7 +187,7 @@ CREATE TABLE [dbo].[DataTypeParameters](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DataTypeParameterValues]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[DataTypeParameterValues]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -203,7 +203,7 @@ CREATE TABLE [dbo].[DataTypeParameterValues](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DataTypes]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[DataTypes]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -220,7 +220,7 @@ CREATE TABLE [dbo].[DataTypes](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DeliveryMethods]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[DeliveryMethods]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -236,7 +236,7 @@ CREATE TABLE [dbo].[DeliveryMethods](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Dictionaries]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Dictionaries]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -249,7 +249,7 @@ CREATE TABLE [dbo].[Dictionaries](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[EndpointPermissions]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[EndpointPermissions]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -264,7 +264,7 @@ CREATE TABLE [dbo].[EndpointPermissions](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Endpoints]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Endpoints]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -286,7 +286,7 @@ CREATE TABLE [dbo].[Endpoints](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[FieldOptions]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[FieldOptions]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -302,7 +302,7 @@ CREATE TABLE [dbo].[FieldOptions](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Fields]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Fields]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -322,7 +322,7 @@ CREATE TABLE [dbo].[Fields](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[FieldTypes]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[FieldTypes]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -339,7 +339,7 @@ CREATE TABLE [dbo].[FieldTypes](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Files]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Files]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -354,7 +354,7 @@ CREATE TABLE [dbo].[Files](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Forms]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Forms]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -373,7 +373,7 @@ CREATE TABLE [dbo].[Forms](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Localizations]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Localizations]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -389,7 +389,7 @@ CREATE TABLE [dbo].[Localizations](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Members]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Members]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -414,7 +414,7 @@ CREATE TABLE [dbo].[Members](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[MenuItems]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[MenuItems]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -432,7 +432,7 @@ CREATE TABLE [dbo].[MenuItems](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Menus]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Menus]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -447,7 +447,7 @@ CREATE TABLE [dbo].[Menus](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ModelStates]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[ModelStates]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -462,7 +462,7 @@ CREATE TABLE [dbo].[ModelStates](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Objects]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Objects]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -476,7 +476,7 @@ CREATE TABLE [dbo].[Objects](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Orders]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Orders]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -499,7 +499,7 @@ CREATE TABLE [dbo].[Orders](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[OrderStates]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[OrderStates]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -515,7 +515,7 @@ CREATE TABLE [dbo].[OrderStates](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PaymentMethods]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[PaymentMethods]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -531,7 +531,7 @@ CREATE TABLE [dbo].[PaymentMethods](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Permissions]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Permissions]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -547,7 +547,7 @@ CREATE TABLE [dbo].[Permissions](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Photos]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Photos]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -564,7 +564,7 @@ CREATE TABLE [dbo].[Photos](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Positions]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Positions]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -583,7 +583,7 @@ CREATE TABLE [dbo].[Positions](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Products]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Products]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -606,7 +606,7 @@ CREATE TABLE [dbo].[Products](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Properties]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Properties]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -625,7 +625,7 @@ CREATE TABLE [dbo].[Properties](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Relations]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Relations]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -641,7 +641,7 @@ CREATE TABLE [dbo].[Relations](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[RolePermissions]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[RolePermissions]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -656,7 +656,7 @@ CREATE TABLE [dbo].[RolePermissions](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Roles]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Roles]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -672,7 +672,7 @@ CREATE TABLE [dbo].[Roles](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Tabs]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Tabs]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -688,7 +688,7 @@ CREATE TABLE [dbo].[Tabs](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[UserRoles]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[UserRoles]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -703,7 +703,7 @@ CREATE TABLE [dbo].[UserRoles](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Users]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Users]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -718,7 +718,7 @@ CREATE TABLE [dbo].[Users](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Variables]    Script Date: 09.09.2021 17:29:55 ******/
+/****** Object:  Table [dbo].[Variables]    Script Date: 20.10.2021 14:06:57 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -738,11 +738,11 @@ CREATE TABLE [dbo].[Variables](
 GO
 SET IDENTITY_INSERT [dbo].[Categories] ON 
 GO
-INSERT [dbo].[Categories] ([Id], [CategoryId], [Url], [NameId], [DescriptionId], [Position], [TitleId], [MetaDescriptionId], [MetaKeywordsId], [ProductProviderCSharpClassName], [ProductProviderParameters]) VALUES (1, NULL, N'/pizza', 14, 12, 10, 15, 11, 13, N'Platformus.ECommerce.ProductProviders.DefaultProductProvider', NULL)
+INSERT [dbo].[Categories] ([Id], [CategoryId], [Url], [NameId], [DescriptionId], [Position], [TitleId], [MetaDescriptionId], [MetaKeywordsId], [ProductProviderCSharpClassName], [ProductProviderParameters]) VALUES (1, NULL, N'/', 12, 10, 10, 13, 9, 11, N'Platformus.ECommerce.ProductProviders.DefaultProductProvider', NULL)
 GO
-INSERT [dbo].[Categories] ([Id], [CategoryId], [Url], [NameId], [DescriptionId], [Position], [TitleId], [MetaDescriptionId], [MetaKeywordsId], [ProductProviderCSharpClassName], [ProductProviderParameters]) VALUES (2, NULL, N'/panini', 17, 20, 20, 16, 19, 18, N'Platformus.ECommerce.ProductProviders.DefaultProductProvider', NULL)
+INSERT [dbo].[Categories] ([Id], [CategoryId], [Url], [NameId], [DescriptionId], [Position], [TitleId], [MetaDescriptionId], [MetaKeywordsId], [ProductProviderCSharpClassName], [ProductProviderParameters]) VALUES (2, NULL, N'/panini', 15, 18, 20, 14, 17, 16, N'Platformus.ECommerce.ProductProviders.DefaultProductProvider', NULL)
 GO
-INSERT [dbo].[Categories] ([Id], [CategoryId], [Url], [NameId], [DescriptionId], [Position], [TitleId], [MetaDescriptionId], [MetaKeywordsId], [ProductProviderCSharpClassName], [ProductProviderParameters]) VALUES (3, NULL, N'/drinks', 22, 25, 30, 21, 24, 23, N'Platformus.ECommerce.ProductProviders.DefaultProductProvider', NULL)
+INSERT [dbo].[Categories] ([Id], [CategoryId], [Url], [NameId], [DescriptionId], [Position], [TitleId], [MetaDescriptionId], [MetaKeywordsId], [ProductProviderCSharpClassName], [ProductProviderParameters]) VALUES (3, NULL, N'/drinks', 20, 23, 30, 19, 22, 21, N'Platformus.ECommerce.ProductProviders.DefaultProductProvider', NULL)
 GO
 SET IDENTITY_INSERT [dbo].[Categories] OFF
 GO
@@ -787,8 +787,6 @@ GO
 INSERT [dbo].[DataSources] ([Id], [EndpointId], [Code], [DataProviderCSharpClassName], [DataProviderParameters]) VALUES (1, 1, N'Page', N'Platformus.Website.Frontend.DataProviders.PageObjectDataProvider', NULL)
 GO
 INSERT [dbo].[DataSources] ([Id], [EndpointId], [Code], [DataProviderCSharpClassName], [DataProviderParameters]) VALUES (2, 2, N'Page', N'Platformus.Website.Frontend.DataProviders.PageObjectDataProvider', NULL)
-GO
-INSERT [dbo].[DataSources] ([Id], [EndpointId], [Code], [DataProviderCSharpClassName], [DataProviderParameters]) VALUES (3, 3, N'Page', N'Platformus.Website.Frontend.DataProviders.PageObjectDataProvider', NULL)
 GO
 SET IDENTITY_INSERT [dbo].[DataSources] OFF
 GO
@@ -870,11 +868,11 @@ SET IDENTITY_INSERT [dbo].[DataTypes] OFF
 GO
 SET IDENTITY_INSERT [dbo].[DeliveryMethods] ON 
 GO
-INSERT [dbo].[DeliveryMethods] ([Id], [Code], [NameId], [Position]) VALUES (1, N'NotSet', 125, 10)
+INSERT [dbo].[DeliveryMethods] ([Id], [Code], [NameId], [Position]) VALUES (1, N'NotSet', 123, 10)
 GO
-INSERT [dbo].[DeliveryMethods] ([Id], [Code], [NameId], [Position]) VALUES (2, N'Pickup', 126, 20)
+INSERT [dbo].[DeliveryMethods] ([Id], [Code], [NameId], [Position]) VALUES (2, N'Pickup', 124, 20)
 GO
-INSERT [dbo].[DeliveryMethods] ([Id], [Code], [NameId], [Position]) VALUES (3, N'Courier', 127, 30)
+INSERT [dbo].[DeliveryMethods] ([Id], [Code], [NameId], [Position]) VALUES (3, N'Courier', 125, 30)
 GO
 SET IDENTITY_INSERT [dbo].[DeliveryMethods] OFF
 GO
@@ -1150,30 +1148,6 @@ INSERT [dbo].[Dictionaries] ([Id]) VALUES (134)
 GO
 INSERT [dbo].[Dictionaries] ([Id]) VALUES (135)
 GO
-INSERT [dbo].[Dictionaries] ([Id]) VALUES (136)
-GO
-INSERT [dbo].[Dictionaries] ([Id]) VALUES (137)
-GO
-INSERT [dbo].[Dictionaries] ([Id]) VALUES (138)
-GO
-INSERT [dbo].[Dictionaries] ([Id]) VALUES (139)
-GO
-INSERT [dbo].[Dictionaries] ([Id]) VALUES (140)
-GO
-INSERT [dbo].[Dictionaries] ([Id]) VALUES (141)
-GO
-INSERT [dbo].[Dictionaries] ([Id]) VALUES (142)
-GO
-INSERT [dbo].[Dictionaries] ([Id]) VALUES (143)
-GO
-INSERT [dbo].[Dictionaries] ([Id]) VALUES (144)
-GO
-INSERT [dbo].[Dictionaries] ([Id]) VALUES (145)
-GO
-INSERT [dbo].[Dictionaries] ([Id]) VALUES (146)
-GO
-INSERT [dbo].[Dictionaries] ([Id]) VALUES (147)
-GO
 SET IDENTITY_INSERT [dbo].[Dictionaries] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Endpoints] ON 
@@ -1182,17 +1156,15 @@ INSERT [dbo].[Endpoints] ([Id], [Name], [UrlTemplate], [Position], [DisallowAnon
 GO
 INSERT [dbo].[Endpoints] ([Id], [Name], [UrlTemplate], [Position], [DisallowAnonymous], [SignInUrl], [RequestProcessorCSharpClassName], [RequestProcessorParameters], [ResponseCacheCSharpClassName], [ResponseCacheParameters]) VALUES (2, N'Contacts', N'contacts', 10, 0, NULL, N'Platformus.Website.Frontend.RequestProcessors.DefaultRequestProcessor', N'ViewName=ContactsPage', NULL, NULL)
 GO
-INSERT [dbo].[Endpoints] ([Id], [Name], [UrlTemplate], [Position], [DisallowAnonymous], [SignInUrl], [RequestProcessorCSharpClassName], [RequestProcessorParameters], [ResponseCacheCSharpClassName], [ResponseCacheParameters]) VALUES (3, N'Cart', N'cart', 20, 0, NULL, N'Platformus.Website.Frontend.RequestProcessors.DefaultRequestProcessor', N'ViewName=CartPage', NULL, NULL)
-GO
 SET IDENTITY_INSERT [dbo].[Endpoints] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Fields] ON 
 GO
-INSERT [dbo].[Fields] ([Id], [FormId], [FieldTypeId], [Code], [NameId], [IsRequired], [MaxLength], [Position]) VALUES (1, 1, 1, N'Name', 8, 1, NULL, 10)
+INSERT [dbo].[Fields] ([Id], [FormId], [FieldTypeId], [Code], [NameId], [IsRequired], [MaxLength], [Position]) VALUES (1, 1, 1, N'Name', 6, 1, NULL, 10)
 GO
-INSERT [dbo].[Fields] ([Id], [FormId], [FieldTypeId], [Code], [NameId], [IsRequired], [MaxLength], [Position]) VALUES (2, 1, 1, N'Email', 9, 1, NULL, 20)
+INSERT [dbo].[Fields] ([Id], [FormId], [FieldTypeId], [Code], [NameId], [IsRequired], [MaxLength], [Position]) VALUES (2, 1, 1, N'Email', 7, 1, NULL, 20)
 GO
-INSERT [dbo].[Fields] ([Id], [FormId], [FieldTypeId], [Code], [NameId], [IsRequired], [MaxLength], [Position]) VALUES (3, 1, 2, N'Message', 10, 1, NULL, 30)
+INSERT [dbo].[Fields] ([Id], [FormId], [FieldTypeId], [Code], [NameId], [IsRequired], [MaxLength], [Position]) VALUES (3, 1, 2, N'Message', 8, 1, NULL, 30)
 GO
 SET IDENTITY_INSERT [dbo].[Fields] OFF
 GO
@@ -1216,7 +1188,7 @@ SET IDENTITY_INSERT [dbo].[FieldTypes] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Forms] ON 
 GO
-INSERT [dbo].[Forms] ([Id], [Code], [NameId], [SubmitButtonTitleId], [ProduceCompletedForms], [FormHandlerCSharpClassName], [FormHandlerParameters]) VALUES (1, N'Feedback', 6, 7, 1, N'Platformus.Website.Frontend.FormHandlers.EmailFormHandler', N'RecipientEmails=test@test.com;RedirectUrl=/contacts')
+INSERT [dbo].[Forms] ([Id], [Code], [NameId], [SubmitButtonTitleId], [ProduceCompletedForms], [FormHandlerCSharpClassName], [FormHandlerParameters]) VALUES (1, N'Feedback', 4, 5, 1, N'Platformus.Website.Frontend.FormHandlers.EmailFormHandler', N'RecipientEmails=test@test.com;RedirectUrl=/contacts')
 GO
 SET IDENTITY_INSERT [dbo].[Forms] OFF
 GO
@@ -1228,731 +1200,731 @@ INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES
 GO
 INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (3, 1, N'uk', N'Головне')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (4, 2, N'uk', N'Головна')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (4, 2, N'uk', N'Про нас')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (5, 2, N'ru', N'Главная')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (5, 2, N'ru', N'О нас')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (6, 2, N'en', N'Home')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (6, 2, N'en', N'About us')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (7, 3, N'uk', N'Про нас')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (7, 3, N'uk', N'Контакти')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (8, 3, N'ru', N'О нас')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (8, 3, N'ru', N'Контакты')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (9, 3, N'en', N'About us')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (9, 3, N'en', N'Contacts')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (10, 4, N'uk', N'Контакти')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (10, 4, N'uk', N'Зворотний зв’язок')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (11, 4, N'ru', N'Контакты')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (11, 4, N'ru', N'Обратная связь')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (12, 4, N'en', N'Contacts')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (12, 4, N'en', N'Feedback')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (13, 5, N'uk', N'Кошик')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (13, 5, N'en', N'Submit')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (14, 5, N'ru', N'Корзина')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (14, 5, N'ru', N'Отправить')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (15, 5, N'en', N'Cart')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (15, 5, N'uk', N'Надіслати')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (16, 6, N'uk', N'Зворотний зв’язок')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (16, 6, N'uk', N'Ваше ім’я')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (17, 6, N'ru', N'Обратная связь')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (17, 6, N'ru', N'Ваше имя')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (18, 6, N'en', N'Feedback')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (18, 6, N'en', N'Your name')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (19, 7, N'en', N'Submit')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (19, 7, N'uk', N'Ваша електронна пошта')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (20, 7, N'ru', N'Отправить')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (20, 7, N'ru', N'Ваша электронная почта')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (21, 7, N'uk', N'Надіслати')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (21, 7, N'en', N'Your email')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (22, 8, N'uk', N'Ваше ім’я')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (22, 8, N'uk', N'Ваше повідомлення')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (23, 8, N'ru', N'Ваше имя')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (23, 8, N'ru', N'Ваше сообщение')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (24, 8, N'en', N'Your name')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (24, 8, N'en', N'Your message')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (25, 9, N'uk', N'Ваша електронна пошта')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (25, 9, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (26, 9, N'ru', N'Ваша электронная почта')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (26, 9, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (27, 9, N'en', N'Your email')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (27, 9, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (28, 10, N'uk', N'Ваше повідомлення')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (28, 10, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (29, 10, N'ru', N'Ваше сообщение')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (29, 10, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (30, 10, N'en', N'Your message')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (30, 10, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (31, 11, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (31, 11, N'en', N'')
 GO
 INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (32, 11, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (33, 11, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (33, 11, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (34, 12, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (34, 12, N'en', N'Pizza')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (35, 12, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (35, 12, N'ru', N'Пицца')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (36, 12, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (36, 12, N'uk', N'Піца')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (37, 13, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (37, 13, N'en', N'Pizza')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (38, 13, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (38, 13, N'ru', N'Пицца')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (39, 13, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (39, 13, N'uk', N'Піца')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (40, 14, N'en', N'Pizza')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (40, 14, N'uk', N'Паніні')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (41, 14, N'ru', N'Пицца')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (41, 14, N'ru', N'Панини')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (42, 14, N'uk', N'Піца')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (42, 14, N'en', N'Panini')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (43, 15, N'en', N'Pizza')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (43, 15, N'uk', N'Паніні')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (44, 15, N'ru', N'Пицца')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (44, 15, N'ru', N'Панини')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (45, 15, N'uk', N'Піца')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (45, 15, N'en', N'Panini')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (46, 16, N'uk', N'Паніні')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (46, 16, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (47, 16, N'ru', N'Панини')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (47, 16, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (48, 16, N'en', N'Panini')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (48, 16, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (49, 17, N'uk', N'Паніні')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (49, 17, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (50, 17, N'ru', N'Панини')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (50, 17, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (51, 17, N'en', N'Panini')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (51, 17, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (52, 18, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (52, 18, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (53, 18, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (53, 18, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (54, 18, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (54, 18, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (55, 19, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (55, 19, N'uk', N'Напої')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (56, 19, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (56, 19, N'ru', N'Напитки')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (57, 19, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (57, 19, N'en', N'Drinks')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (58, 20, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (58, 20, N'uk', N'Напої')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (59, 20, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (59, 20, N'ru', N'Напитки')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (60, 20, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (60, 20, N'en', N'Drinks')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (61, 21, N'uk', N'Напої')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (61, 21, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (62, 21, N'ru', N'Напитки')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (62, 21, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (63, 21, N'en', N'Drinks')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (63, 21, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (64, 22, N'uk', N'Напої')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (64, 22, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (65, 22, N'ru', N'Напитки')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (65, 22, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (66, 22, N'en', N'Drinks')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (66, 22, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (67, 23, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (67, 23, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (68, 23, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (68, 23, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (69, 23, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (69, 23, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (70, 24, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (70, 24, N'uk', N'Піца 1')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (71, 24, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (71, 29, N'en', N'460 g')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (72, 24, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (72, 28, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (73, 25, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (73, 28, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (74, 25, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (74, 28, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (75, 25, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (75, 27, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (76, 26, N'uk', N'Піца 1')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (76, 27, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (77, 31, N'en', N'470 g')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (77, 29, N'ru', N'460 г')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (78, 30, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (78, 27, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (79, 30, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (79, 26, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (80, 30, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (80, 26, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (81, 29, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (81, 25, N'en', N'Pizza 1')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (82, 29, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (82, 25, N'ru', N'Пицца 1')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (83, 31, N'ru', N'470 г')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (83, 25, N'uk', N'Піца 1')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (84, 29, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (84, 24, N'en', N'Pizza 1')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (85, 28, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (85, 24, N'ru', N'Пицца 1')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (86, 28, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (86, 26, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (87, 27, N'en', N'Pizza 1')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (87, 29, N'uk', N'460 г')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (88, 27, N'ru', N'Пицца 1')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (88, 30, N'uk', N'430 г')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (89, 27, N'uk', N'Піца 1')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (89, 35, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (90, 26, N'en', N'Pizza 1')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (90, 35, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (91, 26, N'ru', N'Пицца 1')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (91, 34, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (92, 28, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (92, 34, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (93, 31, N'uk', N'470 г')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (93, 34, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (94, 32, N'uk', N'410 г')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (94, 33, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (95, 37, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (95, 33, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (96, 37, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (96, 35, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (97, 36, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (97, 33, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (98, 36, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (98, 32, N'ru', N'Пицца 2')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (99, 36, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (99, 32, N'uk', N'Піца 2')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (100, 35, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (100, 31, N'en', N'Pizza 2')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (101, 35, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (101, 31, N'ru', N'Пицца 2')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (102, 37, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (102, 31, N'uk', N'Піца 2')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (103, 35, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (103, 30, N'en', N'430 g')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (104, 34, N'ru', N'Пицца 2')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (104, 30, N'ru', N'430 г')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (105, 34, N'uk', N'Піца 2')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (105, 32, N'en', N'Pizza 2')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (106, 33, N'en', N'Pizza 2')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (106, 36, N'uk', N'430 г')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (107, 33, N'ru', N'Пицца 2')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (107, 41, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (108, 33, N'uk', N'Піца 2')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (108, 41, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (109, 32, N'en', N'410 g')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (109, 40, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (110, 32, N'ru', N'410 г')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (110, 40, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (111, 34, N'en', N'Pizza 2')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (111, 40, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (112, 38, N'uk', N'450 г')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (112, 39, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (113, 43, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (113, 39, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (114, 43, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (114, 41, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (115, 42, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (115, 39, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (116, 42, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (116, 38, N'ru', N'Пицца 3')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (117, 42, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (117, 38, N'uk', N'Піца 3')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (118, 41, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (118, 37, N'en', N'Pizza 3')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (119, 41, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (119, 37, N'ru', N'Пицца 3')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (120, 43, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (120, 37, N'uk', N'Піца 3')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (121, 41, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (121, 36, N'en', N'430 g')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (122, 40, N'ru', N'Пицца 3')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (122, 36, N'ru', N'430 г')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (123, 40, N'uk', N'Піца 3')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (123, 38, N'en', N'Pizza 3')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (124, 39, N'en', N'Pizza 3')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (124, 42, N'uk', N'470 г')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (125, 39, N'ru', N'Пицца 3')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (125, 47, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (126, 39, N'uk', N'Піца 3')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (126, 47, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (127, 38, N'en', N'450 g')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (127, 46, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (128, 38, N'ru', N'450 г')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (128, 46, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (129, 40, N'en', N'Pizza 3')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (129, 46, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (130, 44, N'uk', N'460 г')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (130, 45, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (131, 49, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (131, 45, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (132, 49, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (132, 47, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (133, 48, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (133, 45, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (134, 48, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (134, 44, N'ru', N'Пицца 4')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (135, 48, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (135, 44, N'uk', N'Піца 4')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (136, 47, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (136, 43, N'en', N'Pizza 4')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (137, 47, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (137, 43, N'ru', N'Пицца 4')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (138, 49, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (138, 43, N'uk', N'Піца 4')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (139, 47, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (139, 42, N'en', N'470 g')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (140, 46, N'ru', N'Пицца 4')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (140, 42, N'ru', N'470 г')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (141, 46, N'uk', N'Піца 4')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (141, 44, N'en', N'Pizza 4')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (142, 45, N'en', N'Pizza 4')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (142, 48, N'uk', N'470 г')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (143, 45, N'ru', N'Пицца 4')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (143, 53, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (144, 45, N'uk', N'Піца 4')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (144, 53, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (145, 44, N'en', N'460 g')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (145, 52, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (146, 44, N'ru', N'460 г')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (146, 52, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (147, 46, N'en', N'Pizza 4')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (147, 52, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (148, 50, N'uk', N'450 г')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (148, 51, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (149, 55, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (149, 51, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (150, 55, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (150, 53, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (151, 54, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (151, 51, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (152, 54, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (152, 50, N'ru', N'Пицца 5')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (153, 54, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (153, 50, N'uk', N'Піца 5')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (154, 53, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (154, 49, N'en', N'Pizza 5')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (155, 53, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (155, 49, N'ru', N'Пицца 5')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (156, 55, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (156, 49, N'uk', N'Піца 5')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (157, 53, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (157, 48, N'en', N'470 g')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (158, 52, N'ru', N'Пицца 5')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (158, 48, N'ru', N'470 г')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (159, 52, N'uk', N'Піца 5')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (159, 50, N'en', N'Pizza 5')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (160, 51, N'en', N'Pizza 5')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (160, 54, N'uk', N'480 г')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (161, 51, N'ru', N'Пицца 5')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (161, 59, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (162, 51, N'uk', N'Піца 5')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (162, 59, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (163, 50, N'en', N'450 g')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (163, 58, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (164, 50, N'ru', N'450 г')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (164, 58, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (165, 52, N'en', N'Pizza 5')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (165, 58, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (166, 56, N'uk', N'430 г')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (166, 57, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (167, 61, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (167, 57, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (168, 61, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (168, 59, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (169, 60, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (169, 57, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (170, 60, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (170, 56, N'ru', N'Пицца 6')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (171, 60, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (171, 56, N'uk', N'Піца 6')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (172, 59, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (172, 55, N'en', N'Pizza 6')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (173, 59, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (173, 55, N'ru', N'Пицца 6')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (174, 61, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (174, 55, N'uk', N'Піца 6')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (175, 59, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (175, 54, N'en', N'480 g')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (176, 58, N'ru', N'Пицца 6')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (176, 54, N'ru', N'480 г')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (177, 58, N'uk', N'Піца 6')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (177, 56, N'en', N'Pizza 6')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (178, 57, N'en', N'Pizza 6')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (178, 60, N'uk', N'470 г')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (179, 57, N'ru', N'Пицца 6')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (179, 65, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (180, 57, N'uk', N'Піца 6')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (180, 65, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (181, 56, N'en', N'430 g')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (181, 64, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (182, 56, N'ru', N'430 г')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (182, 64, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (183, 58, N'en', N'Pizza 6')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (183, 64, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (184, 62, N'uk', N'450 г')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (184, 63, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (185, 67, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (185, 63, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (186, 67, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (186, 65, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (187, 66, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (187, 63, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (188, 66, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (188, 62, N'ru', N'Пицца 7')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (189, 66, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (189, 62, N'uk', N'Піца 7')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (190, 65, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (190, 61, N'en', N'Pizza 7')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (191, 65, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (191, 61, N'ru', N'Пицца 7')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (192, 67, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (192, 61, N'uk', N'Піца 7')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (193, 65, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (193, 60, N'en', N'470 g')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (194, 64, N'ru', N'Пицца 7')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (194, 60, N'ru', N'470 г')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (195, 64, N'uk', N'Піца 7')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (195, 62, N'en', N'Pizza 7')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (196, 63, N'en', N'Pizza 7')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (196, 66, N'uk', N'450 г')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (197, 63, N'ru', N'Пицца 7')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (197, 71, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (198, 63, N'uk', N'Піца 7')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (198, 71, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (199, 62, N'en', N'450 g')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (199, 70, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (200, 62, N'ru', N'450 г')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (200, 70, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (201, 64, N'en', N'Pizza 7')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (201, 70, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (202, 68, N'uk', N'450 г')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (202, 69, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (203, 73, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (203, 69, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (204, 73, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (204, 71, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (205, 72, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (205, 69, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (206, 72, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (206, 68, N'ru', N'Пицца 8')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (207, 72, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (207, 68, N'uk', N'Піца 8')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (208, 71, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (208, 67, N'en', N'Pizza 8')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (209, 71, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (209, 67, N'ru', N'Пицца 8')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (210, 73, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (210, 67, N'uk', N'Піца 8')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (211, 71, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (211, 66, N'en', N'450 g')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (212, 70, N'ru', N'Пицца 8')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (212, 66, N'ru', N'450 г')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (213, 70, N'uk', N'Піца 8')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (213, 68, N'en', N'Pizza 8')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (214, 69, N'en', N'Pizza 8')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (214, 72, N'uk', N'460 г')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (215, 69, N'ru', N'Пицца 8')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (215, 77, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (216, 69, N'uk', N'Піца 8')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (216, 77, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (217, 68, N'en', N'450 g')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (217, 76, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (218, 68, N'ru', N'450 г')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (218, 76, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (219, 70, N'en', N'Pizza 8')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (219, 76, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (220, 74, N'uk', N'430 г')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (220, 75, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (221, 79, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (221, 75, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (222, 79, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (222, 77, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (223, 78, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (223, 75, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (224, 78, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (224, 74, N'ru', N'Пицца 9')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (225, 78, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (225, 74, N'uk', N'Піца 9')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (226, 77, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (226, 73, N'en', N'Pizza 9')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (227, 77, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (227, 73, N'ru', N'Пицца 9')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (228, 79, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (228, 73, N'uk', N'Піца 9')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (229, 77, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (229, 72, N'en', N'460 g')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (230, 76, N'ru', N'Пицца 9')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (230, 72, N'ru', N'460 г')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (231, 76, N'uk', N'Піца 9')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (231, 74, N'en', N'Pizza 9')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (232, 75, N'en', N'Pizza 9')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (232, 78, N'uk', N'130 г')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (233, 75, N'ru', N'Пицца 9')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (233, 83, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (234, 75, N'uk', N'Піца 9')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (234, 83, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (235, 74, N'en', N'430 g')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (235, 82, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (236, 74, N'ru', N'430 г')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (236, 82, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (237, 76, N'en', N'Pizza 9')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (237, 82, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (238, 80, N'uk', N'120 г')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (238, 81, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (239, 85, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (239, 81, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (240, 85, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (240, 83, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (241, 84, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (241, 81, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (242, 84, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (242, 80, N'ru', N'Панини 1')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (243, 84, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (243, 80, N'uk', N'Паніні 1')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (244, 83, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (244, 79, N'en', N'Panini 1')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (245, 83, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (245, 79, N'ru', N'Панини 1')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (246, 85, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (246, 79, N'uk', N'Паніні 1')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (247, 83, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (247, 78, N'en', N'130 g')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (248, 82, N'ru', N'Панини 1')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (248, 78, N'ru', N'130 г')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (249, 82, N'uk', N'Паніні 1')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (249, 80, N'en', N'Panini 1')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (250, 81, N'en', N'Panini 1')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (250, 84, N'uk', N'180 г')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (251, 81, N'ru', N'Панини 1')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (251, 89, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (252, 81, N'uk', N'Паніні 1')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (252, 89, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (253, 80, N'en', N'120 g')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (253, 88, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (254, 80, N'ru', N'120 г')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (254, 88, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (255, 82, N'en', N'Panini 1')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (255, 88, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (256, 86, N'uk', N'170 г')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (256, 87, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (257, 91, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (257, 87, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (258, 91, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (258, 89, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (259, 90, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (259, 87, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (260, 90, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (260, 86, N'ru', N'Панини 2')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (261, 90, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (261, 86, N'uk', N'Паніні 2')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (262, 89, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (262, 85, N'en', N'Panini 2')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (263, 89, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (263, 85, N'ru', N'Панини 2')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (264, 91, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (264, 85, N'uk', N'Паніні 2')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (265, 89, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (265, 84, N'en', N'180 g')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (266, 88, N'ru', N'Панини 2')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (266, 84, N'ru', N'180 г')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (267, 88, N'uk', N'Паніні 2')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (267, 86, N'en', N'Panini 2')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (268, 87, N'en', N'Panini 2')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (268, 90, N'uk', N'160 г')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (269, 87, N'ru', N'Панини 2')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (269, 95, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (270, 87, N'uk', N'Паніні 2')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (270, 95, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (271, 86, N'en', N'170 g')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (271, 94, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (272, 86, N'ru', N'170 г')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (272, 94, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (273, 88, N'en', N'Panini 2')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (273, 94, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (274, 92, N'uk', N'170 г')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (274, 93, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (275, 97, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (275, 93, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (276, 97, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (276, 95, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (277, 96, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (277, 93, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (278, 96, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (278, 92, N'ru', N'Панини 3')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (279, 96, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (279, 92, N'uk', N'Паніні 3')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (280, 95, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (280, 91, N'en', N'Panini 3')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (281, 95, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (281, 91, N'ru', N'Панини 3')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (282, 97, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (282, 91, N'uk', N'Паніні 3')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (283, 95, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (283, 90, N'en', N'160 g')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (284, 94, N'ru', N'Панини 3')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (284, 90, N'ru', N'160 г')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (285, 94, N'uk', N'Паніні 3')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (285, 92, N'en', N'Panini 3')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (286, 93, N'en', N'Panini 3')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (286, 96, N'uk', N'1 л')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (287, 93, N'ru', N'Панини 3')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (287, 101, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (288, 93, N'uk', N'Паніні 3')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (288, 101, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (289, 92, N'en', N'170 g')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (289, 100, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (290, 92, N'ru', N'170 г')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (290, 100, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (291, 94, N'en', N'Panini 3')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (291, 100, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (292, 98, N'uk', N'1 л')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (292, 99, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (293, 103, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (293, 99, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (294, 103, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (294, 101, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (295, 102, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (295, 99, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (296, 102, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (296, 98, N'ru', N'Напитки 1')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (297, 102, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (297, 98, N'uk', N'Напої 1')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (298, 101, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (298, 97, N'en', N'Drinks 1')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (299, 101, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (299, 97, N'ru', N'Напитки 1')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (300, 103, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (300, 97, N'uk', N'Напої 1')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (301, 101, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (301, 96, N'en', N'1 l')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (302, 100, N'ru', N'Напитки 1')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (302, 96, N'ru', N'1 л')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (303, 100, N'uk', N'Напої 1')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (303, 98, N'en', N'Drinks 1')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (304, 99, N'en', N'Drinks 1')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (304, 102, N'uk', N'1 л')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (305, 99, N'ru', N'Напитки 1')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (305, 107, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (306, 99, N'uk', N'Напої 1')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (306, 107, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (307, 98, N'en', N'1 l')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (307, 106, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (308, 98, N'ru', N'1 л')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (308, 106, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (309, 100, N'en', N'Drinks 1')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (309, 106, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (310, 104, N'uk', N'1 л')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (310, 105, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (311, 109, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (311, 105, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (312, 109, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (312, 107, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (313, 108, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (313, 105, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (314, 108, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (314, 104, N'ru', N'Напитки 2')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (315, 108, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (315, 104, N'uk', N'Напої 2')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (316, 107, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (316, 103, N'en', N'Drinks 2')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (317, 107, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (317, 103, N'ru', N'Напитки 2')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (318, 109, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (318, 103, N'uk', N'Напої 2')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (319, 107, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (319, 102, N'en', N'1 l')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (320, 106, N'ru', N'Напитки 2')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (320, 102, N'ru', N'1 л')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (321, 106, N'uk', N'Напої 2')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (321, 104, N'en', N'Drinks 2')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (322, 105, N'en', N'Drinks 2')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (322, 108, N'uk', N'1 л')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (323, 105, N'ru', N'Напитки 2')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (323, 113, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (324, 105, N'uk', N'Напої 2')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (324, 113, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (325, 104, N'en', N'1 l')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (325, 112, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (326, 104, N'ru', N'1 л')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (326, 112, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (327, 106, N'en', N'Drinks 2')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (327, 112, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (328, 110, N'uk', N'1 л')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (328, 111, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (329, 115, N'ru', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (329, 111, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (330, 115, N'uk', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (330, 113, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (331, 114, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (331, 111, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (332, 114, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (332, 110, N'ru', N'Напитки 3')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (333, 114, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (333, 110, N'uk', N'Напої 3')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (334, 113, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (334, 109, N'en', N'Drinks 3')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (335, 113, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (335, 109, N'ru', N'Напитки 3')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (336, 115, N'en', N'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (336, 109, N'uk', N'Напої 3')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (337, 113, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (337, 108, N'en', N'1 l')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (338, 112, N'ru', N'Напитки 3')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (338, 108, N'ru', N'1 л')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (339, 112, N'uk', N'Напої 3')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (339, 110, N'en', N'Drinks 3')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (340, 111, N'en', N'Drinks 3')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (340, 114, N'uk', N'Новий')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (341, 111, N'ru', N'Напитки 3')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (341, 114, N'ru', N'Новый')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (342, 111, N'uk', N'Напої 3')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (342, 114, N'en', N'New')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (343, 110, N'en', N'1 l')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (343, 115, N'uk', N'Підтверджений')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (344, 110, N'ru', N'1 л')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (344, 115, N'ru', N'Подтвержден')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (345, 112, N'en', N'Drinks 3')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (345, 115, N'en', N'Confirmed')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (346, 116, N'uk', N'Новий')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (346, 116, N'uk', N'Запланований')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (347, 116, N'ru', N'Новый')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (347, 116, N'ru', N'Запланирован')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (348, 116, N'en', N'New')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (348, 116, N'en', N'Scheduled')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (349, 117, N'uk', N'Підтверджений')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (349, 117, N'uk', N'Доставляється')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (350, 117, N'ru', N'Подтвержден')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (350, 117, N'ru', N'Доставляется')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (351, 117, N'en', N'Confirmed')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (351, 117, N'en', N'Being delivered')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (352, 118, N'uk', N'Запланований')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (352, 118, N'uk', N'Доставлений')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (353, 118, N'ru', N'Запланирован')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (353, 118, N'ru', N'Доставлен')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (354, 118, N'en', N'Scheduled')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (354, 118, N'en', N'Delivered')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (355, 119, N'uk', N'Доставляється')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (355, 119, N'uk', N'Закритий')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (356, 119, N'ru', N'Доставляется')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (356, 119, N'ru', N'Закрыт')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (357, 119, N'en', N'Being delivered')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (357, 119, N'en', N'Closed')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (358, 120, N'uk', N'Доставлений')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (358, 120, N'uk', N'Скасований')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (359, 120, N'ru', N'Доставлен')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (359, 120, N'ru', N'Отменен')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (360, 120, N'en', N'Delivered')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (360, 120, N'en', N'Canceled')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (361, 121, N'uk', N'Закритий')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (361, 121, N'uk', N'Не вказано')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (362, 121, N'ru', N'Закрыт')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (362, 121, N'ru', N'Не указан')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (363, 121, N'en', N'Closed')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (363, 121, N'en', N'Not set')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (364, 122, N'uk', N'Скасований')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (364, 122, N'uk', N'Готівка')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (365, 122, N'ru', N'Отменен')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (365, 122, N'ru', N'Наличные')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (366, 122, N'en', N'Canceled')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (366, 122, N'en', N'Cash')
 GO
 INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (367, 123, N'uk', N'Не вказано')
 GO
@@ -1960,133 +1932,69 @@ INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES
 GO
 INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (369, 123, N'en', N'Not set')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (370, 124, N'uk', N'Готівка')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (370, 124, N'uk', N'Самовивіз')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (371, 124, N'ru', N'Наличные')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (371, 124, N'ru', N'Самовывоз')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (372, 124, N'en', N'Cash')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (372, 124, N'en', N'Pickup')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (373, 125, N'uk', N'Не вказано')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (373, 125, N'uk', N'Кур’єр')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (374, 125, N'ru', N'Не указан')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (374, 125, N'ru', N'Курьер')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (375, 125, N'en', N'Not set')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (375, 125, N'en', N'Courier')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (376, 126, N'uk', N'Самовивіз')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (376, 126, N'__', N'/about-us')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (377, 126, N'ru', N'Самовывоз')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (377, 127, N'uk', N'<h1>Про нас</h1><p>Вітаємо! Це ваш веб-сайт електронної комерції, він працює на базі системи керування вмістом &laquo;<a href="http://platformus.net/" target="_blank" rel="noopener">Платформус</a>&raquo;. Ви можете керувати ним (створювати сторінки, елементи меню, форми і так далі) за допомогою <a href="/backend">бекенду</a>. Для входу використовуйте, будь ласка, ім&rsquo;я користувача і пароль, вказані під час установки (за замовчуванням це &laquo;admin@platformus.net&raquo; і &laquo;admin&raquo; відповідно).</p><p>Щоб дізнатися більше про Платформус і про те, як ним користуватися, будь ласка, скористайтеся <a href="http://docs.platformus.net/" target="_blank" rel="noopener">документацією</a>, там є декілька прикладів, що стануть у нагоді початківцям. При виникненні труднощів або питань ви можете звернутися в наш <a href="https://gitter.im/Platformus/Platformus" target="_blank" rel="noopener">чат</a>, де вам обов&rsquo;язково допоможуть.</p><p>Приємної роботи!</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (378, 126, N'en', N'Pickup')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (378, 127, N'ru', N'<h1>О нас</h1><p>Здравствуйте! Это ваш веб-сайт электронной коммерции, он работает на базе системы управления содержимым &laquo;<a href="http://platformus.net/" target="_blank" rel="noopener">Платформус</a>&raquo;. Вы можете управлять им (создавать страницы, элементы меню, формы и так далее) с помощью <a href="/backend">бекенда</a>. Для входа используйте, пожалуйста, имя пользователя и пароль, указанные при установке (по умолчанию это &laquo;admin@platformus.net&raquo; и &laquo;admin&raquo; соответственно).</p><p>Чтобы узнать больше о Платформусе и о том, как им пользоваться, пожалуйста, воспользуйтесь <a href="http://docs.platformus.net/" target="_blank" rel="noopener">документацией</a>, там есть несколько примеров, которые пригодятся начинающим. При возникновении сложностей или вопросов вы можете обратиться в наш <a href="https://gitter.im/Platformus/Platformus" target="_blank" rel="noopener">чат</a>, где вам обязательно помогут.</p><p>Приятной работы!</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (379, 127, N'uk', N'Кур’єр')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (379, 127, N'en', N'<h1>About Us</h1><p>Hello! This is your ecommerce website, it is based on the <a href="http://platformus.net/" target="_blank" rel="noopener">Platformus</a> content management system. You can manage it (create pages, menu items, forms and so on) using the <a href="/backend">backend</a>. Please use the username and password specified during the installation to sign in (it is &ldquo;admin@platformus.net&rdquo; and &ldquo;admin&rdquo; by default).</p><p>Please use the <a href="http://docs.platformus.net/" target="_blank" rel="noopener">documentation</a> to learn more about Platformus and how to use it. There are several examples that could be useful for the beginners. Also, you can get help in our <a href="https://gitter.im/Platformus/Platformus" target="_blank" rel="noopener">chat</a>.</p><p>Have a nice work!</p>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (380, 127, N'ru', N'Курьер')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (380, 128, N'uk', N'Про нас')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (381, 127, N'en', N'Courier')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (381, 128, N'ru', N'О нас')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (382, 128, N'__', N'/')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (382, 128, N'en', N'About Us')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (383, 129, N'uk', N'<h1>Ваш веб-сайт електронної комерції</h1><p>Вітаємо! Це ваш веб-сайт електронної комерції, він працює на базі системи керування вмістом &laquo;<a href="http://platformus.net/" target="_blank" rel="noopener">Платформус</a>&raquo;. Ви можете керувати ним (створювати сторінки, елементи меню, форми і так далі) за допомогою <a href="/backend">бекенду</a>. Для входу використовуйте, будь ласка, ім&rsquo;я користувача і пароль, вказані під час установки (за замовчуванням це &laquo;admin@platformus.net&raquo; і &laquo;admin&raquo; відповідно).</p><p>Щоб дізнатися більше про Платформус і про те, як ним користуватися, будь ласка, скористайтеся <a href="http://docs.platformus.net/" target="_blank" rel="noopener">документацією</a>, там є декілька прикладів, що стануть у нагоді початківцям. При виникненні труднощів або питань ви можете звернутися в наш <a href="https://gitter.im/Platformus/Platformus" target="_blank" rel="noopener">чат</a>, де вам обов&rsquo;язково допоможуть.</p><p>Приємної роботи!</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (383, 129, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (384, 129, N'ru', N'<h1>Ваш веб-сайт электронной коммерции</h1><p>Здравствуйте! Это ваш веб-сайт электронной коммерции, он работает на базе системы управления содержимым &laquo;<a href="http://platformus.net/" target="_blank" rel="noopener">Платформус</a>&raquo;. Вы можете управлять им (создавать страницы, элементы меню, формы и так далее) с помощью <a href="/backend">бекенда</a>. Для входа используйте, пожалуйста, имя пользователя и пароль, указанные при установке (по умолчанию это &laquo;admin@platformus.net&raquo; и &laquo;admin&raquo; соответственно).</p><p>Чтобы узнать больше о Платформусе и о том, как им пользоваться, пожалуйста, воспользуйтесь <a href="http://docs.platformus.net/" target="_blank" rel="noopener">документацией</a>, там есть несколько примеров, которые пригодятся начинающим. При возникновении сложностей или вопросов вы можете обратиться в наш <a href="https://gitter.im/Platformus/Platformus" target="_blank" rel="noopener">чат</a>, где вам обязательно помогут.</p><p>Приятной работы!</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (384, 129, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (385, 129, N'en', N'<h1>Your Ecommerce Website</h1><p>Hello! This is your ecommerce website, it is based on the <a href="http://platformus.net/" target="_blank" rel="noopener">Platformus</a> content management system. You can manage it (create pages, menu items, forms and so on) using the <a href="/backend">backend</a>. Please use the username and password specified during the installation to sign in (it is &ldquo;admin@platformus.net&rdquo; and &ldquo;admin&rdquo; by default).</p><p>Please use the <a href="http://docs.platformus.net/" target="_blank" rel="noopener">documentation</a> to learn more about Platformus and how to use it. There are several examples that could be useful for the beginners. Also, you can get help in our <a href="https://gitter.im/Platformus/Platformus" target="_blank" rel="noopener">chat</a>.</p><p>Have a nice work!</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (385, 129, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (386, 130, N'uk', N'Ваш веб-сайт електронної комерції')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (386, 130, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (387, 130, N'ru', N'Ваш веб-сайт электронной коммерции')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (387, 130, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (388, 130, N'en', N'Your Ecommerce Website')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (388, 130, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (389, 131, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (389, 131, N'__', N'/contacts')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (390, 131, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (390, 132, N'uk', N'<h1>Контакти</h1><p>Додайте свої контакти на цій сторінці. Номер телефону, месенджери, посилання на соціальні мережі. Форма зворотного зв&rsquo;язку, розташована нижче (до речі, ви можете її змінити або перенести в інше місце), допоможе відвідувачам написати вам повідомлення прямо з сайту, лише вкажіть для цього адресу, на яку потрібно надсилати повідомлення.</p><h2>Форма зворотного зв&rsquo;язку</h2>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (391, 131, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (391, 132, N'ru', N'<h1>Контакты</h1><p>Добавьте свои контакты на этой странице. Телефонный номер, мессенджеры, ссылки на социальные сети. Форма обратной связи, расположенная ниже (кстати, вы можете ее изменить или перенести в другое место), поможет посетителям написать вам сообщение прямо с сайта, лишь укажите для этого адрес, на который нужно присылать сообщения.</p><h2>Форма обратной связи</h2>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (392, 132, N'uk', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (392, 132, N'en', N'<h1>Contacts</h1><p>Add your contacts on this page. Phone number, messengers, social links. The feedback form below (by the way, you can edit or move it to a different place) allows your visitors to write you directly from the website, just don&rsquo;t forget to specify the email address for the messages.</p><h2>Feedback from</h2>')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (393, 132, N'ru', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (393, 133, N'uk', N'Контакти')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (394, 132, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (394, 133, N'ru', N'Контакты')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (395, 133, N'__', N'/about-us')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (395, 133, N'en', N'Contacts')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (396, 134, N'uk', N'<h1>Про нас</h1><p>Розкажіть про ваш веб-сайт електронної комерції. Ви можете додати сюди фотографії або відео.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (396, 134, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (397, 134, N'ru', N'<h1>О нас</h1><p>Расскажите о вашем веб-сайте электронной коммерции. Вы можете добавить сюда фотографии или видео.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (397, 134, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (398, 134, N'en', N'<h1>About Us</h1><p>Tell us about your ecommerce website. You can add photos or videos here.</p>')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (398, 134, N'en', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (399, 135, N'uk', N'Про нас')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (399, 135, N'uk', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (400, 135, N'ru', N'О нас')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (400, 135, N'ru', N'')
 GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (401, 135, N'en', N'About Us')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (402, 136, N'uk', N'')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (403, 136, N'ru', N'')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (404, 136, N'en', N'')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (405, 137, N'uk', N'')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (406, 137, N'ru', N'')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (407, 137, N'en', N'')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (408, 138, N'__', N'/contacts')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (409, 139, N'uk', N'<h1>Контакти</h1><p>Додайте свої контакти на цій сторінці. Номер телефону, месенджери, посилання на соціальні мережі. Форма зворотного зв&rsquo;язку, розташована нижче (до речі, ви можете її змінити або перенести в інше місце), допоможе відвідувачам написати вам повідомлення прямо з сайту, лише вкажіть для цього адресу, на яку потрібно надсилати повідомлення.</p><h2>Форма зворотного зв&rsquo;язку</h2>')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (410, 139, N'ru', N'<h1>Контакты</h1><p>Добавьте свои контакты на этой странице. Телефонный номер, мессенджеры, ссылки на социальные сети. Форма обратной связи, расположенная ниже (кстати, вы можете ее изменить или перенести в другое место), поможет посетителям написать вам сообщение прямо с сайта, лишь укажите для этого адрес, на который нужно присылать сообщения.</p><h2>Форма обратной связи</h2>')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (411, 139, N'en', N'<h1>Contacts</h1><p>Add your contacts on this page. Phone number, messengers, social links. The feedback form below (by the way, you can edit or move it to a different place) allows your visitors to write you directly from the website, just don&rsquo;t forget to specify the email address for the messages.</p><h2>Feedback from</h2>')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (412, 140, N'uk', N'Контакти')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (413, 140, N'ru', N'Контакты')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (414, 140, N'en', N'Contacts')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (415, 141, N'uk', N'')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (416, 141, N'ru', N'')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (417, 141, N'en', N'')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (418, 142, N'uk', N'')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (419, 142, N'ru', N'')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (420, 142, N'en', N'')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (421, 143, N'__', N'/cart')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (422, 144, N'uk', N'<h1>Кошик</h1>')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (423, 144, N'ru', N'<h1>Корзина</h1>')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (424, 144, N'en', N'<h1>Cart</h1>')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (425, 145, N'uk', N'Кошик')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (426, 145, N'ru', N'Корзина')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (427, 145, N'en', N'Cart')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (428, 146, N'uk', N'')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (429, 146, N'ru', N'')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (430, 146, N'en', N'')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (431, 147, N'uk', N'')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (432, 147, N'ru', N'')
-GO
-INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (433, 147, N'en', N'')
+INSERT [dbo].[Localizations] ([Id], [DictionaryId], [CultureId], [Value]) VALUES (401, 135, N'en', N'')
 GO
 SET IDENTITY_INSERT [dbo].[Localizations] OFF
 GO
@@ -2106,13 +2014,9 @@ SET IDENTITY_INSERT [dbo].[Members] OFF
 GO
 SET IDENTITY_INSERT [dbo].[MenuItems] ON 
 GO
-INSERT [dbo].[MenuItems] ([Id], [MenuId], [MenuItemId], [NameId], [Url], [Position]) VALUES (1, 1, NULL, 2, N'/', 10)
+INSERT [dbo].[MenuItems] ([Id], [MenuId], [MenuItemId], [NameId], [Url], [Position]) VALUES (1, 1, NULL, 2, N'/about-us', 10)
 GO
-INSERT [dbo].[MenuItems] ([Id], [MenuId], [MenuItemId], [NameId], [Url], [Position]) VALUES (2, 1, NULL, 3, N'/about-us', 20)
-GO
-INSERT [dbo].[MenuItems] ([Id], [MenuId], [MenuItemId], [NameId], [Url], [Position]) VALUES (3, 1, NULL, 4, N'/contacts', 30)
-GO
-INSERT [dbo].[MenuItems] ([Id], [MenuId], [MenuItemId], [NameId], [Url], [Position]) VALUES (4, 1, NULL, 5, N'/cart', 40)
+INSERT [dbo].[MenuItems] ([Id], [MenuId], [MenuItemId], [NameId], [Url], [Position]) VALUES (2, 1, NULL, 3, N'/contacts', 20)
 GO
 SET IDENTITY_INSERT [dbo].[MenuItems] OFF
 GO
@@ -2128,35 +2032,31 @@ INSERT [dbo].[Objects] ([Id], [ClassId]) VALUES (1, 2)
 GO
 INSERT [dbo].[Objects] ([Id], [ClassId]) VALUES (2, 2)
 GO
-INSERT [dbo].[Objects] ([Id], [ClassId]) VALUES (3, 2)
-GO
-INSERT [dbo].[Objects] ([Id], [ClassId]) VALUES (4, 2)
-GO
 SET IDENTITY_INSERT [dbo].[Objects] OFF
 GO
 SET IDENTITY_INSERT [dbo].[OrderStates] ON 
 GO
-INSERT [dbo].[OrderStates] ([Id], [Code], [NameId], [Position]) VALUES (1, N'New', 116, 10)
+INSERT [dbo].[OrderStates] ([Id], [Code], [NameId], [Position]) VALUES (1, N'New', 114, 10)
 GO
-INSERT [dbo].[OrderStates] ([Id], [Code], [NameId], [Position]) VALUES (2, N'Confirmed', 117, 20)
+INSERT [dbo].[OrderStates] ([Id], [Code], [NameId], [Position]) VALUES (2, N'Confirmed', 115, 20)
 GO
-INSERT [dbo].[OrderStates] ([Id], [Code], [NameId], [Position]) VALUES (3, N'Scheduled', 118, 30)
+INSERT [dbo].[OrderStates] ([Id], [Code], [NameId], [Position]) VALUES (3, N'Scheduled', 116, 30)
 GO
-INSERT [dbo].[OrderStates] ([Id], [Code], [NameId], [Position]) VALUES (4, N'BeingDelivered', 119, 40)
+INSERT [dbo].[OrderStates] ([Id], [Code], [NameId], [Position]) VALUES (4, N'BeingDelivered', 117, 40)
 GO
-INSERT [dbo].[OrderStates] ([Id], [Code], [NameId], [Position]) VALUES (5, N'Delivered', 120, 50)
+INSERT [dbo].[OrderStates] ([Id], [Code], [NameId], [Position]) VALUES (5, N'Delivered', 118, 50)
 GO
-INSERT [dbo].[OrderStates] ([Id], [Code], [NameId], [Position]) VALUES (6, N'Closed', 121, 60)
+INSERT [dbo].[OrderStates] ([Id], [Code], [NameId], [Position]) VALUES (6, N'Closed', 119, 60)
 GO
-INSERT [dbo].[OrderStates] ([Id], [Code], [NameId], [Position]) VALUES (7, N'Canceled', 122, 70)
+INSERT [dbo].[OrderStates] ([Id], [Code], [NameId], [Position]) VALUES (7, N'Canceled', 120, 70)
 GO
 SET IDENTITY_INSERT [dbo].[OrderStates] OFF
 GO
 SET IDENTITY_INSERT [dbo].[PaymentMethods] ON 
 GO
-INSERT [dbo].[PaymentMethods] ([Id], [Code], [NameId], [Position]) VALUES (1, N'NotSet', 123, 10)
+INSERT [dbo].[PaymentMethods] ([Id], [Code], [NameId], [Position]) VALUES (1, N'NotSet', 121, 10)
 GO
-INSERT [dbo].[PaymentMethods] ([Id], [Code], [NameId], [Position]) VALUES (2, N'Cash', 124, 20)
+INSERT [dbo].[PaymentMethods] ([Id], [Code], [NameId], [Position]) VALUES (2, N'Cash', 122, 20)
 GO
 SET IDENTITY_INSERT [dbo].[PaymentMethods] OFF
 GO
@@ -2240,79 +2140,59 @@ SET IDENTITY_INSERT [dbo].[Photos] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Products] ON 
 GO
-INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (1, 1, N'/pizza/pizza-1', N'pizza-1', 27, 30, 31, 110.0000, 26, 29, 28)
+INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (1, 1, N'/pizza/pizza-1', N'pizza-1', 25, 28, 29, 120.0000, 24, 27, 26)
 GO
-INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (2, 1, N'/pizza/pizza-2', N'pizza-2', 34, 37, 32, 110.0000, 33, 36, 35)
+INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (2, 1, N'/pizza/pizza-2', N'pizza-2', 32, 35, 30, 130.0000, 31, 34, 33)
 GO
-INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (3, 1, N'/pizza/pizza-3', N'pizza-3', 40, 43, 38, 130.0000, 39, 42, 41)
+INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (3, 1, N'/pizza/pizza-3', N'pizza-3', 38, 41, 36, 140.0000, 37, 40, 39)
 GO
-INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (4, 1, N'/pizza/pizza-4', N'pizza-4', 46, 49, 44, 120.0000, 45, 48, 47)
+INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (4, 1, N'/pizza/pizza-4', N'pizza-4', 44, 47, 42, 170.0000, 43, 46, 45)
 GO
-INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (5, 1, N'/pizza/pizza-5', N'pizza-5', 52, 55, 50, 110.0000, 51, 54, 53)
+INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (5, 1, N'/pizza/pizza-5', N'pizza-5', 50, 53, 48, 180.0000, 49, 52, 51)
 GO
-INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (6, 1, N'/pizza/pizza-6', N'pizza-6', 58, 61, 56, 120.0000, 57, 60, 59)
+INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (6, 1, N'/pizza/pizza-6', N'pizza-6', 56, 59, 54, 150.0000, 55, 58, 57)
 GO
-INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (7, 1, N'/pizza/pizza-7', N'pizza-7', 64, 67, 62, 170.0000, 63, 66, 65)
+INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (7, 1, N'/pizza/pizza-7', N'pizza-7', 62, 65, 60, 140.0000, 61, 64, 63)
 GO
-INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (8, 1, N'/pizza/pizza-8', N'pizza-8', 70, 73, 68, 170.0000, 69, 72, 71)
+INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (8, 1, N'/pizza/pizza-8', N'pizza-8', 68, 71, 66, 150.0000, 67, 70, 69)
 GO
-INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (9, 1, N'/pizza/pizza-9', N'pizza-9', 76, 79, 74, 140.0000, 75, 78, 77)
+INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (9, 1, N'/pizza/pizza-9', N'pizza-9', 74, 77, 72, 180.0000, 73, 76, 75)
 GO
-INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (10, 2, N'/panini/panini-1', N'panini-1', 82, 85, 80, 80.0000, 81, 84, 83)
+INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (10, 2, N'/panini/panini-1', N'panini-1', 80, 83, 78, 70.0000, 79, 82, 81)
 GO
-INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (11, 2, N'/panini/panini-2', N'panini-2', 88, 91, 86, 20.0000, 87, 90, 89)
+INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (11, 2, N'/panini/panini-2', N'panini-2', 86, 89, 84, 30.0000, 85, 88, 87)
 GO
-INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (12, 2, N'/panini/panini-3', N'panini-3', 94, 97, 92, 70.0000, 93, 96, 95)
+INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (12, 2, N'/panini/panini-3', N'panini-3', 92, 95, 90, 60.0000, 91, 94, 93)
 GO
-INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (13, 3, N'/pizza/drinks-1', N'drinks-1', 100, 103, 98, 80.0000, 99, 102, 101)
+INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (13, 3, N'/pizza/drinks-1', N'drinks-1', 98, 101, 96, 70.0000, 97, 100, 99)
 GO
-INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (14, 3, N'/pizza/drinks-2', N'drinks-2', 106, 109, 104, 30.0000, 105, 108, 107)
+INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (14, 3, N'/pizza/drinks-2', N'drinks-2', 104, 107, 102, 70.0000, 103, 106, 105)
 GO
-INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (15, 3, N'/pizza/drinks-3', N'drinks-3', 112, 115, 110, 10.0000, 111, 114, 113)
+INSERT [dbo].[Products] ([Id], [CategoryId], [Url], [Code], [NameId], [DescriptionId], [UnitsId], [Price], [TitleId], [MetaDescriptionId], [MetaKeywordsId]) VALUES (15, 3, N'/pizza/drinks-3', N'drinks-3', 110, 113, 108, 20.0000, 109, 112, 111)
 GO
 SET IDENTITY_INSERT [dbo].[Products] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Properties] ON 
 GO
-INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (1, 1, 1, NULL, NULL, 128, NULL)
+INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (1, 1, 1, NULL, NULL, 126, NULL)
 GO
-INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (2, 1, 2, NULL, NULL, 129, NULL)
+INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (2, 1, 2, NULL, NULL, 127, NULL)
 GO
-INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (3, 1, 3, NULL, NULL, 130, NULL)
+INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (3, 1, 3, NULL, NULL, 128, NULL)
 GO
-INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (4, 1, 4, NULL, NULL, 131, NULL)
+INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (4, 1, 4, NULL, NULL, 129, NULL)
 GO
-INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (5, 1, 5, NULL, NULL, 132, NULL)
+INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (5, 1, 5, NULL, NULL, 130, NULL)
 GO
-INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (6, 2, 1, NULL, NULL, 133, NULL)
+INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (6, 2, 1, NULL, NULL, 131, NULL)
 GO
-INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (7, 2, 2, NULL, NULL, 134, NULL)
+INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (7, 2, 2, NULL, NULL, 132, NULL)
 GO
-INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (8, 2, 3, NULL, NULL, 135, NULL)
+INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (8, 2, 3, NULL, NULL, 133, NULL)
 GO
-INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (9, 2, 4, NULL, NULL, 136, NULL)
+INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (9, 2, 4, NULL, NULL, 134, NULL)
 GO
-INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (10, 2, 5, NULL, NULL, 137, NULL)
-GO
-INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (11, 3, 1, NULL, NULL, 138, NULL)
-GO
-INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (12, 3, 2, NULL, NULL, 139, NULL)
-GO
-INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (13, 3, 3, NULL, NULL, 140, NULL)
-GO
-INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (14, 3, 4, NULL, NULL, 141, NULL)
-GO
-INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (15, 3, 5, NULL, NULL, 142, NULL)
-GO
-INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (16, 4, 1, NULL, NULL, 143, NULL)
-GO
-INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (17, 4, 2, NULL, NULL, 144, NULL)
-GO
-INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (18, 4, 3, NULL, NULL, 145, NULL)
-GO
-INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (19, 4, 4, NULL, NULL, 146, NULL)
-GO
-INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (20, 4, 5, NULL, NULL, 147, NULL)
+INSERT [dbo].[Properties] ([Id], [ObjectId], [MemberId], [IntegerValue], [DecimalValue], [StringValueId], [DateTimeValue]) VALUES (10, 2, 5, NULL, NULL, 135, NULL)
 GO
 SET IDENTITY_INSERT [dbo].[Properties] OFF
 GO
@@ -2374,7 +2254,7 @@ INSERT [dbo].[Variables] ([Id], [ConfigurationId], [Code], [Name], [Value], [Pos
 GO
 SET IDENTITY_INSERT [dbo].[Variables] OFF
 GO
-/****** Object:  Index [IX_Categories_CategoryId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Categories_CategoryId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Categories_CategoryId] ON [dbo].[Categories]
 (
 	[CategoryId] ASC
@@ -2382,13 +2262,13 @@ CREATE NONCLUSTERED INDEX [IX_Categories_CategoryId] ON [dbo].[Categories]
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [IX_Configurations_Code]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Configurations_Code]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Configurations_Code] ON [dbo].[Configurations]
 (
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Credentials_UserId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Credentials_UserId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Credentials_UserId] ON [dbo].[Credentials]
 (
 	[UserId] ASC
@@ -2396,37 +2276,37 @@ CREATE NONCLUSTERED INDEX [IX_Credentials_UserId] ON [dbo].[Credentials]
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [IX_CredentialTypes_Code]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_CredentialTypes_Code]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_CredentialTypes_Code] ON [dbo].[CredentialTypes]
 (
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_DataSources_EndpointId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_DataSources_EndpointId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_DataSources_EndpointId] ON [dbo].[DataSources]
 (
 	[EndpointId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_DataTypeParameters_DataTypeId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_DataTypeParameters_DataTypeId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_DataTypeParameters_DataTypeId] ON [dbo].[DataTypeParameters]
 (
 	[DataTypeId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_DataTypeParameterValues_DataTypeParameterId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_DataTypeParameterValues_DataTypeParameterId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_DataTypeParameterValues_DataTypeParameterId] ON [dbo].[DataTypeParameterValues]
 (
 	[DataTypeParameterId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_FieldOptions_FieldId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_FieldOptions_FieldId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_FieldOptions_FieldId] ON [dbo].[FieldOptions]
 (
 	[FieldId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Fields_FieldId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Fields_FieldId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Fields_FieldId] ON [dbo].[Fields]
 (
 	[FormId] ASC
@@ -2434,7 +2314,7 @@ CREATE NONCLUSTERED INDEX [IX_Fields_FieldId] ON [dbo].[Fields]
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [IX_FieldTypes_Code]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_FieldTypes_Code]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_FieldTypes_Code] ON [dbo].[FieldTypes]
 (
 	[Code] ASC
@@ -2442,13 +2322,13 @@ CREATE NONCLUSTERED INDEX [IX_FieldTypes_Code] ON [dbo].[FieldTypes]
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [IX_Forms_Code]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Forms_Code]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Forms_Code] ON [dbo].[Forms]
 (
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Localizations_DictionaryId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Localizations_DictionaryId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Localizations_DictionaryId] ON [dbo].[Localizations]
 (
 	[DictionaryId] ASC
@@ -2456,26 +2336,26 @@ CREATE NONCLUSTERED INDEX [IX_Localizations_DictionaryId] ON [dbo].[Localization
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [IX_Localizations_DictionaryId_CultureId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Localizations_DictionaryId_CultureId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Localizations_DictionaryId_CultureId] ON [dbo].[Localizations]
 (
 	[CultureId] ASC,
 	[DictionaryId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Members_ClassId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Members_ClassId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Members_ClassId] ON [dbo].[Members]
 (
 	[ClassId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_MenuItems_MenuId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_MenuItems_MenuId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_MenuItems_MenuId] ON [dbo].[MenuItems]
 (
 	[MenuId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_MenuItems_MenuItemId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_MenuItems_MenuItemId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_MenuItems_MenuItemId] ON [dbo].[MenuItems]
 (
 	[MenuItemId] ASC
@@ -2483,31 +2363,31 @@ CREATE NONCLUSTERED INDEX [IX_MenuItems_MenuItemId] ON [dbo].[MenuItems]
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [IX_Menus_Code]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Menus_Code]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Menus_Code] ON [dbo].[Menus]
 (
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Objects_ClassId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Objects_ClassId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Objects_ClassId] ON [dbo].[Objects]
 (
 	[ClassId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Orders_DeliveryMethodId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Orders_DeliveryMethodId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Orders_DeliveryMethodId] ON [dbo].[Orders]
 (
 	[DeliveryMethodId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Orders_OrderStateId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Orders_OrderStateId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Orders_OrderStateId] ON [dbo].[Orders]
 (
 	[OrderStateId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Orders_PaymentMethodId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Orders_PaymentMethodId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Orders_PaymentMethodId] ON [dbo].[Orders]
 (
 	[PaymentMethodId] ASC
@@ -2515,76 +2395,76 @@ CREATE NONCLUSTERED INDEX [IX_Orders_PaymentMethodId] ON [dbo].[Orders]
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [IX_Permissions_Code]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Permissions_Code]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Permissions_Code] ON [dbo].[Permissions]
 (
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Photos_ProductId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Photos_ProductId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Photos_ProductId] ON [dbo].[Photos]
 (
 	[ProductId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Positions_CartId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Positions_CartId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Positions_CartId] ON [dbo].[Positions]
 (
 	[CartId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Positions_OrderId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Positions_OrderId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Positions_OrderId] ON [dbo].[Positions]
 (
 	[OrderId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Positions_ProductId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Positions_ProductId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Positions_ProductId] ON [dbo].[Positions]
 (
 	[ProductId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Products_CategoryId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Products_CategoryId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Products_CategoryId] ON [dbo].[Products]
 (
 	[CategoryId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Properties_ObjectId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Properties_ObjectId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Properties_ObjectId] ON [dbo].[Properties]
 (
 	[ObjectId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Properties_ObjectId_MemberId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Properties_ObjectId_MemberId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Properties_ObjectId_MemberId] ON [dbo].[Properties]
 (
 	[ObjectId] ASC,
 	[MemberId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Relations_ForeignId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Relations_ForeignId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Relations_ForeignId] ON [dbo].[Relations]
 (
 	[ForeignId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Relations_MemberId_ForeignId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Relations_MemberId_ForeignId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Relations_MemberId_ForeignId] ON [dbo].[Relations]
 (
 	[MemberId] ASC,
 	[ForeignId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Relations_MemberId_PrimaryId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Relations_MemberId_PrimaryId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Relations_MemberId_PrimaryId] ON [dbo].[Relations]
 (
 	[PrimaryId] ASC,
 	[MemberId] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Relations_PrimaryId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Relations_PrimaryId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Relations_PrimaryId] ON [dbo].[Relations]
 (
 	[PrimaryId] ASC
@@ -2592,13 +2472,13 @@ CREATE NONCLUSTERED INDEX [IX_Relations_PrimaryId] ON [dbo].[Relations]
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [IX_Roles_Code]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Roles_Code]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Roles_Code] ON [dbo].[Roles]
 (
 	[Code] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Tabs_ClassId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Tabs_ClassId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Tabs_ClassId] ON [dbo].[Tabs]
 (
 	[ClassId] ASC
@@ -2606,13 +2486,13 @@ CREATE NONCLUSTERED INDEX [IX_Tabs_ClassId] ON [dbo].[Tabs]
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [IX_Users_Name]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Users_Name]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Users_Name] ON [dbo].[Users]
 (
 	[Name] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Variables_ConfigurationId]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Variables_ConfigurationId]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Variables_ConfigurationId] ON [dbo].[Variables]
 (
 	[ConfigurationId] ASC
@@ -2620,7 +2500,7 @@ CREATE NONCLUSTERED INDEX [IX_Variables_ConfigurationId] ON [dbo].[Variables]
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [IX_Variables_ConfigurationId_Code]    Script Date: 09.09.2021 17:29:57 ******/
+/****** Object:  Index [IX_Variables_ConfigurationId_Code]    Script Date: 20.10.2021 14:06:58 ******/
 CREATE NONCLUSTERED INDEX [IX_Variables_ConfigurationId_Code] ON [dbo].[Variables]
 (
 	[ConfigurationId] ASC,

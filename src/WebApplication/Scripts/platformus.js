@@ -1,4 +1,4 @@
-// Copyright © 2017 Dmitry Sikorsky. All rights reserved.
+// Copyright © 2021 Dmitry Sikorsky. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
 function getCulture() {
@@ -13,16 +13,16 @@ function combineLocalizedUrl(url) {
   return "/" + getCulture() + url;
 }
 
-function toggleHeader() {
-  var header = $(".header");
+function onBurgerButtonClick() {
+  $("#burgerButton").toggleClass("burger-button--active");
+  $("#header").toggleClass("container__header--active");
+  return false;
+}
 
-  if (header.is(":visible")) {
-    header.slideUp("fast");
-  }
-
-  else {
-    header.slideDown("fast");
-  }
+function onCartButtonClick() {
+  $("#cartButton").toggleClass("cart-button--active");
+  $("#cart").toggleClass("container__cart--active");
+  return false;
 }
 
 function addToCart(productId) {

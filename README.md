@@ -10,11 +10,11 @@ and [Magicalizer](https://github.com/Magicalizer/Magicalizer).
 
 ### Sample Screenshots
 
-![Home page](home_page.png)
-*Home page*
+![Home page](category_page_empty_cart.png)
+*Category page (empty cart)*
 
-![Category page](category_page.png)
-*Category page*
+![Category page](category_page_not_empty_cart.png)
+*Category page (not empty cart)*
 
 ![Product page](product_page.png)
 *Product page*
