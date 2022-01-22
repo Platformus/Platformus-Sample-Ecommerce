@@ -37,6 +37,8 @@ namespace WebApplication
 
     public void Configure(IApplicationBuilder applicationBuilder, IWebHostEnvironment webHostEnvironment)
     {
+      // AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
       if (webHostEnvironment.IsDevelopment())
         applicationBuilder.UseDeveloperExceptionPage();
 

@@ -1,4 +1,4 @@
-# Platformus 2.5.0 Sample Ecommerce
+# Platformus 3.0.0-beta1 Sample Ecommerce
 
 [![Join the chat at https://gitter.im/Platformus/Platformus](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Platformus/Platformus?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -30,5 +30,3 @@ Website: http://platformus.net/
 Docs: http://docs.platformus.net/
 
 Author: http://sikorsky.pro/
-
-Patreon: https://www.patreon.com/dmitry_sikorsky (you can support this project)
