@@ -3,19 +3,19 @@
   <PropertyGroup>
     <Authors>Dmitry Sikorsky</Authors>
     <Copyright>Copyright © 2015 Dmitry Sikorsky</Copyright>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Platformus.Core.Data.EntityFramework.Sqlite" Version="4.0.0" />
-    <PackageReference Include="Platformus.ECommerce.Backend" Version="4.0.0" />
-    <PackageReference Include="Platformus.ECommerce.Data.EntityFramework.Sqlite" Version="4.0.0" />
-    <PackageReference Include="Platformus.ECommerce.Frontend" Version="4.0.0" />
-    <PackageReference Include="Platformus.Images" Version="4.0.0" />
-    <PackageReference Include="Platformus.WebApplication" Version="4.0.0" />
-    <PackageReference Include="Platformus.Website.Backend" Version="4.0.0" />
-    <PackageReference Include="Platformus.Website.Data.EntityFramework.Sqlite" Version="4.0.0" />
-    <PackageReference Include="Platformus.Website.Frontend" Version="4.0.0" />
+    <PackageReference Include="Platformus.Core.Data.EntityFramework.Sqlite" Version="5.0.0" />
+    <PackageReference Include="Platformus.ECommerce.Backend" Version="5.0.0" />
+    <PackageReference Include="Platformus.ECommerce.Data.EntityFramework.Sqlite" Version="5.0.0" />
+    <PackageReference Include="Platformus.ECommerce.Frontend" Version="5.0.0" />
+    <PackageReference Include="Platformus.Images" Version="5.0.0" />
+    <PackageReference Include="Platformus.WebApplication" Version="5.0.0" />
+    <PackageReference Include="Platformus.Website.Backend" Version="5.0.0" />
+    <PackageReference Include="Platformus.Website.Data.EntityFramework.Sqlite" Version="5.0.0" />
+    <PackageReference Include="Platformus.Website.Frontend" Version="5.0.0" />
   </ItemGroup>
 
   <Target Name="PrecompileScript" BeforeTargets="BeforeBuild">
